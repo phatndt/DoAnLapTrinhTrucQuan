@@ -31,7 +31,6 @@ namespace MediaPlayerWindows
             btnOpen.Click += BtnOpen_Click;
             btnPlay.Click += BtnPlay_Click;
             btnPause.Click += BtnPause_Click;
-            btnOpen.Click += BtnOpen_Click1;
             this.FormClosing += FMusicManager_FormClosing;
             pictureBox1.BackgroundImageChanged += PictureBox1_BackgroundImageChanged;
         }
@@ -49,12 +48,6 @@ namespace MediaPlayerWindows
             w.controls.stop();
         }
 
-        private void BtnOpen_Click1(object sender, EventArgs e)
-        {
-            lbName.Text = w.currentMedia.getItemInfo("Title");
-            lbArtist.Text = w.currentMedia.getItemInfo("Album artist");
-            MessageBox.Show(lbArtist.Text);
-        }
         private void BtnPause_Click(object sender, EventArgs e)
         {
             //Bitmap m = new Bitmap(w.URL);
@@ -70,7 +63,27 @@ namespace MediaPlayerWindows
             btnPlay.Hide();
             btnPause.Show();
         }
+        private void setNewSong(OpenFileDialog dlg, Label name, Label singer)
+        {
+            byte[] b = new byte[128];
+            FileStream fs = new FileStream(dlg.FileName, FileMode.Open);
+            fs.Seek(-128, SeekOrigin.End);
+            fs.Read(b, 0, 128);
+            bool isSet = false;
+            String sFlag = System.Text.Encoding.Default.GetString(b, 0, 3);
+            if (sFlag.CompareTo("TAG") == 0)
+            {
+                System.Console.WriteLine("Tag   is   setted! ");
+                isSet = true;
+            }
 
+            if (isSet)
+            {
+                name.Text = (string)System.Text.Encoding.Default.GetString(b, 3, 30);
+                singer.Text = (string)System.Text.Encoding.Default.GetString(b, 33, 30);
+            }
+
+        }
         private void BtnOpen_Click(object sender, EventArgs e)
         {
             OpenFileDialog dlg = new OpenFileDialog();
@@ -83,6 +96,8 @@ namespace MediaPlayerWindows
                 try
                 {
                     w.URL = dlg.FileName;
+                    setNewSong(dlg, lbName, lbArtist);
+                    timer.Start();
                 }
                 catch(Exception ex)
                 {
@@ -115,7 +130,16 @@ namespace MediaPlayerWindows
             else
                 subMenu.Visible = false;
         }
-        
+        private void timer_Tick(object sender, EventArgs e)
+        {
 
+            if (w.playState == WMPLib.WMPPlayState.wmppsPlaying)
+            {
+                ProgressBar2.MaximumValue = (int)w.currentMedia.duration;
+                ProgressBar2.Value = (int)w.controls.currentPosition;
+            }
+            lblTime_start.Text = w.controls.currentPositionString;
+            lblTime_end.Text = w.controls.currentItem.durationString;
+        }
     }
 }
