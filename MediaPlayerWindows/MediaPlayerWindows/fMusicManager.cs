@@ -28,31 +28,21 @@ namespace MediaPlayerWindows
             HideSubMenu();
             btnMedia.Click += BtnMedia_Click;
             btnPlayList.Click += BtnPlayList_Click;
+            btnMute.Click += BtnMute_Click;
+            btnUnMute.Click += BtnUnMute_Click;
+            btnRepeat.Click += BtnRepeat_Click;
+            btnRepeat1.Click += BtnRepeat1_Click;
 
             btnPlay.Click += BtnPlay_Click;
-            btnNext.MouseHover += BtnNext_MouseHover;
             btnPause.Click += BtnPause_Click;
             this.FormClosing += FMusicManager_FormClosing;
-            //pictureBox1.BackgroundImageChanged += PictureBox1_BackgroundImageChanged;
             btnExit.Click += BtnExit_Click;
             
         }
-
-        private void BtnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void BtnNext_MouseHover(object sender, EventArgs e)
-        {
-            btnNext.BackColor = Color.FromArgb(36, 129, 77);
-        }
-
         private void BtnPlayList_Click(object sender, EventArgs e)
         {
             ShowSubMenu(panelPlayList);
         }
-
         private void BtnMedia_Click(object sender, EventArgs e)
         {
             ShowSubMenu(panelMedia);
@@ -75,20 +65,36 @@ namespace MediaPlayerWindows
             else
                 subMenu.Visible = false;
         }
-
-        private void PictureBox1_BackgroundImageChanged(object sender, EventArgs e)
+        private void BtnExit_Click(object sender, EventArgs e)
         {
-            Bitmap m = new Bitmap(w.URL);
-            
-            
-            
+            Application.Exit();
         }
-
         private void FMusicManager_FormClosing(object sender, FormClosingEventArgs e)
         {
             w.controls.stop();
         }
+        private void BtnRepeat1_Click(object sender, EventArgs e)
+        {
+            btnRepeat1.Hide();
+            btnRepeat.Show();
+        }
 
+        private void BtnRepeat_Click(object sender, EventArgs e)
+        {
+            btnRepeat.Hide();
+            btnRepeat1.Show();
+        }
+        private void BtnUnMute_Click(object sender, EventArgs e)
+        {
+            btnUnMute.Hide();
+            btnMute.Show();
+        }
+
+        private void BtnMute_Click(object sender, EventArgs e)
+        {
+            btnMute.Hide();
+            btnUnMute.Show();
+        }
         private void BtnPause_Click(object sender, EventArgs e)
         {
             //Bitmap m = new Bitmap(w.URL);

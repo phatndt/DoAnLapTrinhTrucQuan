@@ -231,5 +231,32 @@
   <ItemGroup>
     <None Include="Resources\close_window_40px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_window1_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize_window1_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize_window1_40px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize_window1_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\media_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circled_play_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playlist_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\opened_folder_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_40px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
