@@ -46,7 +46,6 @@
             // panel1
             // 
             this.panel1.AutoSize = true;
-            this.panel1.BackgroundImage = global::MediaPlayerWindows.Properties.Resources.BackgroundLogin;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.btnSignUp);
             this.panel1.Controls.Add(this.btnForgetPassword);
@@ -170,6 +169,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Tag = "0";
             this.Text = "Đăng Nhập";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fLogin_FormClosing);
             this.panel1.ResumeLayout(false);

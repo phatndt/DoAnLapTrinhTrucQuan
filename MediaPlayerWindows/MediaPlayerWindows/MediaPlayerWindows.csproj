@@ -36,6 +36,12 @@
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>C:\Windows\SysWOW64\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
+    <Reference Include="Guna.UI">
+      <HintPath>C:\Windows\SysWOW64\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>C:\Windows\SysWOW64\Guna.UI2.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -74,9 +80,26 @@
     <Compile Include="Authenticater\fSignUp.Designer.cs">
       <DependentUpon>fSignUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="fMusicPlaying.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="fMusicPlaying.Designer.cs">
+      <DependentUpon>fMusicPlaying.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fMusicPlaying_Search.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="fMusicPlaying_Search.Designer.cs">
+      <DependentUpon>fMusicPlaying_Search.cs</DependentUpon>
+    </Compile>
     <Compile Include="MediaPlayer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="User.cs" />
     <EmbeddedResource Include="fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
@@ -87,16 +110,17 @@
     <EmbeddedResource Include="Authenticater\fSignUp.resx">
       <DependentUpon>fSignUp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fMusicPlaying.resx">
+      <DependentUpon>fMusicPlaying.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fMusicPlaying_Search.resx">
+      <DependentUpon>fMusicPlaying_Search.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -135,12 +159,6 @@
     <None Include="Resources\next_64px1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\play_26px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\end_26px.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\skip_to_start_26px.png" />
   </ItemGroup>
   <ItemGroup>
@@ -172,7 +190,46 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\pause_26px.png" />
+    <None Include="Resources\search_48px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_26px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\end_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mute_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\voice_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\end_40px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\skip_to_start_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat_one_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shuffle_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_window_40px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

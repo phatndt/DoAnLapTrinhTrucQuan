@@ -10,7 +10,7 @@ using System.Windows.Controls;
 
 namespace MediaPlayerWindows
 {
-    public partial class MediaPlayer : UserControl
+    public partial class MediaPlayer
     {
         public string Path { get; set; }
         public void open()

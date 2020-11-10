@@ -26,13 +26,54 @@ namespace MediaPlayerWindows
         {
             InitializeComponent();
             HideSubMenu();
-            btnUser.Click += BtnUser_Click;
-            btnMusicOfYou.Click += BtnMusicOfYou_Click;
-            btnOpen.Click += BtnOpen_Click;
+            btnMedia.Click += BtnMedia_Click;
+            btnPlayList.Click += BtnPlayList_Click;
+
             btnPlay.Click += BtnPlay_Click;
+            btnNext.MouseHover += BtnNext_MouseHover;
             btnPause.Click += BtnPause_Click;
             this.FormClosing += FMusicManager_FormClosing;
-            pictureBox1.BackgroundImageChanged += PictureBox1_BackgroundImageChanged;
+            //pictureBox1.BackgroundImageChanged += PictureBox1_BackgroundImageChanged;
+            btnExit.Click += BtnExit_Click;
+            
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void BtnNext_MouseHover(object sender, EventArgs e)
+        {
+            btnNext.BackColor = Color.FromArgb(36, 129, 77);
+        }
+
+        private void BtnPlayList_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(panelPlayList);
+        }
+
+        private void BtnMedia_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(panelMedia);
+        }
+        private void HideSubMenu()
+        {
+            if (panelMedia.Visible == true)
+                panelMedia.Visible = true;
+            else
+                panelMedia.Visible = false;
+            panelPlayList.Visible = false;
+        }
+        private void ShowSubMenu(Panel subMenu)
+        {
+            if (subMenu.Visible == false)
+            {
+                HideSubMenu();
+                subMenu.Visible = true;
+            }
+            else
+                subMenu.Visible = false;
         }
 
         private void PictureBox1_BackgroundImageChanged(object sender, EventArgs e)
@@ -84,52 +125,29 @@ namespace MediaPlayerWindows
             }
 
         }
-        private void BtnOpen_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Filter =
-                "Audio Files (*.mp3,*.m4a,*.wav,*.aac)|*.mp3|Video Files(*.mp4,*.wmv,*.3gp,*.mkv)|*.mp4|All Files(*.*)|*.*";
-            dlg.FilterIndex = 1;
-            DialogResult dlgResult = dlg.ShowDialog();
-            if (dlgResult == DialogResult.OK)
-            {
-                try
-                {
-                    w.URL = dlg.FileName;
-                    setNewSong(dlg, lbName, lbArtist);
-                    timer.Start();
-                }
-                catch(Exception ex)
-                {
-                    MessageBox.Show("Error" + ex.Message);
-                }
-            }
-        }
-        private void BtnMusicOfYou_Click(object sender, EventArgs e)
-        {
-            ShowSubMenu(panelMusicOfYou);
-        }
+        //private void BtnOpen_Click(object sender, EventArgs e)
+        //{
+        //    OpenFileDialog dlg = new OpenFileDialog();
+        //    dlg.Filter =
+        //        "Audio Files (*.mp3,*.m4a,*.wav,*.aac)|*.mp3|Video Files(*.mp4,*.wmv,*.3gp,*.mkv)|*.mp4|All Files(*.*)|*.*";
+        //    dlg.FilterIndex = 1;
+        //    DialogResult dlgResult = dlg.ShowDialog();
+        //    if (dlgResult == DialogResult.OK)
+        //    {
+        //        try
+        //        {
+        //            w.URL = dlg.FileName;
+        //            setNewSong(dlg, lbName, lbArtist);
+        //            timer.Start();
+        //        }
+        //        catch(Exception ex)
+        //        {
+        //            MessageBox.Show("Error" + ex.Message);
+        //        }
+        //    }
+        //}
 
-        private void BtnUser_Click(object sender, EventArgs e)
-        {
-            ShowSubMenu(panelUser);
-        }
-
-        private void HideSubMenu()
-        {
-            panelUser.Visible = false;
-            panelMusicOfYou.Visible = false;
-        }
-        private void ShowSubMenu(Panel subMenu)
-        {
-            if (subMenu.Visible == false)
-            {
-                HideSubMenu();
-                subMenu.Visible = true;
-            }
-            else
-                subMenu.Visible = false;
-        }
+        
         private void timer_Tick(object sender, EventArgs e)
         {
 
@@ -141,5 +159,6 @@ namespace MediaPlayerWindows
             lblTime_start.Text = w.controls.currentPositionString;
             lblTime_end.Text = w.controls.currentItem.durationString;
         }
+
     }
 }
