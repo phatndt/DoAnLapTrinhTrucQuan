@@ -75,6 +75,12 @@
       <DependentUpon>fSignUp.cs</DependentUpon>
     </Compile>
     <Compile Include="MediaPlayer.cs" />
+    <Compile Include="PlayListShow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PlayListShow.Designer.cs">
+      <DependentUpon>PlayListShow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
@@ -87,6 +93,18 @@
     <EmbeddedResource Include="Authenticater\fSignUp.resx">
       <DependentUpon>fSignUp.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< Updated upstream
+=======
+    <EmbeddedResource Include="fMusicPlaying.resx">
+      <DependentUpon>fMusicPlaying.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fMusicPlaying_Search.resx">
+      <DependentUpon>fMusicPlaying_Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayListShow.resx">
+      <DependentUpon>PlayListShow.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> Stashed changes
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -173,6 +191,54 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pause_26px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circled_play_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circled_play_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circled_play_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playlist_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open_box_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\opened_folder_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize_window_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize_window_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_moon_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize_window1_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize_window1_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_window1_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\media_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\control_panel_40px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -26,6 +26,7 @@ namespace MediaPlayerWindows
         {
             InitializeComponent();
             HideSubMenu();
+<<<<<<< Updated upstream
             btnUser.Click += BtnUser_Click;
             btnMusicOfYou.Click += BtnMusicOfYou_Click;
             btnOpen.Click += BtnOpen_Click;
@@ -33,6 +34,92 @@ namespace MediaPlayerWindows
             btnPause.Click += BtnPause_Click;
             this.FormClosing += FMusicManager_FormClosing;
             pictureBox1.BackgroundImageChanged += PictureBox1_BackgroundImageChanged;
+=======
+            btnMedia.Click += BtnMedia_Click;
+            btnPlayList.Click += BtnPlayList_Click;
+            btnControl.Click += BtnControl_Click;
+            btnPlay.Click += BtnPlay_Click;
+
+            btnMute.Click += BtnMute_Click;
+            btnUnMute.Click += BtnUnMute_Click;
+
+            btnRepeat.Click += BtnRepeat_Click;
+            btnRepeat1.Click += BtnRepeat1_Click;
+
+            btnPause.Click += BtnPause_Click;
+            this.FormClosing += FMusicManager_FormClosing;
+            //pictureBox1.BackgroundImageChanged += PictureBox1_BackgroundImageChanged;
+            btnExit.Click += BtnExit_Click;
+            
+        }
+
+        private void BtnControl_Click(object sender, EventArgs e)
+        {
+            if (panelControl.Width == 45)
+            {
+                panelControl.Visible = false;
+                panelControl.Width = 250;
+                bunifuTransition1.ShowSync(panelControl);
+            }
+            else
+            {
+                panelControl.Visible = false;
+                panelControl.Width = 45;
+                bunifuTransition1.ShowSync(panelControl);
+            }
+        }
+
+        private void BtnRepeat1_Click(object sender, EventArgs e)
+        {
+            btnRepeat1.Hide();
+            btnRepeat.Show();
+        }
+
+        private void BtnRepeat_Click(object sender, EventArgs e)
+        {
+            btnRepeat.Hide();
+            btnRepeat1.Show();
+        }
+
+        private void BtnUnMute_Click(object sender, EventArgs e)
+        {
+            btnUnMute.Hide();
+            btnMute.Show();
+        }
+
+        private void BtnMute_Click(object sender, EventArgs e)
+        {
+            btnMute.Hide();
+            btnUnMute.Show();
+        }
+
+        private void BtnPlayList_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(panelPlayList);
+        }
+
+        private void BtnMedia_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(panelMedia);
+        }
+        private void HideSubMenu()
+        {
+            if (panelMedia.Visible == true)
+                panelMedia.Visible = true;
+            else
+                panelMedia.Visible = false;
+            panelPlayList.Visible = false;
+        }
+        private void ShowSubMenu(Panel subMenu)
+        {
+            if (subMenu.Visible == false)
+            {
+                HideSubMenu();
+                subMenu.Visible = true;
+            }
+            else
+                subMenu.Visible = false;
+>>>>>>> Stashed changes
         }
 
         private void PictureBox1_BackgroundImageChanged(object sender, EventArgs e)
@@ -41,6 +128,10 @@ namespace MediaPlayerWindows
             
             
             
+        }
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         private void FMusicManager_FormClosing(object sender, FormClosingEventArgs e)
@@ -51,7 +142,6 @@ namespace MediaPlayerWindows
         private void BtnPause_Click(object sender, EventArgs e)
         {
             //Bitmap m = new Bitmap(w.URL);
-           
             w.controls.pause();
             btnPause.Hide();
             btnPlay.Show();
@@ -59,6 +149,7 @@ namespace MediaPlayerWindows
 
         private void BtnPlay_Click(object sender, EventArgs e)
         {
+
             w.controls.play();
             btnPlay.Hide();
             btnPause.Show();
