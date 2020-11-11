@@ -31,54 +31,54 @@
             this.components = new System.ComponentModel.Container();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.panelMainButton = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.bunifuSlider1 = new Bunifu.Framework.UI.BunifuSlider();
-            this.lbArtist = new System.Windows.Forms.Label();
-            this.lbName = new System.Windows.Forms.Label();
-            this.ProgressBar2 = new Bunifu.Framework.UI.BunifuProgressBar();
-            this.lblTime_end = new System.Windows.Forms.Label();
-            this.lblTime_start = new System.Windows.Forms.Label();
             this.panelButtonExit = new System.Windows.Forms.Panel();
             this.panelControl = new System.Windows.Forms.Panel();
             this.panelMedia = new System.Windows.Forms.Panel();
             this.panelPlayList = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panelMain = new System.Windows.Forms.Panel();
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnPlayList = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.btnMedia = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnMinimize = new System.Windows.Forms.Button();
-            this.btnMaximize = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.pictureSong = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnUnMute = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnShuffle = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnRepeat = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnRepeat1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnNext = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnPlay = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnPause = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnEnd = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnMute = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnRepeat1 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnRepeat = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuSlider1 = new Bunifu.Framework.UI.BunifuSlider();
+            this.lbArtist = new System.Windows.Forms.Label();
+            this.lbName = new System.Windows.Forms.Label();
+            this.ProgressBar2 = new Bunifu.Framework.UI.BunifuProgressBar();
+            this.lblTime_start = new System.Windows.Forms.Label();
+            this.lblTime_end = new System.Windows.Forms.Label();
+            this.ucPlaylist1 = new MediaPlayerWindows.UcPlaylist();
+            this.ucSystemButton1 = new MediaPlayerWindows.ManagerUserControl.UcSystemButton();
+            this.DragControl = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panelMainButton.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panelButtonExit.SuspendLayout();
             this.panelControl.SuspendLayout();
             this.panelMedia.SuspendLayout();
             this.panelPlayList.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureSong)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnUnMute)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnShuffle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRepeat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRepeat1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNext)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPlay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPause)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMute)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRepeat1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRepeat)).BeginInit();
             this.SuspendLayout();
             // 
             // timer
@@ -88,111 +88,23 @@
             // panelMainButton
             // 
             this.panelMainButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.panelMainButton.Controls.Add(this.lblTime_end);
             this.panelMainButton.Controls.Add(this.pictureSong);
             this.panelMainButton.Controls.Add(this.panel1);
             this.panelMainButton.Controls.Add(this.lbArtist);
             this.panelMainButton.Controls.Add(this.lbName);
             this.panelMainButton.Controls.Add(this.ProgressBar2);
-            this.panelMainButton.Controls.Add(this.lblTime_end);
             this.panelMainButton.Controls.Add(this.lblTime_start);
             this.panelMainButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelMainButton.Location = new System.Drawing.Point(0, 514);
+            this.panelMainButton.Location = new System.Drawing.Point(0, 515);
             this.panelMainButton.Name = "panelMainButton";
-            this.panelMainButton.Size = new System.Drawing.Size(1000, 111);
+            this.panelMainButton.Size = new System.Drawing.Size(1000, 110);
             this.panelMainButton.TabIndex = 2;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnUnMute);
-            this.panel1.Controls.Add(this.btnShuffle);
-            this.panel1.Controls.Add(this.btnRepeat);
-            this.panel1.Controls.Add(this.btnRepeat1);
-            this.panel1.Controls.Add(this.btnNext);
-            this.panel1.Controls.Add(this.btnPlay);
-            this.panel1.Controls.Add(this.btnPause);
-            this.panel1.Controls.Add(this.btnEnd);
-            this.panel1.Controls.Add(this.btnMute);
-            this.panel1.Controls.Add(this.bunifuSlider1);
-            this.panel1.Location = new System.Drawing.Point(300, 58);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(700, 84);
-            this.panel1.TabIndex = 23;
-            // 
-            // bunifuSlider1
-            // 
-            this.bunifuSlider1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSlider1.BackgroudColor = System.Drawing.Color.DarkGray;
-            this.bunifuSlider1.BorderRadius = 0;
-            this.bunifuSlider1.IndicatorColor = System.Drawing.Color.SeaGreen;
-            this.bunifuSlider1.Location = new System.Drawing.Point(541, 5);
-            this.bunifuSlider1.MaximumValue = 100;
-            this.bunifuSlider1.Name = "bunifuSlider1";
-            this.bunifuSlider1.Size = new System.Drawing.Size(119, 30);
-            this.bunifuSlider1.TabIndex = 19;
-            this.bunifuSlider1.Value = 0;
-            // 
-            // lbArtist
-            // 
-            this.lbArtist.AutoSize = true;
-            this.lbArtist.Font = new System.Drawing.Font("Roboto", 12F);
-            this.lbArtist.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbArtist.Location = new System.Drawing.Point(128, 78);
-            this.lbArtist.Name = "lbArtist";
-            this.lbArtist.Size = new System.Drawing.Size(91, 20);
-            this.lbArtist.TabIndex = 21;
-            this.lbArtist.Text = "ArtistName";
-            // 
-            // lbName
-            // 
-            this.lbName.AutoSize = true;
-            this.lbName.Font = new System.Drawing.Font("Roboto", 12F);
-            this.lbName.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbName.Location = new System.Drawing.Point(128, 49);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(95, 20);
-            this.lbName.TabIndex = 20;
-            this.lbName.Text = "MusicName";
-            // 
-            // ProgressBar2
-            // 
-            this.ProgressBar2.BackColor = System.Drawing.Color.Silver;
-            this.ProgressBar2.BorderRadius = 5;
-            this.ProgressBar2.Location = new System.Drawing.Point(225, 20);
-            this.ProgressBar2.MaximumValue = 100;
-            this.ProgressBar2.Name = "ProgressBar2";
-            this.ProgressBar2.ProgressColor = System.Drawing.Color.Teal;
-            this.ProgressBar2.Size = new System.Drawing.Size(604, 15);
-            this.ProgressBar2.TabIndex = 9;
-            this.ProgressBar2.Value = 0;
-            // 
-            // lblTime_end
-            // 
-            this.lblTime_end.AutoSize = true;
-            this.lblTime_end.Font = new System.Drawing.Font("Roboto", 10F);
-            this.lblTime_end.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblTime_end.Location = new System.Drawing.Point(835, 19);
-            this.lblTime_end.Name = "lblTime_end";
-            this.lblTime_end.Size = new System.Drawing.Size(44, 18);
-            this.lblTime_end.TabIndex = 17;
-            this.lblTime_end.Text = "00:00";
-            // 
-            // lblTime_start
-            // 
-            this.lblTime_start.AutoSize = true;
-            this.lblTime_start.Font = new System.Drawing.Font("Roboto", 10F);
-            this.lblTime_start.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblTime_start.Location = new System.Drawing.Point(175, 19);
-            this.lblTime_start.Name = "lblTime_start";
-            this.lblTime_start.Size = new System.Drawing.Size(44, 18);
-            this.lblTime_start.TabIndex = 18;
-            this.lblTime_start.Text = "00:00";
             // 
             // panelButtonExit
             // 
             this.panelButtonExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.panelButtonExit.Controls.Add(this.btnMinimize);
-            this.panelButtonExit.Controls.Add(this.btnMaximize);
-            this.panelButtonExit.Controls.Add(this.btnExit);
+            this.panelButtonExit.Controls.Add(this.ucSystemButton1);
             this.panelButtonExit.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelButtonExit.Location = new System.Drawing.Point(0, 0);
             this.panelButtonExit.Name = "panelButtonExit";
@@ -207,7 +119,7 @@
             this.panelControl.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl.Location = new System.Drawing.Point(0, 40);
             this.panelControl.Name = "panelControl";
-            this.panelControl.Size = new System.Drawing.Size(250, 474);
+            this.panelControl.Size = new System.Drawing.Size(250, 475);
             this.panelControl.TabIndex = 4;
             // 
             // panelMedia
@@ -230,24 +142,6 @@
             this.panelPlayList.Name = "panelPlayList";
             this.panelPlayList.Size = new System.Drawing.Size(250, 80);
             this.panelPlayList.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.btnMedia);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(250, 40);
-            this.panel4.TabIndex = 0;
-            // 
-            // panelMain
-            // 
-            this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(250, 40);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(750, 474);
-            this.panelMain.TabIndex = 5;
             // 
             // bunifuFlatButton4
             // 
@@ -389,6 +283,15 @@
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btnMedia);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(250, 40);
+            this.panel4.TabIndex = 0;
+            // 
             // btnMedia
             // 
             this.btnMedia.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
@@ -424,47 +327,40 @@
             this.btnMedia.Textcolor = System.Drawing.Color.White;
             this.btnMedia.TextFont = new System.Drawing.Font("Roboto", 12F);
             // 
-            // btnMinimize
+            // panelMain
             // 
-            this.btnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.Image = global::MediaPlayerWindows.Properties.Resources.minimize_window1_40px;
-            this.btnMinimize.Location = new System.Drawing.Point(880, 0);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(40, 40);
-            this.btnMinimize.TabIndex = 22;
-            this.btnMinimize.UseVisualStyleBackColor = true;
-            // 
-            // btnMaximize
-            // 
-            this.btnMaximize.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximize.Image = global::MediaPlayerWindows.Properties.Resources.maximize_window1_40px;
-            this.btnMaximize.Location = new System.Drawing.Point(920, 0);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(40, 40);
-            this.btnMaximize.TabIndex = 22;
-            this.btnMaximize.UseVisualStyleBackColor = true;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Image = global::MediaPlayerWindows.Properties.Resources.close_window1_40px;
-            this.btnExit.Location = new System.Drawing.Point(960, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(40, 40);
-            this.btnExit.TabIndex = 22;
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMain.Location = new System.Drawing.Point(250, 40);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(750, 475);
+            this.panelMain.TabIndex = 5;
             // 
             // pictureSong
             // 
             this.pictureSong.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureSong.Location = new System.Drawing.Point(0, 0);
             this.pictureSong.Name = "pictureSong";
-            this.pictureSong.Size = new System.Drawing.Size(118, 111);
-            this.pictureSong.TabIndex = 24;
+            this.pictureSong.Size = new System.Drawing.Size(125, 110);
+            this.pictureSong.TabIndex = 36;
             this.pictureSong.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnUnMute);
+            this.panel1.Controls.Add(this.btnShuffle);
+            this.panel1.Controls.Add(this.btnRepeat);
+            this.panel1.Controls.Add(this.btnRepeat1);
+            this.panel1.Controls.Add(this.btnNext);
+            this.panel1.Controls.Add(this.btnPlay);
+            this.panel1.Controls.Add(this.btnPause);
+            this.panel1.Controls.Add(this.btnEnd);
+            this.panel1.Controls.Add(this.btnMute);
+            this.panel1.Controls.Add(this.bunifuSlider1);
+            this.panel1.Location = new System.Drawing.Point(300, 51);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(700, 84);
+            this.panel1.TabIndex = 35;
             // 
             // btnUnMute
             // 
@@ -491,6 +387,32 @@
             this.btnShuffle.TabIndex = 0;
             this.btnShuffle.TabStop = false;
             this.btnShuffle.Zoom = 10;
+            // 
+            // btnRepeat
+            // 
+            this.btnRepeat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnRepeat.Image = global::MediaPlayerWindows.Properties.Resources.repeat_one_40px;
+            this.btnRepeat.ImageActive = global::MediaPlayerWindows.Properties.Resources.repeat_40px;
+            this.btnRepeat.Location = new System.Drawing.Point(280, 0);
+            this.btnRepeat.Name = "btnRepeat";
+            this.btnRepeat.Size = new System.Drawing.Size(40, 40);
+            this.btnRepeat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnRepeat.TabIndex = 0;
+            this.btnRepeat.TabStop = false;
+            this.btnRepeat.Zoom = 10;
+            // 
+            // btnRepeat1
+            // 
+            this.btnRepeat1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnRepeat1.Image = global::MediaPlayerWindows.Properties.Resources.repeat_40px;
+            this.btnRepeat1.ImageActive = global::MediaPlayerWindows.Properties.Resources.repeat_40px;
+            this.btnRepeat1.Location = new System.Drawing.Point(280, 0);
+            this.btnRepeat1.Name = "btnRepeat1";
+            this.btnRepeat1.Size = new System.Drawing.Size(40, 40);
+            this.btnRepeat1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnRepeat1.TabIndex = 0;
+            this.btnRepeat1.TabStop = false;
+            this.btnRepeat1.Zoom = 10;
             // 
             // btnNext
             // 
@@ -557,41 +479,111 @@
             this.btnMute.TabStop = false;
             this.btnMute.Zoom = 10;
             // 
-            // btnRepeat1
+            // bunifuSlider1
             // 
-            this.btnRepeat1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnRepeat1.Image = global::MediaPlayerWindows.Properties.Resources.repeat_40px;
-            this.btnRepeat1.ImageActive = global::MediaPlayerWindows.Properties.Resources.repeat_40px;
-            this.btnRepeat1.Location = new System.Drawing.Point(280, 0);
-            this.btnRepeat1.Name = "btnRepeat1";
-            this.btnRepeat1.Size = new System.Drawing.Size(40, 40);
-            this.btnRepeat1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnRepeat1.TabIndex = 0;
-            this.btnRepeat1.TabStop = false;
-            this.btnRepeat1.Zoom = 10;
+            this.bunifuSlider1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSlider1.BackgroudColor = System.Drawing.Color.DarkGray;
+            this.bunifuSlider1.BorderRadius = 0;
+            this.bunifuSlider1.IndicatorColor = System.Drawing.Color.SeaGreen;
+            this.bunifuSlider1.Location = new System.Drawing.Point(541, 5);
+            this.bunifuSlider1.MaximumValue = 100;
+            this.bunifuSlider1.Name = "bunifuSlider1";
+            this.bunifuSlider1.Size = new System.Drawing.Size(119, 30);
+            this.bunifuSlider1.TabIndex = 19;
+            this.bunifuSlider1.Value = 0;
             // 
-            // btnRepeat
+            // lbArtist
             // 
-            this.btnRepeat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnRepeat.Image = global::MediaPlayerWindows.Properties.Resources.repeat_one_40px;
-            this.btnRepeat.ImageActive = global::MediaPlayerWindows.Properties.Resources.repeat_40px;
-            this.btnRepeat.Location = new System.Drawing.Point(280, 0);
-            this.btnRepeat.Name = "btnRepeat";
-            this.btnRepeat.Size = new System.Drawing.Size(40, 40);
-            this.btnRepeat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnRepeat.TabIndex = 0;
-            this.btnRepeat.TabStop = false;
-            this.btnRepeat.Zoom = 10;
+            this.lbArtist.AutoSize = true;
+            this.lbArtist.Font = new System.Drawing.Font("Roboto", 12F);
+            this.lbArtist.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbArtist.Location = new System.Drawing.Point(131, 81);
+            this.lbArtist.Name = "lbArtist";
+            this.lbArtist.Size = new System.Drawing.Size(91, 20);
+            this.lbArtist.TabIndex = 34;
+            this.lbArtist.Text = "ArtistName";
+            // 
+            // lbName
+            // 
+            this.lbName.AutoSize = true;
+            this.lbName.Font = new System.Drawing.Font("Roboto", 12F);
+            this.lbName.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbName.Location = new System.Drawing.Point(131, 51);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(95, 20);
+            this.lbName.TabIndex = 33;
+            this.lbName.Text = "MusicName";
+            // 
+            // ProgressBar2
+            // 
+            this.ProgressBar2.BackColor = System.Drawing.Color.Silver;
+            this.ProgressBar2.BorderRadius = 5;
+            this.ProgressBar2.Location = new System.Drawing.Point(250, 18);
+            this.ProgressBar2.MaximumValue = 100;
+            this.ProgressBar2.Name = "ProgressBar2";
+            this.ProgressBar2.ProgressColor = System.Drawing.Color.Teal;
+            this.ProgressBar2.Size = new System.Drawing.Size(604, 15);
+            this.ProgressBar2.TabIndex = 31;
+            this.ProgressBar2.Value = 0;
+            // 
+            // lblTime_start
+            // 
+            this.lblTime_start.AutoSize = true;
+            this.lblTime_start.Font = new System.Drawing.Font("Roboto", 10F);
+            this.lblTime_start.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblTime_start.Location = new System.Drawing.Point(200, 17);
+            this.lblTime_start.Name = "lblTime_start";
+            this.lblTime_start.Size = new System.Drawing.Size(44, 18);
+            this.lblTime_start.TabIndex = 32;
+            this.lblTime_start.Text = "00:00";
+            // 
+            // lblTime_end
+            // 
+            this.lblTime_end.AutoSize = true;
+            this.lblTime_end.Font = new System.Drawing.Font("Roboto", 10F);
+            this.lblTime_end.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblTime_end.Location = new System.Drawing.Point(860, 15);
+            this.lblTime_end.Name = "lblTime_end";
+            this.lblTime_end.Size = new System.Drawing.Size(44, 18);
+            this.lblTime_end.TabIndex = 37;
+            this.lblTime_end.Text = "00:00";
+            // 
+            // ucPlaylist1
+            // 
+            this.ucPlaylist1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucPlaylist1.Location = new System.Drawing.Point(250, 40);
+            this.ucPlaylist1.Name = "ucPlaylist1";
+            this.ucPlaylist1.Size = new System.Drawing.Size(750, 475);
+            this.ucPlaylist1.TabIndex = 0;
+            // 
+            // ucSystemButton1
+            // 
+            this.ucSystemButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.ucSystemButton1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucSystemButton1.Location = new System.Drawing.Point(0, 0);
+            this.ucSystemButton1.Name = "ucSystemButton1";
+            this.ucSystemButton1.Size = new System.Drawing.Size(1000, 40);
+            this.ucSystemButton1.TabIndex = 0;
+            // 
+            // DragControl
+            // 
+            this.DragControl.Fixed = true;
+            this.DragControl.Horizontal = true;
+            this.DragControl.TargetControl = this.ucSystemButton1;
+            this.DragControl.Vertical = true;
             // 
             // fMusicManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1000, 625);
+            this.Controls.Add(this.ucPlaylist1);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelControl);
             this.Controls.Add(this.panelButtonExit);
             this.Controls.Add(this.panelMainButton);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fMusicManager";
@@ -600,22 +592,22 @@
             this.Text = "Phần mềm nghe nhạc";
             this.panelMainButton.ResumeLayout(false);
             this.panelMainButton.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.panelButtonExit.ResumeLayout(false);
             this.panelControl.ResumeLayout(false);
             this.panelMedia.ResumeLayout(false);
             this.panelPlayList.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureSong)).EndInit();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnUnMute)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnShuffle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRepeat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRepeat1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNext)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPlay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPause)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEnd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMute)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRepeat1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRepeat)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -623,12 +615,6 @@
         #endregion
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Panel panelMainButton;
-        private System.Windows.Forms.Label lbArtist;
-        private System.Windows.Forms.Label lbName;
-        private Bunifu.Framework.UI.BunifuSlider bunifuSlider1;
-        private Bunifu.Framework.UI.BunifuProgressBar ProgressBar2;
-        private System.Windows.Forms.Label lblTime_end;
-        private System.Windows.Forms.Label lblTime_start;
         private System.Windows.Forms.Panel panelButtonExit;
         private System.Windows.Forms.Panel panelControl;
         private System.Windows.Forms.Panel panelMedia;
@@ -640,19 +626,25 @@
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
         private Bunifu.Framework.UI.BunifuFlatButton btnPlayList;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnExit;
-        private Bunifu.Framework.UI.BunifuImageButton btnUnMute;
-        private Bunifu.Framework.UI.BunifuImageButton btnNext;
-        private Bunifu.Framework.UI.BunifuImageButton btnPlay;
-        private Bunifu.Framework.UI.BunifuImageButton btnEnd;
-        private Bunifu.Framework.UI.BunifuImageButton btnShuffle;
-        private Bunifu.Framework.UI.BunifuImageButton btnMute;
-        private Bunifu.Framework.UI.BunifuImageButton btnPause;
-        private System.Windows.Forms.Button btnMinimize;
-        private System.Windows.Forms.Button btnMaximize;
+        private UcPlaylist ucPlaylist1;
+        private ManagerUserControl.UcSystemButton ucSystemButton1;
+        private Bunifu.Framework.UI.BunifuDragControl DragControl;
         private System.Windows.Forms.PictureBox pictureSong;
+        private System.Windows.Forms.Panel panel1;
+        private Bunifu.Framework.UI.BunifuImageButton btnUnMute;
+        private Bunifu.Framework.UI.BunifuImageButton btnShuffle;
         private Bunifu.Framework.UI.BunifuImageButton btnRepeat;
         private Bunifu.Framework.UI.BunifuImageButton btnRepeat1;
+        private Bunifu.Framework.UI.BunifuImageButton btnNext;
+        private Bunifu.Framework.UI.BunifuImageButton btnPlay;
+        private Bunifu.Framework.UI.BunifuImageButton btnPause;
+        private Bunifu.Framework.UI.BunifuImageButton btnEnd;
+        private Bunifu.Framework.UI.BunifuImageButton btnMute;
+        private Bunifu.Framework.UI.BunifuSlider bunifuSlider1;
+        private System.Windows.Forms.Label lbArtist;
+        private System.Windows.Forms.Label lbName;
+        private Bunifu.Framework.UI.BunifuProgressBar ProgressBar2;
+        private System.Windows.Forms.Label lblTime_start;
+        private System.Windows.Forms.Label lblTime_end;
     }
 }

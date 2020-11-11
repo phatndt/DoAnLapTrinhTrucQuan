@@ -65,7 +65,7 @@ D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindo
 D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.exe
 D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.pdb
 D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.fMusicPlaying.resources
-D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\bin\Debug\Guna.UI.dll
 D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.fMusicPlaying_Search.resources
-D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\bin\Debug\Guna.UI2.dll
+D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.UcPlaylist.resources
 D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.csprojAssemblyReference.cache
+D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.ManagerUserControl.UcSystemButton.resources

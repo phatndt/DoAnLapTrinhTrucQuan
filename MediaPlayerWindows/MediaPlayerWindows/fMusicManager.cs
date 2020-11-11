@@ -14,17 +14,16 @@ using MediaPlayerWindows;
 using System.Windows.Controls.Primitives;
 using System.Runtime.CompilerServices;
 using System.IO;
-
 namespace MediaPlayerWindows
 {
     public partial class fMusicManager : Form
     {
-
         WindowsMediaPlayer w = new WindowsMediaPlayer();
         MediaPlayer M = new MediaPlayer();
         public fMusicManager()
         {
             InitializeComponent();
+            
             HideSubMenu();
             btnMedia.Click += BtnMedia_Click;
             btnPlayList.Click += BtnPlayList_Click;
@@ -36,12 +35,13 @@ namespace MediaPlayerWindows
             btnPlay.Click += BtnPlay_Click;
             btnPause.Click += BtnPause_Click;
             this.FormClosing += FMusicManager_FormClosing;
-            btnExit.Click += BtnExit_Click;
+            ucPlaylist1.Hide();
             
         }
         private void BtnPlayList_Click(object sender, EventArgs e)
         {
             ShowSubMenu(panelPlayList);
+            ucPlaylist1.Show();
         }
         private void BtnMedia_Click(object sender, EventArgs e)
         {
@@ -64,10 +64,6 @@ namespace MediaPlayerWindows
             }
             else
                 subMenu.Visible = false;
-        }
-        private void BtnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
         private void FMusicManager_FormClosing(object sender, FormClosingEventArgs e)
         {

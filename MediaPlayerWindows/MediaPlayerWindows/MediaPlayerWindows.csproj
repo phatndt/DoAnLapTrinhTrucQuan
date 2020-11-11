@@ -36,12 +36,6 @@
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>C:\Windows\SysWOW64\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
-    <Reference Include="Guna.UI">
-      <HintPath>C:\Windows\SysWOW64\Guna.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Guna.UI2">
-      <HintPath>C:\Windows\SysWOW64\Guna.UI2.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -92,6 +86,12 @@
     <Compile Include="fMusicPlaying_Search.Designer.cs">
       <DependentUpon>fMusicPlaying_Search.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerUserControl\UcSystemButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManagerUserControl\UcSystemButton.Designer.cs">
+      <DependentUpon>UcSystemButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="MediaPlayer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -99,6 +99,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerUserControl\UcPlaylist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManagerUserControl\UcPlaylist.Designer.cs">
+      <DependentUpon>UcPlaylist.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
     <EmbeddedResource Include="fLogin.resx">
@@ -116,10 +122,16 @@
     <EmbeddedResource Include="fMusicPlaying_Search.resx">
       <DependentUpon>fMusicPlaying_Search.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManagerUserControl\UcSystemButton.resx">
+      <DependentUpon>UcSystemButton.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerUserControl\UcPlaylist.resx">
+      <DependentUpon>UcPlaylist.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -258,5 +270,6 @@
   <ItemGroup>
     <None Include="Resources\add_40px.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
