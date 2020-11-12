@@ -143,6 +143,16 @@ namespace MediaPlayerWindows.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap file_40px {
+            get {
+                object obj = ResourceManager.GetObject("file_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hinh_anh_nen_dep_cho_powerpoint_110314970 {
             get {
                 object obj = ResourceManager.GetObject("hinh-anh-nen-dep-cho-powerpoint_110314970", resourceCulture);
@@ -176,6 +186,16 @@ namespace MediaPlayerWindows.Properties {
         internal static System.Drawing.Bitmap media_40px {
             get {
                 object obj = ResourceManager.GetObject("media_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap media_40px_green {
+            get {
+                object obj = ResourceManager.GetObject("media_40px_green", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

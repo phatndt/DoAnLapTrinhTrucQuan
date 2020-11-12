@@ -27,6 +27,8 @@ namespace MediaPlayerWindows
             HideSubMenu();
             btnMedia.Click += BtnMedia_Click;
             btnPlayList.Click += BtnPlayList_Click;
+            btnBrowser.Click += BtnBrowser_Click;
+
             btnMute.Click += BtnMute_Click;
             btnUnMute.Click += BtnUnMute_Click;
             btnRepeat1.Click += BtnRepeat_Click;
@@ -38,6 +40,44 @@ namespace MediaPlayerWindows
             ucPlaylist1.Hide();
             
         }
+
+        private void BtnBrowser_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter =
+                "Audio Files (*.mp3,*.m4a,*.wav,*.aac)|*.mp3|Video Files(*.mp4,*.wmv,*.3gp,*.mkv)|*.mp4|All Files(*.*)|*.*";
+            dlg.FilterIndex = 1;
+            DialogResult dlgResult = dlg.ShowDialog();
+            if (dlgResult == DialogResult.OK)
+            {
+                try
+                {
+                    w.URL = dlg.FileName;
+                    var fileTag = TagLib.File.Create(dlg.FileName);
+                    lbName.Text = fileTag.Tag.Title;
+                    lbArtist.Text = fileTag.Tag.FirstPerformer;
+                    var mStream = new MemoryStream();
+                    var firstPicture = fileTag.Tag.Pictures.FirstOrDefault();
+                    if (firstPicture != null)
+                    {
+                        byte[] pData = firstPicture.Data.Data;
+                        mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
+                        var bm = new Bitmap(mStream, false);
+                        mStream.Dispose();
+                        pictureSong.Image = bm;
+                    }
+                    else
+                    {
+                        pictureSong.Image = global::MediaPlayerWindows.Properties.Resources.hinh_anh_nen_dep_cho_powerpoint_110314970;
+                    }
+                    timer.Start();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error" + ex.Message);
+                }
+            }
+        }
         private void BtnPlayList_Click(object sender, EventArgs e)
         {
             ShowSubMenu(panelPlayList);
@@ -45,7 +85,6 @@ namespace MediaPlayerWindows
         }
         private void BtnMedia_Click(object sender, EventArgs e)
         {
-            btnMedia.Textcolor = Color.FromArgb(36, 129, 77);
             ShowSubMenu(panelMedia);
         }
         private void HideSubMenu()

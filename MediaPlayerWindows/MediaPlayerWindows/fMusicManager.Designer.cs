@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.panelMainButton = new System.Windows.Forms.Panel();
-            this.lblTime_end = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnUnMute = new Bunifu.Framework.UI.BunifuImageButton();
             this.pictureSong = new System.Windows.Forms.PictureBox();
@@ -46,23 +45,25 @@
             this.btnEnd = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnMute = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuSlider1 = new Bunifu.Framework.UI.BunifuSlider();
-            this.ProgressBar2 = new Bunifu.Framework.UI.BunifuProgressBar();
-            this.lblTime_start = new System.Windows.Forms.Label();
             this.panelButtonExit = new System.Windows.Forms.Panel();
             this.ucSystemButton1 = new MediaPlayerWindows.ManagerUserControl.UcSystemButton();
+            this.panelMain = new System.Windows.Forms.Panel();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.ucPlaylist1 = new MediaPlayerWindows.UcPlaylist();
+            this.DragControl = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnMedia = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelControl = new System.Windows.Forms.Panel();
             this.panelMedia = new System.Windows.Forms.Panel();
             this.panelPlayList = new System.Windows.Forms.Panel();
-            this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnCreatPlayList = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnOpenPlayList = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnPlayList = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btnMedia = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.panelMain = new System.Windows.Forms.Panel();
-            this.ucPlaylist1 = new MediaPlayerWindows.UcPlaylist();
-            this.DragControl = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.btnPlaying = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnBrowser = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.lblTime_end = new System.Windows.Forms.Label();
+            this.lblTime_start = new System.Windows.Forms.Label();
+            this.ProgressBar2 = new Bunifu.Framework.UI.BunifuProgressBar();
             this.panelMainButton.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnUnMute)).BeginInit();
@@ -76,10 +77,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMute)).BeginInit();
             this.panelButtonExit.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panelControl.SuspendLayout();
             this.panelMedia.SuspendLayout();
             this.panelPlayList.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer
@@ -96,24 +97,13 @@
             this.panelMainButton.Size = new System.Drawing.Size(1000, 80);
             this.panelMainButton.TabIndex = 2;
             // 
-            // lblTime_end
-            // 
-            this.lblTime_end.AutoSize = true;
-            this.lblTime_end.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblTime_end.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblTime_end.Location = new System.Drawing.Point(749, 7);
-            this.lblTime_end.Name = "lblTime_end";
-            this.lblTime_end.Size = new System.Drawing.Size(44, 17);
-            this.lblTime_end.TabIndex = 37;
-            this.lblTime_end.Text = "00:00";
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.lblTime_end);
-            this.panel1.Controls.Add(this.btnUnMute);
-            this.panel1.Controls.Add(this.pictureSong);
             this.panel1.Controls.Add(this.lblTime_start);
             this.panel1.Controls.Add(this.ProgressBar2);
+            this.panel1.Controls.Add(this.btnUnMute);
+            this.panel1.Controls.Add(this.pictureSong);
             this.panel1.Controls.Add(this.btnShuffle);
             this.panel1.Controls.Add(this.btnRepeat1);
             this.panel1.Controls.Add(this.lbArtist);
@@ -158,7 +148,7 @@
             this.btnShuffle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnShuffle.Image = global::MediaPlayerWindows.Properties.Resources.shuffle_40px;
             this.btnShuffle.ImageActive = null;
-            this.btnShuffle.Location = new System.Drawing.Point(400, 43);
+            this.btnShuffle.Location = new System.Drawing.Point(399, 13);
             this.btnShuffle.Name = "btnShuffle";
             this.btnShuffle.Size = new System.Drawing.Size(25, 25);
             this.btnShuffle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -171,7 +161,7 @@
             this.btnRepeat1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnRepeat1.Image = global::MediaPlayerWindows.Properties.Resources.repeat_40px;
             this.btnRepeat1.ImageActive = null;
-            this.btnRepeat1.Location = new System.Drawing.Point(600, 43);
+            this.btnRepeat1.Location = new System.Drawing.Point(599, 13);
             this.btnRepeat1.Name = "btnRepeat1";
             this.btnRepeat1.Size = new System.Drawing.Size(25, 25);
             this.btnRepeat1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -184,7 +174,7 @@
             this.lbArtist.AutoSize = true;
             this.lbArtist.Font = new System.Drawing.Font("Roboto", 10F);
             this.lbArtist.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbArtist.Location = new System.Drawing.Point(100, 54);
+            this.lbArtist.Location = new System.Drawing.Point(100, 37);
             this.lbArtist.Name = "lbArtist";
             this.lbArtist.Size = new System.Drawing.Size(81, 18);
             this.lbArtist.TabIndex = 34;
@@ -196,7 +186,7 @@
             this.btnRepeat.Image = global::MediaPlayerWindows.Properties.Resources.repeat_one_40px;
             this.btnRepeat.ImageActive = global::MediaPlayerWindows.Properties.Resources.repeat_40px;
             this.btnRepeat.InitialImage = null;
-            this.btnRepeat.Location = new System.Drawing.Point(600, 43);
+            this.btnRepeat.Location = new System.Drawing.Point(599, 13);
             this.btnRepeat.Name = "btnRepeat";
             this.btnRepeat.Size = new System.Drawing.Size(25, 25);
             this.btnRepeat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -209,7 +199,7 @@
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Roboto", 12F);
             this.lbName.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbName.Location = new System.Drawing.Point(100, 27);
+            this.lbName.Location = new System.Drawing.Point(99, 8);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(95, 20);
             this.lbName.TabIndex = 33;
@@ -220,7 +210,7 @@
             this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnNext.Image = global::MediaPlayerWindows.Properties.Resources.end_40px;
             this.btnNext.ImageActive = null;
-            this.btnNext.Location = new System.Drawing.Point(550, 43);
+            this.btnNext.Location = new System.Drawing.Point(549, 13);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(25, 25);
             this.btnNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -233,7 +223,7 @@
             this.btnPlay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnPlay.Image = global::MediaPlayerWindows.Properties.Resources.play_40px;
             this.btnPlay.ImageActive = null;
-            this.btnPlay.Location = new System.Drawing.Point(500, 38);
+            this.btnPlay.Location = new System.Drawing.Point(499, 8);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(35, 35);
             this.btnPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -246,7 +236,7 @@
             this.btnPause.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnPause.Image = global::MediaPlayerWindows.Properties.Resources.pause_40px;
             this.btnPause.ImageActive = null;
-            this.btnPause.Location = new System.Drawing.Point(500, 38);
+            this.btnPause.Location = new System.Drawing.Point(499, 8);
             this.btnPause.Name = "btnPause";
             this.btnPause.Size = new System.Drawing.Size(35, 35);
             this.btnPause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -259,7 +249,7 @@
             this.btnEnd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnEnd.Image = global::MediaPlayerWindows.Properties.Resources.skip_to_start_40px;
             this.btnEnd.ImageActive = null;
-            this.btnEnd.Location = new System.Drawing.Point(450, 43);
+            this.btnEnd.Location = new System.Drawing.Point(449, 13);
             this.btnEnd.Name = "btnEnd";
             this.btnEnd.Size = new System.Drawing.Size(25, 25);
             this.btnEnd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -294,30 +284,6 @@
             this.bunifuSlider1.TabIndex = 19;
             this.bunifuSlider1.Value = 0;
             // 
-            // ProgressBar2
-            // 
-            this.ProgressBar2.BackColor = System.Drawing.Color.Silver;
-            this.ProgressBar2.BorderRadius = 5;
-            this.ProgressBar2.Location = new System.Drawing.Point(292, 8);
-            this.ProgressBar2.Margin = new System.Windows.Forms.Padding(4);
-            this.ProgressBar2.MaximumValue = 100;
-            this.ProgressBar2.Name = "ProgressBar2";
-            this.ProgressBar2.ProgressColor = System.Drawing.Color.Teal;
-            this.ProgressBar2.Size = new System.Drawing.Size(450, 15);
-            this.ProgressBar2.TabIndex = 31;
-            this.ProgressBar2.Value = 0;
-            // 
-            // lblTime_start
-            // 
-            this.lblTime_start.AutoSize = true;
-            this.lblTime_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblTime_start.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblTime_start.Location = new System.Drawing.Point(241, 7);
-            this.lblTime_start.Name = "lblTime_start";
-            this.lblTime_start.Size = new System.Drawing.Size(44, 17);
-            this.lblTime_start.TabIndex = 32;
-            this.lblTime_start.Text = "00:00";
-            // 
             // panelButtonExit
             // 
             this.panelButtonExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
@@ -338,181 +304,35 @@
             this.ucSystemButton1.Size = new System.Drawing.Size(1000, 30);
             this.ucSystemButton1.TabIndex = 0;
             // 
-            // panelControl
+            // panelMain
             // 
-            this.panelControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.panelControl.Controls.Add(this.panelMedia);
-            this.panelControl.Controls.Add(this.panel4);
-            this.panelControl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl.Location = new System.Drawing.Point(0, 30);
-            this.panelControl.Name = "panelControl";
-            this.panelControl.Size = new System.Drawing.Size(250, 515);
-            this.panelControl.TabIndex = 4;
+            this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMain.Location = new System.Drawing.Point(250, 30);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(750, 515);
+            this.panelMain.TabIndex = 5;
             // 
-            // panelMedia
+            // bunifuElipse1
             // 
-            this.panelMedia.Controls.Add(this.panelPlayList);
-            this.panelMedia.Controls.Add(this.btnPlayList);
-            this.panelMedia.Controls.Add(this.bunifuFlatButton1);
-            this.panelMedia.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelMedia.Location = new System.Drawing.Point(0, 40);
-            this.panelMedia.Name = "panelMedia";
-            this.panelMedia.Size = new System.Drawing.Size(250, 160);
-            this.panelMedia.TabIndex = 1;
+            this.bunifuElipse1.ElipseRadius = 5;
+            this.bunifuElipse1.TargetControl = this;
             // 
-            // panelPlayList
+            // ucPlaylist1
             // 
-            this.panelPlayList.Controls.Add(this.bunifuFlatButton4);
-            this.panelPlayList.Controls.Add(this.bunifuFlatButton3);
-            this.panelPlayList.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelPlayList.Location = new System.Drawing.Point(0, 80);
-            this.panelPlayList.Name = "panelPlayList";
-            this.panelPlayList.Size = new System.Drawing.Size(250, 80);
-            this.panelPlayList.TabIndex = 2;
+            this.ucPlaylist1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucPlaylist1.Location = new System.Drawing.Point(250, 30);
+            this.ucPlaylist1.Margin = new System.Windows.Forms.Padding(4);
+            this.ucPlaylist1.Name = "ucPlaylist1";
+            this.ucPlaylist1.Size = new System.Drawing.Size(750, 515);
+            this.ucPlaylist1.TabIndex = 0;
             // 
-            // bunifuFlatButton4
+            // DragControl
             // 
-            this.bunifuFlatButton4.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.bunifuFlatButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton4.BorderRadius = 0;
-            this.bunifuFlatButton4.ButtonText = "Create PlayList";
-            this.bunifuFlatButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton4.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuFlatButton4.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton4.Iconimage = global::MediaPlayerWindows.Properties.Resources.add_40px;
-            this.bunifuFlatButton4.Iconimage_right = null;
-            this.bunifuFlatButton4.Iconimage_right_Selected = null;
-            this.bunifuFlatButton4.Iconimage_Selected = null;
-            this.bunifuFlatButton4.IconMarginLeft = 30;
-            this.bunifuFlatButton4.IconMarginRight = 0;
-            this.bunifuFlatButton4.IconRightVisible = true;
-            this.bunifuFlatButton4.IconRightZoom = 0D;
-            this.bunifuFlatButton4.IconVisible = true;
-            this.bunifuFlatButton4.IconZoom = 90D;
-            this.bunifuFlatButton4.IsTab = false;
-            this.bunifuFlatButton4.Location = new System.Drawing.Point(0, 40);
-            this.bunifuFlatButton4.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuFlatButton4.Name = "bunifuFlatButton4";
-            this.bunifuFlatButton4.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.bunifuFlatButton4.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuFlatButton4.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton4.selected = false;
-            this.bunifuFlatButton4.Size = new System.Drawing.Size(250, 40);
-            this.bunifuFlatButton4.TabIndex = 0;
-            this.bunifuFlatButton4.Text = "Create PlayList";
-            this.bunifuFlatButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton4.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton4.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // bunifuFlatButton3
-            // 
-            this.bunifuFlatButton3.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.bunifuFlatButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton3.BorderRadius = 0;
-            this.bunifuFlatButton3.ButtonText = "Open PlayList";
-            this.bunifuFlatButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton3.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuFlatButton3.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton3.Iconimage = global::MediaPlayerWindows.Properties.Resources.opened_folder_40px;
-            this.bunifuFlatButton3.Iconimage_right = null;
-            this.bunifuFlatButton3.Iconimage_right_Selected = null;
-            this.bunifuFlatButton3.Iconimage_Selected = null;
-            this.bunifuFlatButton3.IconMarginLeft = 30;
-            this.bunifuFlatButton3.IconMarginRight = 0;
-            this.bunifuFlatButton3.IconRightVisible = true;
-            this.bunifuFlatButton3.IconRightZoom = 0D;
-            this.bunifuFlatButton3.IconVisible = true;
-            this.bunifuFlatButton3.IconZoom = 90D;
-            this.bunifuFlatButton3.IsTab = false;
-            this.bunifuFlatButton3.Location = new System.Drawing.Point(0, 0);
-            this.bunifuFlatButton3.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuFlatButton3.Name = "bunifuFlatButton3";
-            this.bunifuFlatButton3.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.bunifuFlatButton3.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuFlatButton3.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton3.selected = false;
-            this.bunifuFlatButton3.Size = new System.Drawing.Size(250, 40);
-            this.bunifuFlatButton3.TabIndex = 0;
-            this.bunifuFlatButton3.Text = "Open PlayList";
-            this.bunifuFlatButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton3.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton3.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // btnPlayList
-            // 
-            this.btnPlayList.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnPlayList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.btnPlayList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPlayList.BorderRadius = 0;
-            this.btnPlayList.ButtonText = "PlayList";
-            this.btnPlayList.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPlayList.DisabledColor = System.Drawing.Color.Gray;
-            this.btnPlayList.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPlayList.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnPlayList.Iconimage = global::MediaPlayerWindows.Properties.Resources.playlist_40px;
-            this.btnPlayList.Iconimage_right = null;
-            this.btnPlayList.Iconimage_right_Selected = null;
-            this.btnPlayList.Iconimage_Selected = null;
-            this.btnPlayList.IconMarginLeft = 15;
-            this.btnPlayList.IconMarginRight = 0;
-            this.btnPlayList.IconRightVisible = true;
-            this.btnPlayList.IconRightZoom = 0D;
-            this.btnPlayList.IconVisible = true;
-            this.btnPlayList.IconZoom = 90D;
-            this.btnPlayList.IsTab = false;
-            this.btnPlayList.Location = new System.Drawing.Point(0, 40);
-            this.btnPlayList.Margin = new System.Windows.Forms.Padding(4);
-            this.btnPlayList.Name = "btnPlayList";
-            this.btnPlayList.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.btnPlayList.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btnPlayList.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnPlayList.selected = false;
-            this.btnPlayList.Size = new System.Drawing.Size(250, 40);
-            this.btnPlayList.TabIndex = 1;
-            this.btnPlayList.Text = "PlayList";
-            this.btnPlayList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPlayList.Textcolor = System.Drawing.Color.White;
-            this.btnPlayList.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // bunifuFlatButton1
-            // 
-            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton1.BorderRadius = 0;
-            this.bunifuFlatButton1.ButtonText = "Playing";
-            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton1.Iconimage = global::MediaPlayerWindows.Properties.Resources.circled_play_40px;
-            this.bunifuFlatButton1.Iconimage_right = null;
-            this.bunifuFlatButton1.Iconimage_right_Selected = null;
-            this.bunifuFlatButton1.Iconimage_Selected = null;
-            this.bunifuFlatButton1.IconMarginLeft = 15;
-            this.bunifuFlatButton1.IconMarginRight = 0;
-            this.bunifuFlatButton1.IconRightVisible = true;
-            this.bunifuFlatButton1.IconRightZoom = 0D;
-            this.bunifuFlatButton1.IconVisible = true;
-            this.bunifuFlatButton1.IconZoom = 90D;
-            this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(0, 0);
-            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(250, 40);
-            this.bunifuFlatButton1.TabIndex = 0;
-            this.bunifuFlatButton1.Text = "Playing";
-            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DragControl.Fixed = true;
+            this.DragControl.Horizontal = true;
+            this.DragControl.TargetControl = this.ucSystemButton1;
+            this.DragControl.Vertical = true;
             // 
             // panel4
             // 
@@ -551,7 +371,7 @@
             this.btnMedia.Name = "btnMedia";
             this.btnMedia.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.btnMedia.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btnMedia.OnHoverTextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnMedia.OnHoverTextColor = System.Drawing.Color.White;
             this.btnMedia.selected = false;
             this.btnMedia.Size = new System.Drawing.Size(250, 40);
             this.btnMedia.TabIndex = 0;
@@ -560,35 +380,252 @@
             this.btnMedia.Textcolor = System.Drawing.Color.White;
             this.btnMedia.TextFont = new System.Drawing.Font("Roboto", 12F);
             // 
-            // panelMain
+            // panelControl
             // 
-            this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(250, 30);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(750, 515);
-            this.panelMain.TabIndex = 5;
+            this.panelControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.panelControl.Controls.Add(this.panelMedia);
+            this.panelControl.Controls.Add(this.panel4);
+            this.panelControl.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelControl.Location = new System.Drawing.Point(0, 30);
+            this.panelControl.Name = "panelControl";
+            this.panelControl.Size = new System.Drawing.Size(250, 515);
+            this.panelControl.TabIndex = 4;
             // 
-            // ucPlaylist1
+            // panelMedia
             // 
-            this.ucPlaylist1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucPlaylist1.Location = new System.Drawing.Point(250, 30);
-            this.ucPlaylist1.Margin = new System.Windows.Forms.Padding(4);
-            this.ucPlaylist1.Name = "ucPlaylist1";
-            this.ucPlaylist1.Size = new System.Drawing.Size(750, 515);
-            this.ucPlaylist1.TabIndex = 0;
+            this.panelMedia.Controls.Add(this.panelPlayList);
+            this.panelMedia.Controls.Add(this.btnPlayList);
+            this.panelMedia.Controls.Add(this.btnPlaying);
+            this.panelMedia.Controls.Add(this.btnBrowser);
+            this.panelMedia.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelMedia.Location = new System.Drawing.Point(0, 40);
+            this.panelMedia.Name = "panelMedia";
+            this.panelMedia.Size = new System.Drawing.Size(250, 200);
+            this.panelMedia.TabIndex = 1;
             // 
-            // DragControl
+            // panelPlayList
             // 
-            this.DragControl.Fixed = true;
-            this.DragControl.Horizontal = true;
-            this.DragControl.TargetControl = this.ucSystemButton1;
-            this.DragControl.Vertical = true;
+            this.panelPlayList.AutoSize = true;
+            this.panelPlayList.Controls.Add(this.btnCreatPlayList);
+            this.panelPlayList.Controls.Add(this.btnOpenPlayList);
+            this.panelPlayList.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelPlayList.Location = new System.Drawing.Point(0, 120);
+            this.panelPlayList.Name = "panelPlayList";
+            this.panelPlayList.Size = new System.Drawing.Size(250, 84);
+            this.panelPlayList.TabIndex = 2;
             // 
-            // bunifuElipse1
+            // btnCreatPlayList
             // 
-            this.bunifuElipse1.ElipseRadius = 5;
-            this.bunifuElipse1.TargetControl = this;
+            this.btnCreatPlayList.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnCreatPlayList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.btnCreatPlayList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCreatPlayList.BorderRadius = 0;
+            this.btnCreatPlayList.ButtonText = "Create PlayList";
+            this.btnCreatPlayList.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCreatPlayList.DisabledColor = System.Drawing.Color.Gray;
+            this.btnCreatPlayList.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnCreatPlayList.Iconimage = global::MediaPlayerWindows.Properties.Resources.add_40px;
+            this.btnCreatPlayList.Iconimage_right = null;
+            this.btnCreatPlayList.Iconimage_right_Selected = null;
+            this.btnCreatPlayList.Iconimage_Selected = null;
+            this.btnCreatPlayList.IconMarginLeft = 30;
+            this.btnCreatPlayList.IconMarginRight = 0;
+            this.btnCreatPlayList.IconRightVisible = true;
+            this.btnCreatPlayList.IconRightZoom = 0D;
+            this.btnCreatPlayList.IconVisible = true;
+            this.btnCreatPlayList.IconZoom = 90D;
+            this.btnCreatPlayList.IsTab = false;
+            this.btnCreatPlayList.Location = new System.Drawing.Point(0, 40);
+            this.btnCreatPlayList.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCreatPlayList.Name = "btnCreatPlayList";
+            this.btnCreatPlayList.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.btnCreatPlayList.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnCreatPlayList.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnCreatPlayList.selected = false;
+            this.btnCreatPlayList.Size = new System.Drawing.Size(250, 40);
+            this.btnCreatPlayList.TabIndex = 0;
+            this.btnCreatPlayList.Text = "Create PlayList";
+            this.btnCreatPlayList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCreatPlayList.Textcolor = System.Drawing.Color.White;
+            this.btnCreatPlayList.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // btnOpenPlayList
+            // 
+            this.btnOpenPlayList.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnOpenPlayList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.btnOpenPlayList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnOpenPlayList.BorderRadius = 0;
+            this.btnOpenPlayList.ButtonText = "Open PlayList";
+            this.btnOpenPlayList.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOpenPlayList.DisabledColor = System.Drawing.Color.Gray;
+            this.btnOpenPlayList.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnOpenPlayList.Iconimage = global::MediaPlayerWindows.Properties.Resources.opened_folder_40px;
+            this.btnOpenPlayList.Iconimage_right = null;
+            this.btnOpenPlayList.Iconimage_right_Selected = null;
+            this.btnOpenPlayList.Iconimage_Selected = null;
+            this.btnOpenPlayList.IconMarginLeft = 30;
+            this.btnOpenPlayList.IconMarginRight = 0;
+            this.btnOpenPlayList.IconRightVisible = true;
+            this.btnOpenPlayList.IconRightZoom = 0D;
+            this.btnOpenPlayList.IconVisible = true;
+            this.btnOpenPlayList.IconZoom = 90D;
+            this.btnOpenPlayList.IsTab = false;
+            this.btnOpenPlayList.Location = new System.Drawing.Point(0, 0);
+            this.btnOpenPlayList.Margin = new System.Windows.Forms.Padding(4);
+            this.btnOpenPlayList.Name = "btnOpenPlayList";
+            this.btnOpenPlayList.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.btnOpenPlayList.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnOpenPlayList.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnOpenPlayList.selected = false;
+            this.btnOpenPlayList.Size = new System.Drawing.Size(250, 40);
+            this.btnOpenPlayList.TabIndex = 0;
+            this.btnOpenPlayList.Text = "Open PlayList";
+            this.btnOpenPlayList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOpenPlayList.Textcolor = System.Drawing.Color.White;
+            this.btnOpenPlayList.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // btnPlayList
+            // 
+            this.btnPlayList.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnPlayList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.btnPlayList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPlayList.BorderRadius = 0;
+            this.btnPlayList.ButtonText = "PlayList";
+            this.btnPlayList.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPlayList.DisabledColor = System.Drawing.Color.Gray;
+            this.btnPlayList.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPlayList.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnPlayList.Iconimage = global::MediaPlayerWindows.Properties.Resources.playlist_40px;
+            this.btnPlayList.Iconimage_right = null;
+            this.btnPlayList.Iconimage_right_Selected = null;
+            this.btnPlayList.Iconimage_Selected = null;
+            this.btnPlayList.IconMarginLeft = 15;
+            this.btnPlayList.IconMarginRight = 0;
+            this.btnPlayList.IconRightVisible = true;
+            this.btnPlayList.IconRightZoom = 0D;
+            this.btnPlayList.IconVisible = true;
+            this.btnPlayList.IconZoom = 90D;
+            this.btnPlayList.IsTab = false;
+            this.btnPlayList.Location = new System.Drawing.Point(0, 80);
+            this.btnPlayList.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPlayList.Name = "btnPlayList";
+            this.btnPlayList.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.btnPlayList.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnPlayList.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnPlayList.selected = false;
+            this.btnPlayList.Size = new System.Drawing.Size(250, 40);
+            this.btnPlayList.TabIndex = 1;
+            this.btnPlayList.Text = "PlayList";
+            this.btnPlayList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPlayList.Textcolor = System.Drawing.Color.White;
+            this.btnPlayList.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // btnPlaying
+            // 
+            this.btnPlaying.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnPlaying.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.btnPlaying.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPlaying.BorderRadius = 0;
+            this.btnPlaying.ButtonText = "Playing";
+            this.btnPlaying.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPlaying.DisabledColor = System.Drawing.Color.Gray;
+            this.btnPlaying.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPlaying.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnPlaying.Iconimage = global::MediaPlayerWindows.Properties.Resources.circled_play_40px;
+            this.btnPlaying.Iconimage_right = null;
+            this.btnPlaying.Iconimage_right_Selected = null;
+            this.btnPlaying.Iconimage_Selected = null;
+            this.btnPlaying.IconMarginLeft = 15;
+            this.btnPlaying.IconMarginRight = 0;
+            this.btnPlaying.IconRightVisible = true;
+            this.btnPlaying.IconRightZoom = 0D;
+            this.btnPlaying.IconVisible = true;
+            this.btnPlaying.IconZoom = 90D;
+            this.btnPlaying.IsTab = false;
+            this.btnPlaying.Location = new System.Drawing.Point(0, 40);
+            this.btnPlaying.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPlaying.Name = "btnPlaying";
+            this.btnPlaying.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.btnPlaying.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnPlaying.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnPlaying.selected = false;
+            this.btnPlaying.Size = new System.Drawing.Size(250, 40);
+            this.btnPlaying.TabIndex = 1;
+            this.btnPlaying.Text = "Playing";
+            this.btnPlaying.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPlaying.Textcolor = System.Drawing.Color.White;
+            this.btnPlaying.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // btnBrowser
+            // 
+            this.btnBrowser.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnBrowser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.btnBrowser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBrowser.BorderRadius = 0;
+            this.btnBrowser.ButtonText = "Browser";
+            this.btnBrowser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBrowser.DisabledColor = System.Drawing.Color.Gray;
+            this.btnBrowser.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBrowser.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnBrowser.Iconimage = global::MediaPlayerWindows.Properties.Resources.file_40px;
+            this.btnBrowser.Iconimage_right = null;
+            this.btnBrowser.Iconimage_right_Selected = null;
+            this.btnBrowser.Iconimage_Selected = null;
+            this.btnBrowser.IconMarginLeft = 15;
+            this.btnBrowser.IconMarginRight = 0;
+            this.btnBrowser.IconRightVisible = true;
+            this.btnBrowser.IconRightZoom = 0D;
+            this.btnBrowser.IconVisible = true;
+            this.btnBrowser.IconZoom = 90D;
+            this.btnBrowser.IsTab = false;
+            this.btnBrowser.Location = new System.Drawing.Point(0, 0);
+            this.btnBrowser.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBrowser.Name = "btnBrowser";
+            this.btnBrowser.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.btnBrowser.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnBrowser.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnBrowser.selected = false;
+            this.btnBrowser.Size = new System.Drawing.Size(250, 40);
+            this.btnBrowser.TabIndex = 1;
+            this.btnBrowser.Text = "Browser";
+            this.btnBrowser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBrowser.Textcolor = System.Drawing.Color.White;
+            this.btnBrowser.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // lblTime_end
+            // 
+            this.lblTime_end.AutoSize = true;
+            this.lblTime_end.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblTime_end.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblTime_end.Location = new System.Drawing.Point(755, 49);
+            this.lblTime_end.Name = "lblTime_end";
+            this.lblTime_end.Size = new System.Drawing.Size(44, 17);
+            this.lblTime_end.TabIndex = 40;
+            this.lblTime_end.Text = "00:00";
+            // 
+            // lblTime_start
+            // 
+            this.lblTime_start.AutoSize = true;
+            this.lblTime_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblTime_start.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblTime_start.Location = new System.Drawing.Point(247, 49);
+            this.lblTime_start.Name = "lblTime_start";
+            this.lblTime_start.Size = new System.Drawing.Size(44, 17);
+            this.lblTime_start.TabIndex = 39;
+            this.lblTime_start.Text = "00:00";
+            // 
+            // ProgressBar2
+            // 
+            this.ProgressBar2.BackColor = System.Drawing.Color.Silver;
+            this.ProgressBar2.BorderRadius = 5;
+            this.ProgressBar2.Location = new System.Drawing.Point(298, 50);
+            this.ProgressBar2.Margin = new System.Windows.Forms.Padding(4);
+            this.ProgressBar2.MaximumValue = 100;
+            this.ProgressBar2.Name = "ProgressBar2";
+            this.ProgressBar2.ProgressColor = System.Drawing.Color.Teal;
+            this.ProgressBar2.Size = new System.Drawing.Size(450, 15);
+            this.ProgressBar2.TabIndex = 38;
+            this.ProgressBar2.Value = 0;
             // 
             // fMusicManager
             // 
@@ -622,10 +659,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEnd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMute)).EndInit();
             this.panelButtonExit.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.panelControl.ResumeLayout(false);
             this.panelMedia.ResumeLayout(false);
+            this.panelMedia.PerformLayout();
             this.panelPlayList.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -634,16 +672,7 @@
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Panel panelMainButton;
         private System.Windows.Forms.Panel panelButtonExit;
-        private System.Windows.Forms.Panel panelControl;
-        private System.Windows.Forms.Panel panelMedia;
-        private System.Windows.Forms.Panel panel4;
-        private Bunifu.Framework.UI.BunifuFlatButton btnMedia;
         private System.Windows.Forms.Panel panelMain;
-        private System.Windows.Forms.Panel panelPlayList;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
-        private Bunifu.Framework.UI.BunifuFlatButton btnPlayList;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private UcPlaylist ucPlaylist1;
         private ManagerUserControl.UcSystemButton ucSystemButton1;
         private Bunifu.Framework.UI.BunifuDragControl DragControl;
@@ -661,9 +690,19 @@
         private Bunifu.Framework.UI.BunifuSlider bunifuSlider1;
         private System.Windows.Forms.Label lbArtist;
         private System.Windows.Forms.Label lbName;
-        private Bunifu.Framework.UI.BunifuProgressBar ProgressBar2;
-        private System.Windows.Forms.Label lblTime_start;
-        private System.Windows.Forms.Label lblTime_end;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private System.Windows.Forms.Panel panelControl;
+        private System.Windows.Forms.Panel panel4;
+        private Bunifu.Framework.UI.BunifuFlatButton btnMedia;
+        private System.Windows.Forms.Panel panelPlayList;
+        private Bunifu.Framework.UI.BunifuFlatButton btnCreatPlayList;
+        private Bunifu.Framework.UI.BunifuFlatButton btnOpenPlayList;
+        private System.Windows.Forms.Panel panelMedia;
+        private Bunifu.Framework.UI.BunifuFlatButton btnPlayList;
+        private Bunifu.Framework.UI.BunifuFlatButton btnPlaying;
+        private Bunifu.Framework.UI.BunifuFlatButton btnBrowser;
+        private System.Windows.Forms.Label lblTime_end;
+        private System.Windows.Forms.Label lblTime_start;
+        private Bunifu.Framework.UI.BunifuProgressBar ProgressBar2;
     }
 }
