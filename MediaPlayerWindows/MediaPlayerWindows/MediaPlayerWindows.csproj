@@ -86,6 +86,18 @@
     <Compile Include="fMusicPlaying_Search.Designer.cs">
       <DependentUpon>fMusicPlaying_Search.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerUserControl\PlayList_Name.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManagerUserControl\PlayList_Name.Designer.cs">
+      <DependentUpon>PlayList_Name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerUserControl\UcNameSong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManagerUserControl\UcNameSong.Designer.cs">
+      <DependentUpon>UcNameSong.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerUserControl\UcSystemButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -121,6 +133,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fMusicPlaying_Search.resx">
       <DependentUpon>fMusicPlaying_Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerUserControl\PlayList_Name.resx">
+      <DependentUpon>PlayList_Name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerUserControl\UcNameSong.resx">
+      <DependentUpon>UcNameSong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerUserControl\UcSystemButton.resx">
       <DependentUpon>UcSystemButton.cs</DependentUpon>

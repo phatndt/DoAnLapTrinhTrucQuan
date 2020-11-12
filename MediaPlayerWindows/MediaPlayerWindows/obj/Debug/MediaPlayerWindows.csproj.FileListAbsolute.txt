@@ -69,3 +69,28 @@ D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindo
 D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.UcPlaylist.resources
 D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.csprojAssemblyReference.cache
 D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.ManagerUserControl.UcSystemButton.resources
+C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\bin\Debug\MediaPlayerWindows.exe.config
+C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\bin\Debug\MediaPlayerWindows.exe
+C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\bin\Debug\MediaPlayerWindows.pdb
+C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\bin\Debug\Interop.WMPLib.dll
+C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\Interop.WMPLib.dll
+C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.csproj.ResolveComReference.cache
+C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.fLogin.resources
+C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.fMusicManager.resources
+C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.fSignUp.resources
+C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.fMusicPlaying.resources
+C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.fMusicPlaying_Search.resources
+C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.ManagerUserControl.UcSystemButton.resources
+C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.Properties.Resources.resources
+C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.UcPlaylist.resources
+C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.csproj.CopyComplete
+C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.exe
+C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.pdb
+C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.ManagerUserControl.PlayList_Name.resources
+C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.ManagerUserControl.UcNameSong.resources
