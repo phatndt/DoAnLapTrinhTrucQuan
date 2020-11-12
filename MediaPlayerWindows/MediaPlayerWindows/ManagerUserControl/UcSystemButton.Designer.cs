@@ -38,9 +38,9 @@
             this.btnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Image = global::MediaPlayerWindows.Properties.Resources.minimize_window1_40px;
-            this.btnMinimize.Location = new System.Drawing.Point(638, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(668, 0);
             this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(40, 40);
+            this.btnMinimize.Size = new System.Drawing.Size(30, 30);
             this.btnMinimize.TabIndex = 23;
             this.btnMinimize.UseVisualStyleBackColor = true;
             // 
@@ -49,9 +49,9 @@
             this.btnMaximize.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximize.Image = global::MediaPlayerWindows.Properties.Resources.maximize_window1_40px;
-            this.btnMaximize.Location = new System.Drawing.Point(678, 0);
+            this.btnMaximize.Location = new System.Drawing.Point(698, 0);
             this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(40, 40);
+            this.btnMaximize.Size = new System.Drawing.Size(30, 30);
             this.btnMaximize.TabIndex = 24;
             this.btnMaximize.UseVisualStyleBackColor = true;
             // 
@@ -60,9 +60,9 @@
             this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Image = global::MediaPlayerWindows.Properties.Resources.close_window1_40px;
-            this.btnExit.Location = new System.Drawing.Point(718, 0);
+            this.btnExit.Location = new System.Drawing.Point(728, 0);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(40, 40);
+            this.btnExit.Size = new System.Drawing.Size(30, 30);
             this.btnExit.TabIndex = 25;
             this.btnExit.UseVisualStyleBackColor = true;
             // 
@@ -75,7 +75,7 @@
             this.Controls.Add(this.btnMaximize);
             this.Controls.Add(this.btnExit);
             this.Name = "UcSystemButton";
-            this.Size = new System.Drawing.Size(758, 40);
+            this.Size = new System.Drawing.Size(758, 30);
             this.ResumeLayout(false);
 
         }

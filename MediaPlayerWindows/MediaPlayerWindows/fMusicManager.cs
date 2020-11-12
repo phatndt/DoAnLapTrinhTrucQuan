@@ -29,8 +29,8 @@ namespace MediaPlayerWindows
             btnPlayList.Click += BtnPlayList_Click;
             btnMute.Click += BtnMute_Click;
             btnUnMute.Click += BtnUnMute_Click;
-            btnRepeat.Click += BtnRepeat_Click;
-            btnRepeat1.Click += BtnRepeat1_Click;
+            btnRepeat1.Click += BtnRepeat_Click;
+            btnRepeat.Click += BtnRepeat1_Click;
 
             btnPlay.Click += BtnPlay_Click;
             btnPause.Click += BtnPause_Click;
@@ -45,6 +45,7 @@ namespace MediaPlayerWindows
         }
         private void BtnMedia_Click(object sender, EventArgs e)
         {
+            btnMedia.Textcolor = Color.FromArgb(36, 129, 77);
             ShowSubMenu(panelMedia);
         }
         private void HideSubMenu()
@@ -71,14 +72,14 @@ namespace MediaPlayerWindows
         }
         private void BtnRepeat1_Click(object sender, EventArgs e)
         {
-            btnRepeat1.Hide();
-            btnRepeat.Show();
+            btnRepeat.Hide();
+            btnRepeat1.Show();
         }
 
         private void BtnRepeat_Click(object sender, EventArgs e)
         {
-            btnRepeat.Hide();
-            btnRepeat1.Show();
+            btnRepeat1.Hide();
+            btnRepeat.Show();
         }
         private void BtnUnMute_Click(object sender, EventArgs e)
         {

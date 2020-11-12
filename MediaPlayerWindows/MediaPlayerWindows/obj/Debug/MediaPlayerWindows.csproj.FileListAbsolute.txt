@@ -94,3 +94,5 @@ C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQu
 C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.pdb
 C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.ManagerUserControl.PlayList_Name.resources
 C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.ManagerUserControl.UcNameSong.resources
+D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.ManagerUserControl.PlayList_Name.resources
+D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.ManagerUserControl.UcNameSong.resources

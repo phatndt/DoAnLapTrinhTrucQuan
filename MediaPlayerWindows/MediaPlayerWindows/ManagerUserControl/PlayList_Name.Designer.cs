@@ -34,7 +34,7 @@
             // PlayList_Name1
             // 
             this.PlayList_Name1.Activecolor = System.Drawing.Color.Gray;
-            this.PlayList_Name1.BackColor = System.Drawing.Color.Gray;
+            this.PlayList_Name1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.PlayList_Name1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PlayList_Name1.BorderRadius = 0;
             this.PlayList_Name1.ButtonText = "PlayList_Name1";
@@ -54,13 +54,12 @@
             this.PlayList_Name1.IconZoom = 90D;
             this.PlayList_Name1.IsTab = false;
             this.PlayList_Name1.Location = new System.Drawing.Point(0, 0);
-            this.PlayList_Name1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PlayList_Name1.Name = "PlayList_Name1";
             this.PlayList_Name1.Normalcolor = System.Drawing.Color.Gray;
             this.PlayList_Name1.OnHovercolor = System.Drawing.Color.Gray;
             this.PlayList_Name1.OnHoverTextColor = System.Drawing.Color.White;
             this.PlayList_Name1.selected = false;
-            this.PlayList_Name1.Size = new System.Drawing.Size(205, 88);
+            this.PlayList_Name1.Size = new System.Drawing.Size(154, 72);
             this.PlayList_Name1.TabIndex = 0;
             this.PlayList_Name1.Text = "PlayList_Name1";
             this.PlayList_Name1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -69,12 +68,13 @@
             // 
             // PlayList_Name
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.Controls.Add(this.PlayList_Name1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "PlayList_Name";
-            this.Size = new System.Drawing.Size(205, 88);
+            this.Size = new System.Drawing.Size(154, 72);
             this.ResumeLayout(false);
 
         }
