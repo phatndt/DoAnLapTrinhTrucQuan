@@ -92,9 +92,10 @@
             this.panelMainButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.panelMainButton.Controls.Add(this.panel1);
             this.panelMainButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelMainButton.Location = new System.Drawing.Point(0, 545);
+            this.panelMainButton.Location = new System.Drawing.Point(0, 671);
+            this.panelMainButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelMainButton.Name = "panelMainButton";
-            this.panelMainButton.Size = new System.Drawing.Size(1000, 80);
+            this.panelMainButton.Size = new System.Drawing.Size(1333, 98);
             this.panelMainButton.TabIndex = 2;
             // 
             // panel1
@@ -117,8 +118,9 @@
             this.panel1.Controls.Add(this.TrackbarVolumn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1000, 80);
+            this.panel1.Size = new System.Drawing.Size(1333, 98);
             this.panel1.TabIndex = 35;
             // 
             // lblTime_end
@@ -126,9 +128,10 @@
             this.lblTime_end.AutoSize = true;
             this.lblTime_end.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblTime_end.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblTime_end.Location = new System.Drawing.Point(755, 49);
+            this.lblTime_end.Location = new System.Drawing.Point(1007, 60);
+            this.lblTime_end.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTime_end.Name = "lblTime_end";
-            this.lblTime_end.Size = new System.Drawing.Size(44, 17);
+            this.lblTime_end.Size = new System.Drawing.Size(50, 20);
             this.lblTime_end.TabIndex = 40;
             this.lblTime_end.Text = "00:00";
             // 
@@ -137,9 +140,10 @@
             this.lblTime_start.AutoSize = true;
             this.lblTime_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblTime_start.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblTime_start.Location = new System.Drawing.Point(247, 49);
+            this.lblTime_start.Location = new System.Drawing.Point(329, 60);
+            this.lblTime_start.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTime_start.Name = "lblTime_start";
-            this.lblTime_start.Size = new System.Drawing.Size(44, 17);
+            this.lblTime_start.Size = new System.Drawing.Size(50, 20);
             this.lblTime_start.TabIndex = 39;
             this.lblTime_start.Text = "00:00";
             // 
@@ -147,23 +151,25 @@
             // 
             this.ProgressBar2.BackColor = System.Drawing.Color.Silver;
             this.ProgressBar2.BorderRadius = 5;
-            this.ProgressBar2.Location = new System.Drawing.Point(298, 50);
-            this.ProgressBar2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ProgressBar2.Location = new System.Drawing.Point(397, 62);
+            this.ProgressBar2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.ProgressBar2.MaximumValue = 100;
             this.ProgressBar2.Name = "ProgressBar2";
             this.ProgressBar2.ProgressColor = System.Drawing.Color.Teal;
-            this.ProgressBar2.Size = new System.Drawing.Size(450, 15);
+            this.ProgressBar2.Size = new System.Drawing.Size(600, 18);
             this.ProgressBar2.TabIndex = 38;
             this.ProgressBar2.Value = 0;
+            this.ProgressBar2.progressChanged += new System.EventHandler(this.ProgressBar2_progressChanged);
             // 
             // btnUnMute
             // 
             this.btnUnMute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnUnMute.Image = global::MediaPlayerWindows.Properties.Resources.voice_40px;
             this.btnUnMute.ImageActive = null;
-            this.btnUnMute.Location = new System.Drawing.Point(840, 39);
+            this.btnUnMute.Location = new System.Drawing.Point(1120, 48);
+            this.btnUnMute.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUnMute.Name = "btnUnMute";
-            this.btnUnMute.Size = new System.Drawing.Size(35, 35);
+            this.btnUnMute.Size = new System.Drawing.Size(47, 43);
             this.btnUnMute.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnUnMute.TabIndex = 0;
             this.btnUnMute.TabStop = false;
@@ -173,8 +179,9 @@
             // 
             this.pictureSong.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureSong.Location = new System.Drawing.Point(0, 0);
+            this.pictureSong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureSong.Name = "pictureSong";
-            this.pictureSong.Size = new System.Drawing.Size(91, 80);
+            this.pictureSong.Size = new System.Drawing.Size(121, 98);
             this.pictureSong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureSong.TabIndex = 36;
             this.pictureSong.TabStop = false;
@@ -184,9 +191,10 @@
             this.btnShuffle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnShuffle.Image = global::MediaPlayerWindows.Properties.Resources.shuffle_40px;
             this.btnShuffle.ImageActive = null;
-            this.btnShuffle.Location = new System.Drawing.Point(399, 13);
+            this.btnShuffle.Location = new System.Drawing.Point(532, 16);
+            this.btnShuffle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnShuffle.Name = "btnShuffle";
-            this.btnShuffle.Size = new System.Drawing.Size(25, 25);
+            this.btnShuffle.Size = new System.Drawing.Size(33, 31);
             this.btnShuffle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnShuffle.TabIndex = 0;
             this.btnShuffle.TabStop = false;
@@ -197,9 +205,10 @@
             this.btnRepeat1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnRepeat1.Image = global::MediaPlayerWindows.Properties.Resources.repeat_40px;
             this.btnRepeat1.ImageActive = null;
-            this.btnRepeat1.Location = new System.Drawing.Point(599, 13);
+            this.btnRepeat1.Location = new System.Drawing.Point(799, 16);
+            this.btnRepeat1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRepeat1.Name = "btnRepeat1";
-            this.btnRepeat1.Size = new System.Drawing.Size(25, 25);
+            this.btnRepeat1.Size = new System.Drawing.Size(33, 31);
             this.btnRepeat1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnRepeat1.TabIndex = 0;
             this.btnRepeat1.TabStop = false;
@@ -210,9 +219,10 @@
             this.lbArtist.AutoSize = true;
             this.lbArtist.Font = new System.Drawing.Font("Roboto", 10F);
             this.lbArtist.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbArtist.Location = new System.Drawing.Point(100, 37);
+            this.lbArtist.Location = new System.Drawing.Point(133, 46);
+            this.lbArtist.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbArtist.Name = "lbArtist";
-            this.lbArtist.Size = new System.Drawing.Size(79, 18);
+            this.lbArtist.Size = new System.Drawing.Size(97, 22);
             this.lbArtist.TabIndex = 34;
             this.lbArtist.Text = "ArtistName";
             // 
@@ -222,9 +232,10 @@
             this.btnRepeat.Image = global::MediaPlayerWindows.Properties.Resources.repeat_one_40px;
             this.btnRepeat.ImageActive = global::MediaPlayerWindows.Properties.Resources.repeat_40px;
             this.btnRepeat.InitialImage = null;
-            this.btnRepeat.Location = new System.Drawing.Point(599, 13);
+            this.btnRepeat.Location = new System.Drawing.Point(799, 16);
+            this.btnRepeat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRepeat.Name = "btnRepeat";
-            this.btnRepeat.Size = new System.Drawing.Size(25, 25);
+            this.btnRepeat.Size = new System.Drawing.Size(33, 31);
             this.btnRepeat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnRepeat.TabIndex = 0;
             this.btnRepeat.TabStop = false;
@@ -235,9 +246,10 @@
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Roboto", 12F);
             this.lbName.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbName.Location = new System.Drawing.Point(99, 8);
+            this.lbName.Location = new System.Drawing.Point(132, 10);
+            this.lbName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(94, 20);
+            this.lbName.Size = new System.Drawing.Size(119, 25);
             this.lbName.TabIndex = 33;
             this.lbName.Text = "MusicName";
             // 
@@ -246,9 +258,10 @@
             this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnNext.Image = global::MediaPlayerWindows.Properties.Resources.end_40px;
             this.btnNext.ImageActive = null;
-            this.btnNext.Location = new System.Drawing.Point(549, 13);
+            this.btnNext.Location = new System.Drawing.Point(732, 16);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(25, 25);
+            this.btnNext.Size = new System.Drawing.Size(33, 31);
             this.btnNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnNext.TabIndex = 0;
             this.btnNext.TabStop = false;
@@ -259,9 +272,10 @@
             this.btnPlay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnPlay.Image = global::MediaPlayerWindows.Properties.Resources.play_40px;
             this.btnPlay.ImageActive = null;
-            this.btnPlay.Location = new System.Drawing.Point(499, 8);
+            this.btnPlay.Location = new System.Drawing.Point(665, 10);
+            this.btnPlay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Size = new System.Drawing.Size(35, 35);
+            this.btnPlay.Size = new System.Drawing.Size(47, 43);
             this.btnPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnPlay.TabIndex = 0;
             this.btnPlay.TabStop = false;
@@ -272,9 +286,10 @@
             this.btnPause.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnPause.Image = global::MediaPlayerWindows.Properties.Resources.pause_40px;
             this.btnPause.ImageActive = null;
-            this.btnPause.Location = new System.Drawing.Point(499, 8);
+            this.btnPause.Location = new System.Drawing.Point(665, 10);
+            this.btnPause.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPause.Name = "btnPause";
-            this.btnPause.Size = new System.Drawing.Size(35, 35);
+            this.btnPause.Size = new System.Drawing.Size(47, 43);
             this.btnPause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnPause.TabIndex = 0;
             this.btnPause.TabStop = false;
@@ -285,9 +300,10 @@
             this.btnEnd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnEnd.Image = global::MediaPlayerWindows.Properties.Resources.skip_to_start_40px;
             this.btnEnd.ImageActive = null;
-            this.btnEnd.Location = new System.Drawing.Point(449, 13);
+            this.btnEnd.Location = new System.Drawing.Point(599, 16);
+            this.btnEnd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEnd.Name = "btnEnd";
-            this.btnEnd.Size = new System.Drawing.Size(25, 25);
+            this.btnEnd.Size = new System.Drawing.Size(33, 31);
             this.btnEnd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnEnd.TabIndex = 0;
             this.btnEnd.TabStop = false;
@@ -298,9 +314,10 @@
             this.btnMute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnMute.Image = global::MediaPlayerWindows.Properties.Resources.mute_40px;
             this.btnMute.ImageActive = null;
-            this.btnMute.Location = new System.Drawing.Point(840, 39);
+            this.btnMute.Location = new System.Drawing.Point(1120, 48);
+            this.btnMute.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMute.Name = "btnMute";
-            this.btnMute.Size = new System.Drawing.Size(35, 35);
+            this.btnMute.Size = new System.Drawing.Size(47, 43);
             this.btnMute.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMute.TabIndex = 0;
             this.btnMute.TabStop = false;
@@ -312,11 +329,11 @@
             this.TrackbarVolumn.BackgroudColor = System.Drawing.Color.DarkGray;
             this.TrackbarVolumn.BorderRadius = 0;
             this.TrackbarVolumn.IndicatorColor = System.Drawing.Color.SeaGreen;
-            this.TrackbarVolumn.Location = new System.Drawing.Point(882, 45);
-            this.TrackbarVolumn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TrackbarVolumn.Location = new System.Drawing.Point(1176, 55);
+            this.TrackbarVolumn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.TrackbarVolumn.MaximumValue = 100;
             this.TrackbarVolumn.Name = "TrackbarVolumn";
-            this.TrackbarVolumn.Size = new System.Drawing.Size(105, 30);
+            this.TrackbarVolumn.Size = new System.Drawing.Size(140, 35);
             this.TrackbarVolumn.TabIndex = 19;
             this.TrackbarVolumn.Value = 0;
             this.TrackbarVolumn.ValueChanged += new System.EventHandler(this.TrackbarVolumn_ValueChanged);
@@ -327,8 +344,9 @@
             this.panelButtonExit.Controls.Add(this.ucSystemButton1);
             this.panelButtonExit.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelButtonExit.Location = new System.Drawing.Point(0, 0);
+            this.panelButtonExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelButtonExit.Name = "panelButtonExit";
-            this.panelButtonExit.Size = new System.Drawing.Size(1000, 30);
+            this.panelButtonExit.Size = new System.Drawing.Size(1333, 37);
             this.panelButtonExit.TabIndex = 3;
             // 
             // ucSystemButton1
@@ -336,9 +354,9 @@
             this.ucSystemButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.ucSystemButton1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucSystemButton1.Location = new System.Drawing.Point(0, 0);
-            this.ucSystemButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ucSystemButton1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.ucSystemButton1.Name = "ucSystemButton1";
-            this.ucSystemButton1.Size = new System.Drawing.Size(1000, 30);
+            this.ucSystemButton1.Size = new System.Drawing.Size(1333, 37);
             this.ucSystemButton1.TabIndex = 0;
             // 
             // panelMain
@@ -347,9 +365,10 @@
             this.panelMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelMain.BackgroundImage")));
             this.panelMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(250, 30);
+            this.panelMain.Location = new System.Drawing.Point(333, 37);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(750, 515);
+            this.panelMain.Size = new System.Drawing.Size(1000, 634);
             this.panelMain.TabIndex = 5;
             // 
             // bunifuElipse1
@@ -369,8 +388,9 @@
             this.panel4.Controls.Add(this.btnMedia);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(250, 40);
+            this.panel4.Size = new System.Drawing.Size(333, 49);
             this.panel4.TabIndex = 0;
             // 
             // btnMedia
@@ -397,13 +417,13 @@
             this.btnMedia.IconZoom = 90D;
             this.btnMedia.IsTab = false;
             this.btnMedia.Location = new System.Drawing.Point(0, 0);
-            this.btnMedia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMedia.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnMedia.Name = "btnMedia";
             this.btnMedia.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.btnMedia.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnMedia.OnHoverTextColor = System.Drawing.Color.White;
             this.btnMedia.selected = false;
-            this.btnMedia.Size = new System.Drawing.Size(250, 40);
+            this.btnMedia.Size = new System.Drawing.Size(333, 49);
             this.btnMedia.TabIndex = 0;
             this.btnMedia.Text = "     Media";
             this.btnMedia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -416,9 +436,10 @@
             this.panelControl.Controls.Add(this.panelMedia);
             this.panelControl.Controls.Add(this.panel4);
             this.panelControl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl.Location = new System.Drawing.Point(0, 30);
+            this.panelControl.Location = new System.Drawing.Point(0, 37);
+            this.panelControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelControl.Name = "panelControl";
-            this.panelControl.Size = new System.Drawing.Size(250, 515);
+            this.panelControl.Size = new System.Drawing.Size(333, 634);
             this.panelControl.TabIndex = 4;
             // 
             // panelMedia
@@ -428,9 +449,10 @@
             this.panelMedia.Controls.Add(this.btnPlaying);
             this.panelMedia.Controls.Add(this.btnBrowser);
             this.panelMedia.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelMedia.Location = new System.Drawing.Point(0, 40);
+            this.panelMedia.Location = new System.Drawing.Point(0, 49);
+            this.panelMedia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelMedia.Name = "panelMedia";
-            this.panelMedia.Size = new System.Drawing.Size(250, 200);
+            this.panelMedia.Size = new System.Drawing.Size(333, 246);
             this.panelMedia.TabIndex = 1;
             // 
             // panelPlayList
@@ -439,9 +461,10 @@
             this.panelPlayList.Controls.Add(this.btnCreatPlayList);
             this.panelPlayList.Controls.Add(this.btnOpenPlayList);
             this.panelPlayList.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelPlayList.Location = new System.Drawing.Point(0, 120);
+            this.panelPlayList.Location = new System.Drawing.Point(0, 147);
+            this.panelPlayList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelPlayList.Name = "panelPlayList";
-            this.panelPlayList.Size = new System.Drawing.Size(250, 84);
+            this.panelPlayList.Size = new System.Drawing.Size(333, 103);
             this.panelPlayList.TabIndex = 2;
             // 
             // btnCreatPlayList
@@ -465,14 +488,14 @@
             this.btnCreatPlayList.IconVisible = true;
             this.btnCreatPlayList.IconZoom = 90D;
             this.btnCreatPlayList.IsTab = false;
-            this.btnCreatPlayList.Location = new System.Drawing.Point(0, 40);
-            this.btnCreatPlayList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCreatPlayList.Location = new System.Drawing.Point(0, 49);
+            this.btnCreatPlayList.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnCreatPlayList.Name = "btnCreatPlayList";
             this.btnCreatPlayList.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.btnCreatPlayList.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnCreatPlayList.OnHoverTextColor = System.Drawing.Color.White;
             this.btnCreatPlayList.selected = false;
-            this.btnCreatPlayList.Size = new System.Drawing.Size(250, 40);
+            this.btnCreatPlayList.Size = new System.Drawing.Size(333, 49);
             this.btnCreatPlayList.TabIndex = 0;
             this.btnCreatPlayList.Text = "Create PlayList";
             this.btnCreatPlayList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -501,13 +524,13 @@
             this.btnOpenPlayList.IconZoom = 90D;
             this.btnOpenPlayList.IsTab = false;
             this.btnOpenPlayList.Location = new System.Drawing.Point(0, 0);
-            this.btnOpenPlayList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpenPlayList.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnOpenPlayList.Name = "btnOpenPlayList";
             this.btnOpenPlayList.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.btnOpenPlayList.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnOpenPlayList.OnHoverTextColor = System.Drawing.Color.White;
             this.btnOpenPlayList.selected = false;
-            this.btnOpenPlayList.Size = new System.Drawing.Size(250, 40);
+            this.btnOpenPlayList.Size = new System.Drawing.Size(333, 49);
             this.btnOpenPlayList.TabIndex = 0;
             this.btnOpenPlayList.Text = "Open PlayList";
             this.btnOpenPlayList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -536,14 +559,14 @@
             this.btnPlayList.IconVisible = true;
             this.btnPlayList.IconZoom = 90D;
             this.btnPlayList.IsTab = false;
-            this.btnPlayList.Location = new System.Drawing.Point(0, 80);
-            this.btnPlayList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPlayList.Location = new System.Drawing.Point(0, 98);
+            this.btnPlayList.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnPlayList.Name = "btnPlayList";
             this.btnPlayList.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.btnPlayList.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnPlayList.OnHoverTextColor = System.Drawing.Color.White;
             this.btnPlayList.selected = false;
-            this.btnPlayList.Size = new System.Drawing.Size(250, 40);
+            this.btnPlayList.Size = new System.Drawing.Size(333, 49);
             this.btnPlayList.TabIndex = 1;
             this.btnPlayList.Text = "PlayList";
             this.btnPlayList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -572,14 +595,14 @@
             this.btnPlaying.IconVisible = true;
             this.btnPlaying.IconZoom = 90D;
             this.btnPlaying.IsTab = false;
-            this.btnPlaying.Location = new System.Drawing.Point(0, 40);
-            this.btnPlaying.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPlaying.Location = new System.Drawing.Point(0, 49);
+            this.btnPlaying.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnPlaying.Name = "btnPlaying";
             this.btnPlaying.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.btnPlaying.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnPlaying.OnHoverTextColor = System.Drawing.Color.White;
             this.btnPlaying.selected = false;
-            this.btnPlaying.Size = new System.Drawing.Size(250, 40);
+            this.btnPlaying.Size = new System.Drawing.Size(333, 49);
             this.btnPlaying.TabIndex = 1;
             this.btnPlaying.Text = "Playing";
             this.btnPlaying.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -609,13 +632,13 @@
             this.btnBrowser.IconZoom = 90D;
             this.btnBrowser.IsTab = false;
             this.btnBrowser.Location = new System.Drawing.Point(0, 0);
-            this.btnBrowser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBrowser.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnBrowser.Name = "btnBrowser";
             this.btnBrowser.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.btnBrowser.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnBrowser.OnHoverTextColor = System.Drawing.Color.White;
             this.btnBrowser.selected = false;
-            this.btnBrowser.Size = new System.Drawing.Size(250, 40);
+            this.btnBrowser.Size = new System.Drawing.Size(333, 49);
             this.btnBrowser.TabIndex = 1;
             this.btnBrowser.Text = "Browser";
             this.btnBrowser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -624,17 +647,17 @@
             // 
             // fMusicManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1000, 625);
+            this.ClientSize = new System.Drawing.Size(1333, 769);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelControl);
             this.Controls.Add(this.panelButtonExit);
             this.Controls.Add(this.panelMainButton);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fMusicManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "";

@@ -20,6 +20,7 @@ namespace MediaPlayerWindows
     {
         WindowsMediaPlayer w = new WindowsMediaPlayer();
         MediaPlayer M = new MediaPlayer();
+        private int lastSoundValue = 0;
         public fMusicManager()
         {
             InitializeComponent();
@@ -40,10 +41,8 @@ namespace MediaPlayerWindows
             //ucPlaylist1.Hide();
             
         }
-
-        private void BtnBrowser_Click(object sender, EventArgs e)
+        private void setnewsong(OpenFileDialog dlg)
         {
-            OpenFileDialog dlg = new OpenFileDialog();
             dlg.Filter =
                 "Audio Files (*.mp3,*.m4a,*.wav,*.aac)|*.mp3|Video Files(*.mp4,*.wmv,*.3gp,*.mkv)|*.mp4|All Files(*.*)|*.*";
             dlg.FilterIndex = 1;
@@ -55,7 +54,8 @@ namespace MediaPlayerWindows
                     w.URL = dlg.FileName;
                     btnPlay.Hide();
                     btnPause.Show();
-                    TrackbarVolumn.Value = 50;
+                    TrackbarVolumn.Value = 30;
+                    this.lastSoundValue = TrackbarVolumn.Value;
                     setbtnMute();
                     var fileTag = TagLib.File.Create(dlg.FileName);
                     lbName.Text = fileTag.Tag.Title;
@@ -81,6 +81,11 @@ namespace MediaPlayerWindows
                     MessageBox.Show("Error" + ex.Message);
                 }
             }
+        }
+        private void BtnBrowser_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            setnewsong(dlg);
         }
         private void BtnPlayList_Click(object sender, EventArgs e)
         {
@@ -126,16 +131,28 @@ namespace MediaPlayerWindows
         }
         private void BtnUnMute_Click(object sender, EventArgs e)
         {
-            TrackbarVolumn.Value = 50;
-            btnUnMute.Hide();
-            btnMute.Show();
+            btnUnMute.Enabled = false;
+            btnUnMute.Visible = false;
+            btnMute.Enabled = true;
+            btnMute.Visible = true;
+            int temp = TrackbarVolumn.Value;
+            TrackbarVolumn.Value = 0;
+            this.lastSoundValue = temp;
+            w.settings.volume = TrackbarVolumn.Value;
         }
 
         private void BtnMute_Click(object sender, EventArgs e)
         {
             TrackbarVolumn.Value = 0;
-            btnMute.Hide();
-            btnUnMute.Show();
+            btnUnMute.Enabled = true;
+            btnUnMute.Visible = true;
+            btnMute.Enabled = false;
+            btnMute.Visible = false;
+            if (this.lastSoundValue != 0)
+                TrackbarVolumn.Value = this.lastSoundValue;
+            else
+                TrackbarVolumn.Value = 30;
+            w.settings.volume = TrackbarVolumn.Value;
         }
         private void BtnPause_Click(object sender, EventArgs e)
         {
@@ -164,12 +181,6 @@ namespace MediaPlayerWindows
             lblTime_start.Text = w.controls.currentPositionString;
             lblTime_end.Text = w.controls.currentItem.durationString;
         }
-        private void Test()
-        {
-            WindowsMediaPlayer m = new WindowsMediaPlayer();
-            m.URL = "C:\\Users\\THANHPHAT219\\Downloads\\MusicTest";
-            var ms = new MemoryStream();
-        }
         public void setbtnMute()
         {
             if (TrackbarVolumn.Value == 0)
@@ -186,7 +197,46 @@ namespace MediaPlayerWindows
         private void TrackbarVolumn_ValueChanged(object sender, EventArgs e)
         {
             w.settings.volume = TrackbarVolumn.Value;
+            if (TrackbarVolumn.Value == 0 && btnUnMute.Enabled == true)
+            {
+                BtnUnMute_Click(sender, e);
+            }
+            else if (TrackbarVolumn.Value > 0 && btnUnMute.Enabled == false)
+            {
+                BtnMute_Click(sender, e);
+            }
             setbtnMute();
+        }
+        public String getCurTime(int time)
+        {
+            String rs = "";
+            int mins = Convert.ToInt32(time) / 60;
+            int second = Convert.ToInt32(time) % 60;
+            string minStr, sedStr;
+            if (mins < 10)
+            {
+                minStr = "0" + mins.ToString();
+            }
+            else
+            {
+                minStr = mins.ToString();
+            }
+
+            if (second < 10)
+            {
+                sedStr = "0" + second.ToString();
+            }
+            else
+            {
+                sedStr = second.ToString();
+            }
+            rs = minStr + ":" + sedStr;
+            return rs;
+
+        }
+        private void ProgressBar2_progressChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
