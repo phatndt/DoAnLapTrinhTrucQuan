@@ -201,6 +201,11 @@ namespace MediaPlayerWindows
             lblTime_start.Text = w.controls.currentPositionString;
             lblTime_end.Text = w.controls.currentItem.durationString;
         }
-
+        private void Test()
+        {
+            WindowsMediaPlayer m = new WindowsMediaPlayer();
+            m.URL = "C:\\Users\\THANHPHAT219\\Downloads\\MusicTest";
+            var ms = new MemoryStream();
+        }
     }
 }

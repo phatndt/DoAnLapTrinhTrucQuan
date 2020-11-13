@@ -33,8 +33,8 @@
             // 
             // PlayList_Name1
             // 
-            this.PlayList_Name1.Activecolor = System.Drawing.Color.Gray;
-            this.PlayList_Name1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.PlayList_Name1.Activecolor = System.Drawing.SystemColors.GrayText;
+            this.PlayList_Name1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.PlayList_Name1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PlayList_Name1.BorderRadius = 0;
             this.PlayList_Name1.ButtonText = "PlayList_Name1";
@@ -56,13 +56,13 @@
             this.PlayList_Name1.Location = new System.Drawing.Point(0, 0);
             this.PlayList_Name1.Name = "PlayList_Name1";
             this.PlayList_Name1.Normalcolor = System.Drawing.Color.Gray;
-            this.PlayList_Name1.OnHovercolor = System.Drawing.Color.Gray;
+            this.PlayList_Name1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.PlayList_Name1.OnHoverTextColor = System.Drawing.Color.White;
             this.PlayList_Name1.selected = false;
             this.PlayList_Name1.Size = new System.Drawing.Size(154, 72);
             this.PlayList_Name1.TabIndex = 0;
             this.PlayList_Name1.Text = "PlayList_Name1";
-            this.PlayList_Name1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.PlayList_Name1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.PlayList_Name1.Textcolor = System.Drawing.Color.White;
             this.PlayList_Name1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
@@ -72,7 +72,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.Controls.Add(this.PlayList_Name1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PlayList_Name";
             this.Size = new System.Drawing.Size(154, 72);
             this.ResumeLayout(false);

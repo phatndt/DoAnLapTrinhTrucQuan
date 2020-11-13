@@ -52,8 +52,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="TagLibSharp">
-      <HintPath>C:\Windows\SysWOW64\TagLibSharp.dll</HintPath>
+    <Reference Include="TagLibSharp, Version=2.2.0.0, Culture=neutral, PublicKeyToken=db62eba44689b5b0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Library\TagLibSharp.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
@@ -88,6 +89,12 @@
     </Compile>
     <Compile Include="fMusicPlaying_Search.Designer.cs">
       <DependentUpon>fMusicPlaying_Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerUserControl\fSetNamePlayList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerUserControl\fSetNamePlayList.Designer.cs">
+      <DependentUpon>fSetNamePlayList.cs</DependentUpon>
     </Compile>
     <Compile Include="ManagerUserControl\PlayList_Name.cs">
       <SubType>UserControl</SubType>
@@ -136,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fMusicPlaying_Search.resx">
       <DependentUpon>fMusicPlaying_Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerUserControl\fSetNamePlayList.resx">
+      <DependentUpon>fSetNamePlayList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerUserControl\PlayList_Name.resx">
       <DependentUpon>PlayList_Name.cs</DependentUpon>

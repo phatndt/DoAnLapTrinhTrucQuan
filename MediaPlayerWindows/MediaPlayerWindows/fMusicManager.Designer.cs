@@ -140,6 +140,7 @@
             this.pictureSong.Location = new System.Drawing.Point(0, 0);
             this.pictureSong.Name = "pictureSong";
             this.pictureSong.Size = new System.Drawing.Size(91, 80);
+            this.pictureSong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureSong.TabIndex = 36;
             this.pictureSong.TabStop = false;
             // 
