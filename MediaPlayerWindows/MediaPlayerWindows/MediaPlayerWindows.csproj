@@ -37,6 +37,9 @@
       <HintPath>C:\Windows\SysWOW64\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="NAudio">
+      <HintPath>..\..\Library\NAudio.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -96,17 +99,29 @@
     <Compile Include="ManagerUserControl\fSetNamePlayList.Designer.cs">
       <DependentUpon>fSetNamePlayList.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerUserControl\PlayList_Name.cs">
+    <Compile Include="ManagerUserControl\UcFavoriteSong.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ManagerUserControl\PlayList_Name.Designer.cs">
-      <DependentUpon>PlayList_Name.cs</DependentUpon>
+    <Compile Include="ManagerUserControl\UcFavoriteSong.Designer.cs">
+      <DependentUpon>UcFavoriteSong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerUserControl\UcPlayList_Name.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManagerUserControl\UcPlayList_Name.Designer.cs">
+      <DependentUpon>UcPlayList_Name.cs</DependentUpon>
     </Compile>
     <Compile Include="ManagerUserControl\UcNameSong.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ManagerUserControl\UcNameSong.Designer.cs">
       <DependentUpon>UcNameSong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerUserControl\UcSongList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManagerUserControl\UcSongList.Designer.cs">
+      <DependentUpon>UcSongList.cs</DependentUpon>
     </Compile>
     <Compile Include="ManagerUserControl\UcSystemButton.cs">
       <SubType>UserControl</SubType>
@@ -147,11 +162,17 @@
     <EmbeddedResource Include="ManagerUserControl\fSetNamePlayList.resx">
       <DependentUpon>fSetNamePlayList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerUserControl\PlayList_Name.resx">
-      <DependentUpon>PlayList_Name.cs</DependentUpon>
+    <EmbeddedResource Include="ManagerUserControl\UcFavoriteSong.resx">
+      <DependentUpon>UcFavoriteSong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerUserControl\UcPlayList_Name.resx">
+      <DependentUpon>UcPlayList_Name.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerUserControl\UcNameSong.resx">
       <DependentUpon>UcNameSong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerUserControl\UcSongList.resx">
+      <DependentUpon>UcSongList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerUserControl\UcSystemButton.resx">
       <DependentUpon>UcSystemButton.cs</DependentUpon>
@@ -306,6 +327,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\file_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pictureBoxNotFound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart_outline_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\end_40px_greej.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat_40px_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat_one_40px_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shuffle_40px_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\skip_to_start_40px_green.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

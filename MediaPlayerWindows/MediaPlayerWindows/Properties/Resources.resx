@@ -121,6 +121,9 @@
   <data name="open_in_browser_26px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\open_in_browser_26px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="heart_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\heart_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="end_40px2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\end_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -169,11 +172,17 @@
   <data name="hinh-anh-nen-dep-cho-powerpoint_110314970" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hinh-anh-nen-dep-cho-powerpoint_110314970.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pictureBoxNotFound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pictureBoxNotFound.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="shuffle_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shuffle_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="playlist_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\playlist_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="file_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\file_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pause_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pause_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,7 +208,22 @@
   <data name="BackgroundLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BackgroundLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="file_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\file_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="heart_outline_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\heart_outline_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="end_40px_greej" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\end_40px_greej.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="repeat_40px_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\repeat_40px_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="repeat_one_40px_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\repeat_one_40px_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shuffle_40px_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shuffle_40px_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="skip_to_start_40px_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\skip_to_start_40px_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -14,32 +14,122 @@ using MediaPlayerWindows;
 using System.Windows.Controls.Primitives;
 using System.Runtime.CompilerServices;
 using System.IO;
+using NAudio.Wave;
+using NAudio.Gui;
+using NAudio.FileFormats;
+using MediaPlayerWindows.ManagerUserControl;
+using NAudio.Wave.SampleProviders;
+using NAudio.MediaFoundation;
+
 namespace MediaPlayerWindows
 {
+    public delegate void CreatPlayList();
+    public delegate void ClickAddFavoriteSong();
     public partial class fMusicManager : Form
     {
         WindowsMediaPlayer w = new WindowsMediaPlayer();
         MediaPlayer M = new MediaPlayer();
         private int lastSoundValue = 0;
+        private bool CheckFavoriteSong = true;
+        private bool CheckShuffleSong = true;
+        private int CheckRepeatSong = 0;
+        private string BrowserPath;
+        //private UcSongList FavoriteSongList = new UcSongList();
+        private UcFavoriteSong FavoriteSongList = new UcFavoriteSong();
+
+        public event ClickAddFavoriteSong Add;
         public fMusicManager()
         {
+            MediaFoundationApi.Startup();
             InitializeComponent();
-            
             HideSubMenu();
             btnMedia.Click += BtnMedia_Click;
+            btnYourMusic.Click += BtnYourMusic_Click;
             btnPlayList.Click += BtnPlayList_Click;
             btnBrowser.Click += BtnBrowser_Click;
 
             btnMute.Click += BtnMute_Click;
             btnUnMute.Click += BtnUnMute_Click;
-            btnRepeat1.Click += BtnRepeat_Click;
-            btnRepeat.Click += BtnRepeat1_Click;
+            btnRepeat.Click += BtnRepeat_Click;
+            btnShuffle.Click += BtnShuffle_Click;
 
             btnPlay.Click += BtnPlay_Click;
             btnPause.Click += BtnPause_Click;
             this.FormClosing += FMusicManager_FormClosing;
-            //ucPlaylist1.Hide();
+            ucPlaylist1.Hide();
+
             
+            btnPlaying.Click += BtnPlaying_Click;
+
+            btnCreatPlayList.Click += BtnCreatPlayList_Click;
+
+            btnTym.Click += BtnTym_Click;
+            btnFavoriteSong.Click += BtnFavoriteSong_Click;
+            FavoriteSongList.Hide();
+        }
+
+
+        private void BtnShuffle_Click(object sender, EventArgs e)
+        {
+            if (CheckShuffleSong)
+            {
+                btnShuffle.Image = global::MediaPlayerWindows.Properties.Resources.shuffle_40px_green;
+                CheckShuffleSong = false;
+            }
+            else
+            {
+                btnShuffle.Image = global::MediaPlayerWindows.Properties.Resources.shuffle_40px;
+                CheckShuffleSong = true;
+            }
+        }
+        #region FavoriteSong
+        private void BtnFavoriteSong_Click(object sender, EventArgs e)
+        {
+            openChildFormInPanel(FavoriteSongList);
+
+        }
+
+        private void BtnTym_Click(object sender, EventArgs e)
+        {
+            if (CheckFavoriteSong)
+            {
+                btnTym.Image = global::MediaPlayerWindows.Properties.Resources.heart_outline_40px;
+                CheckFavoriteSong = false;
+                FavoriteSongList.Add();
+            }    
+            else
+            {
+                btnTym.Image = global::MediaPlayerWindows.Properties.Resources.heart_40px;
+                CheckFavoriteSong = true;
+                FavoriteSongList.Remove();
+                MessageBox.Show("a");
+            }
+
+        }
+
+        #endregion
+        private void openChildFormInPanel(UcFavoriteSong childForm)
+        {
+            panelMain.Controls.Clear();
+            childForm.Dock = DockStyle.Fill;
+            childForm.BringToFront();
+            childForm.Show();
+            panelMain.Controls.Add(childForm);
+        }
+        private void BtnCreatPlayList_Click(object sender, EventArgs e)
+        {
+            ucPlaylist1.AddPlayList_Name();
+        }
+
+        private void BtnPlaying_Click(object sender, EventArgs e)
+        {
+            ucPlaylist1.Hide();
+        }
+        #region Browser
+        private void BtnBrowser_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            setnewsong(dlg);
         }
         private void setnewsong(OpenFileDialog dlg)
         {
@@ -52,6 +142,7 @@ namespace MediaPlayerWindows
                 try
                 {
                     w.URL = dlg.FileName;
+                    btnTym.Enabled = true;
                     btnPlay.Hide();
                     btnPause.Show();
                     TrackbarVolumn.Value = 30;
@@ -60,6 +151,7 @@ namespace MediaPlayerWindows
                     var fileTag = TagLib.File.Create(dlg.FileName);
                     lbName.Text = fileTag.Tag.Title;
                     lbArtist.Text = fileTag.Tag.FirstPerformer;
+                    textBox1.Text = fileTag.Tag.Subtitle;
                     var mStream = new MemoryStream();
                     var firstPicture = fileTag.Tag.Pictures.FirstOrDefault();
                     if (firstPicture != null)
@@ -72,8 +164,10 @@ namespace MediaPlayerWindows
                     }
                     else
                     {
-                        pictureSong.Image = global::MediaPlayerWindows.Properties.Resources.hinh_anh_nen_dep_cho_powerpoint_110314970;
+                        pictureSong.Image = global::MediaPlayerWindows.Properties.Resources.pictureBoxNotFound;
                     }
+                    //var fileTag = 
+
                     timer.Start();
                 }
                 catch (Exception ex)
@@ -82,19 +176,22 @@ namespace MediaPlayerWindows
                 }
             }
         }
-        private void BtnBrowser_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog dlg = new OpenFileDialog();
-            setnewsong(dlg);
-        }
+        #endregion
         private void BtnPlayList_Click(object sender, EventArgs e)
         {
-            ShowSubMenu(panelPlayList);
-            //ucPlaylist1.Show();
+            ucPlaylist1.BringToFront();
+            ucPlaylist1.Show();
         }
         private void BtnMedia_Click(object sender, EventArgs e)
         {
             ShowSubMenu(panelMedia);
+            ucPlaylist1.Visible = false;
+            panelMain.Controls.Clear();
+        }
+        private void BtnYourMusic_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(panelYourMusic);
+            ucPlaylist1.Visible = false;
         }
         private void HideSubMenu()
         {
@@ -102,7 +199,12 @@ namespace MediaPlayerWindows
                 panelMedia.Visible = true;
             else
                 panelMedia.Visible = false;
-            panelPlayList.Visible = false;
+            if (panelYourMusic.Visible == true)
+                panelYourMusic.Visible = true;
+            else
+            {
+                panelYourMusic.Visible = false;
+            }    
         }
         private void ShowSubMenu(Panel subMenu)
         {
@@ -118,16 +220,27 @@ namespace MediaPlayerWindows
         {
             w.controls.stop();
         }
-        private void BtnRepeat1_Click(object sender, EventArgs e)
-        {
-            btnRepeat.Hide();
-            btnRepeat1.Show();
-        }
 
         private void BtnRepeat_Click(object sender, EventArgs e)
         {
-            btnRepeat1.Hide();
-            btnRepeat.Show();
+            if (CheckRepeatSong == 0)
+            {
+                btnRepeat.Image = global::MediaPlayerWindows.Properties.Resources.repeat_one_40px_green;
+                CheckRepeatSong = 1;
+            }
+            else
+            {
+                if (CheckRepeatSong == 1)
+                {
+                    btnRepeat.Image = global::MediaPlayerWindows.Properties.Resources.repeat_40px_green;
+                    CheckRepeatSong = 2;
+                }    
+                else
+                {
+                    btnRepeat.Image = global::MediaPlayerWindows.Properties.Resources.repeat_40px;
+                    CheckRepeatSong = 0;
+                }    
+            }
         }
         private void BtnUnMute_Click(object sender, EventArgs e)
         {
@@ -155,9 +268,7 @@ namespace MediaPlayerWindows
             w.settings.volume = TrackbarVolumn.Value;
         }
         private void BtnPause_Click(object sender, EventArgs e)
-        {
-            //Bitmap m = new Bitmap(w.URL);
-           
+        {           
             w.controls.pause();
             btnPause.Hide();
             btnPlay.Show();
@@ -233,10 +344,6 @@ namespace MediaPlayerWindows
             rs = minStr + ":" + sedStr;
             return rs;
 
-        }
-        private void ProgressBar2_progressChanged(object sender, EventArgs e)
-        {
-            
         }
     }
 }

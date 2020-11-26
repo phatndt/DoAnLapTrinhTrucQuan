@@ -12,19 +12,11 @@ namespace MediaPlayerWindows
 {
     public partial class MediaPlayer
     {
+        public IWMPPlayer4 M;
         public string Path { get; set; }
-        public void open()
-        {
-            
-        }
+        public string Name { get; set; }
+        public string Artist { get; set; }
+        public Image Image { get; set; }
 
-        public void play()
-        {
-
-        }
-        public void stop()
-        {
-
-        }
     }
 }
