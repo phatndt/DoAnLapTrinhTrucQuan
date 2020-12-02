@@ -63,6 +63,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Authenticater\Authenticater.cs" />
+    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\FavoriteSongDAO.cs" />
+    <Compile Include="DTO\FavoriteSong.cs" />
     <Compile Include="fLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -352,5 +355,6 @@
   <ItemGroup>
     <None Include="Resources\skip_to_start_40px_green.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

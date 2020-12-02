@@ -67,6 +67,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnCreatPlayList = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ucPlaylist1 = new MediaPlayerWindows.UcPlaylist();
             this.ucSystemButton1 = new MediaPlayerWindows.ManagerUserControl.UcSystemButton();
             this.DragControl = new Bunifu.Framework.UI.BunifuDragControl(this.components);
@@ -88,6 +89,7 @@
             this.panelYourMusic.SuspendLayout();
             this.panelControl.SuspendLayout();
             this.panelMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // timer
@@ -731,11 +733,21 @@
             this.panelMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelMain.BackgroundImage")));
             this.panelMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panelMain.Controls.Add(this.ucPlaylist1);
+            this.panelMain.Controls.Add(this.dataGridView1);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(200, 30);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(800, 515);
             this.panelMain.TabIndex = 5;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(800, 515);
+            this.dataGridView1.TabIndex = 1;
             // 
             // ucPlaylist1
             // 
@@ -801,6 +813,7 @@
             this.panelControl.ResumeLayout(false);
             this.panelControl.PerformLayout();
             this.panelMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -846,5 +859,6 @@
         private Bunifu.Framework.UI.BunifuImageButton btnTym;
         private UcPlaylist ucPlaylist1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

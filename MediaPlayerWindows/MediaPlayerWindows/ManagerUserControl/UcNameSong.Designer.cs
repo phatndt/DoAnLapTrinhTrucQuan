@@ -29,15 +29,18 @@
         private void InitializeComponent()
         {
             this.PlayList_NameSong = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbTime = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lbArtist = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lbName = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.PlayList_NameSong.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // PlayList_NameSong
             // 
             this.PlayList_NameSong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.PlayList_NameSong.Controls.Add(this.pictureBox1);
             this.PlayList_NameSong.Controls.Add(this.lbTime);
             this.PlayList_NameSong.Controls.Add(this.lbArtist);
             this.PlayList_NameSong.Controls.Add(this.lbName);
@@ -47,6 +50,16 @@
             this.PlayList_NameSong.Name = "PlayList_NameSong";
             this.PlayList_NameSong.Size = new System.Drawing.Size(543, 41);
             this.PlayList_NameSong.TabIndex = 18;
+            this.PlayList_NameSong.Click += new System.EventHandler(this.UcNameSong_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(70, 41);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // lbTime
             // 
@@ -65,7 +78,7 @@
             this.lbArtist.AutoSize = true;
             this.lbArtist.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lbArtist.ForeColor = System.Drawing.Color.White;
-            this.lbArtist.Location = new System.Drawing.Point(253, 13);
+            this.lbArtist.Location = new System.Drawing.Point(291, 13);
             this.lbArtist.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbArtist.Name = "lbArtist";
             this.lbArtist.Size = new System.Drawing.Size(74, 17);
@@ -77,7 +90,7 @@
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbName.ForeColor = System.Drawing.Color.White;
-            this.lbName.Location = new System.Drawing.Point(12, 10);
+            this.lbName.Location = new System.Drawing.Point(75, 10);
             this.lbName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(112, 20);
@@ -95,6 +108,7 @@
             this.Size = new System.Drawing.Size(543, 41);
             this.PlayList_NameSong.ResumeLayout(false);
             this.PlayList_NameSong.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -105,5 +119,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel lbTime;
         private Bunifu.Framework.UI.BunifuCustomLabel lbArtist;
         private Bunifu.Framework.UI.BunifuCustomLabel lbName;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

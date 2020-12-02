@@ -20,6 +20,8 @@ using NAudio.FileFormats;
 using MediaPlayerWindows.ManagerUserControl;
 using NAudio.Wave.SampleProviders;
 using NAudio.MediaFoundation;
+using System.Data.SqlClient;
+using MediaPlayerWindows.DAO;
 
 namespace MediaPlayerWindows
 {
@@ -33,15 +35,14 @@ namespace MediaPlayerWindows
         private bool CheckFavoriteSong = true;
         private bool CheckShuffleSong = true;
         private int CheckRepeatSong = 0;
-        private string BrowserPath;
-        //private UcSongList FavoriteSongList = new UcSongList();
-        private UcFavoriteSong FavoriteSongList = new UcFavoriteSong();
+        private UserControl active;
 
         public event ClickAddFavoriteSong Add;
         public fMusicManager()
         {
             MediaFoundationApi.Startup();
             InitializeComponent();
+            LoadAccountList();
             HideSubMenu();
             btnMedia.Click += BtnMedia_Click;
             btnYourMusic.Click += BtnYourMusic_Click;
@@ -65,10 +66,15 @@ namespace MediaPlayerWindows
 
             btnTym.Click += BtnTym_Click;
             btnFavoriteSong.Click += BtnFavoriteSong_Click;
-            FavoriteSongList.Hide();
         }
+        void LoadAccountList()
+        {
 
+            string query = "SELECT * FROM ACCOUNT";
+            
 
+            dataGridView1.DataSource = DataProvider.Instance.ExecuteQuery(query);
+        }
         private void BtnShuffle_Click(object sender, EventArgs e)
         {
             if (CheckShuffleSong)
@@ -85,7 +91,7 @@ namespace MediaPlayerWindows
         #region FavoriteSong
         private void BtnFavoriteSong_Click(object sender, EventArgs e)
         {
-            openChildFormInPanel(FavoriteSongList);
+            openChildForm(new UcFavoriteSong());
 
         }
 
@@ -95,20 +101,20 @@ namespace MediaPlayerWindows
             {
                 btnTym.Image = global::MediaPlayerWindows.Properties.Resources.heart_outline_40px;
                 CheckFavoriteSong = false;
-                FavoriteSongList.Add();
+                
             }    
             else
             {
                 btnTym.Image = global::MediaPlayerWindows.Properties.Resources.heart_40px;
                 CheckFavoriteSong = true;
-                FavoriteSongList.Remove();
+                
                 MessageBox.Show("a");
             }
 
         }
 
         #endregion
-        private void openChildFormInPanel(UcFavoriteSong childForm)
+        private void openChildForm(UserControl childForm)
         {
             panelMain.Controls.Clear();
             childForm.Dock = DockStyle.Fill;
@@ -142,6 +148,7 @@ namespace MediaPlayerWindows
                 try
                 {
                     w.URL = dlg.FileName;
+                    MessageBox.Show(dlg.FileName);
                     btnTym.Enabled = true;
                     btnPlay.Hide();
                     btnPause.Show();
@@ -179,6 +186,7 @@ namespace MediaPlayerWindows
         #endregion
         private void BtnPlayList_Click(object sender, EventArgs e)
         {
+            
             ucPlaylist1.BringToFront();
             ucPlaylist1.Show();
         }

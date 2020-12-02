@@ -7,27 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MediaPlayerWindows.DTO;
+using MediaPlayerWindows.DAO;
 
 namespace MediaPlayerWindows.ManagerUserControl
 {
     public partial class UcFavoriteSong : UserControl
     {
         List<UcNameSong> listControls = new List<UcNameSong>();
-        private int STT = 0;
         public UcFavoriteSong()
         {
             InitializeComponent();
+            Load();
         }
-        public void Add()
+        public void Load()
         {
-            UcNameSong U = new UcNameSong();
-            flowLayoutPanel.Controls.Add(U);
-            listControls.Add(U);
-            STT++;
-        }
-        public void Remove()
-        {
-            //flowLayoutPanel.Controls.RemoveByKey(listControls[STT]);
+            flowLayoutPanel.Controls.Clear();
+            List<FavoriteSong> favoriteSongs = FavoriteSongDAO.Instance.LoadFavoriteSong();
+            foreach (FavoriteSong favorite in favoriteSongs)
+            {
+                UcNameSong ucFavoriteSong = new UcNameSong(favorite.Path, favorite.Name, favorite.Artist, favorite.IMage, favorite.Length);
+                flowLayoutPanel.Controls.Add(ucFavoriteSong);
+            }    
         }
     }
 }

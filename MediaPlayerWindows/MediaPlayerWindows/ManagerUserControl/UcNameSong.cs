@@ -9,46 +9,36 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WMPLib;
 using System.IO;
+using MediaPlayerWindows;
 namespace MediaPlayerWindows.ManagerUserControl
 {
     public partial class UcNameSong : UserControl
     {
-        MediaPlayer M = new MediaPlayer();
-        WindowsMediaPlayer W = new WindowsMediaPlayer();
-        string Path = "";
+        private string path;
         public UcNameSong()
         {
             InitializeComponent();
-            if (Path != "")
-                Set();
+            this.Click += UcNameSong_Click;
         }
-        public UcNameSong(string FilePath)
+
+        private void UcNameSong_Click(object sender, EventArgs e)
         {
-            Path = FilePath;
-            MessageBox.Show(Path);
+            //SaveFileDialog fileDialog = new SaveFileDialog();
+            //fileDialog.FileName = this.path;
+            WindowsMediaPlayer W = new WindowsMediaPlayer();
+            W.URL = this.path;
         }
-        public void Set()
+
+        public UcNameSong(string a, string b, string c, Image d, double e)
         {
-            TagLib.File tagFile = TagLib.File.Create(Path);
-            //var fileTag = TagLib.File.Create(W.URL);
-            MessageBox.Show(tagFile.Tag.Title);
-            //lbName.Text = tagFile.Tag.Title;
-            //lbArtist.Text = tagFile.Tag.FirstPerformer;
-            //var mStream = new MemoryStream();
-            //var firstPicture = tagFile.Tag.Pictures.FirstOrDefault();
-            //if (firstPicture != null)
-            //{
-            //    byte[] pData = firstPicture.Data.Data;
-            //    mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
-            //    var bm = new Bitmap(mStream, false);
-            //    mStream.Dispose();
-            //    //pictureSong.Image = bm;
-            //}
-            //else
-            //{
-            //    //pictureSong.Image = global::MediaPlayerWindows.Properties.Resources.pictureBoxNotFound;
-            //}
+            InitializeComponent();
+            this.path = a.ToString();
+            this.lbName.Text = b.ToString();
+            this.lbArtist.Text = c.ToString();
+            this.pictureBox1.Image= d;
+            this.lbTime.Text = e.ToString();
         }
+        
 
     }
 }
