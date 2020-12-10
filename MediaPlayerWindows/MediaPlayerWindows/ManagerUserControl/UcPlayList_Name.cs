@@ -17,7 +17,7 @@ namespace MediaPlayerWindows.ManagerUserControl
         public UcPlayList_Name()
         {
             InitializeComponent();
-            PlayList_Name.Click += PlayList_Name_Click;
+            //PlayList_Name.Click += PlayList_Name_Click;
         }
 
         private void PlayList_Name_Click(object sender, EventArgs e)

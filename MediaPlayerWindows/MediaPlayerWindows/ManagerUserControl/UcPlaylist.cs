@@ -20,22 +20,6 @@ namespace MediaPlayerWindows
         public UcPlaylist()
         {
             InitializeComponent();
-            UcplayList_Name.ChangeList += UcplayList_Name_ChangeList;
-        }
-        private void UcplayList_Name_ChangeList()
-        {
-            if (ucSongList1.Visible == true)
-            {
-                ucSongList1.Visible = false;
-            }    
-            else
-                ucSongList1.Visible = true;
-        }
-        public void AddPlayList_Name()
-        {
-            UcPlayList_Name U = new UcPlayList_Name();
-            flowLayoutPanel.Controls.Add(U);
-            U.Dock = UcplayList_Name.Dock;
         }
     }
 }

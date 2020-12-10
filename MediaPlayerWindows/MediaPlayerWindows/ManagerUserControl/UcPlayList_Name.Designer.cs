@@ -28,59 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.PlayList_Name = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // PlayList_Name
+            // gunaLabel1
             // 
-            this.PlayList_Name.Activecolor = System.Drawing.SystemColors.GrayText;
-            this.PlayList_Name.BackColor = System.Drawing.Color.Gray;
-            this.PlayList_Name.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PlayList_Name.BorderRadius = 0;
-            this.PlayList_Name.ButtonText = "Nhạc trong máy";
-            this.PlayList_Name.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PlayList_Name.DisabledColor = System.Drawing.Color.Gray;
-            this.PlayList_Name.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PlayList_Name.Iconcolor = System.Drawing.Color.Transparent;
-            this.PlayList_Name.Iconimage = null;
-            this.PlayList_Name.Iconimage_right = null;
-            this.PlayList_Name.Iconimage_right_Selected = null;
-            this.PlayList_Name.Iconimage_Selected = null;
-            this.PlayList_Name.IconMarginLeft = 0;
-            this.PlayList_Name.IconMarginRight = 0;
-            this.PlayList_Name.IconRightVisible = true;
-            this.PlayList_Name.IconRightZoom = 0D;
-            this.PlayList_Name.IconVisible = true;
-            this.PlayList_Name.IconZoom = 90D;
-            this.PlayList_Name.IsTab = false;
-            this.PlayList_Name.Location = new System.Drawing.Point(0, 0);
-            this.PlayList_Name.Name = "PlayList_Name";
-            this.PlayList_Name.Normalcolor = System.Drawing.Color.Gray;
-            this.PlayList_Name.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.PlayList_Name.OnHoverTextColor = System.Drawing.Color.White;
-            this.PlayList_Name.selected = false;
-            this.PlayList_Name.Size = new System.Drawing.Size(200, 40);
-            this.PlayList_Name.TabIndex = 0;
-            this.PlayList_Name.Text = "Nhạc trong máy";
-            this.PlayList_Name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.PlayList_Name.Textcolor = System.Drawing.Color.White;
-            this.PlayList_Name.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
+            this.gunaLabel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.gunaLabel1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.gunaLabel1.Location = new System.Drawing.Point(0, 80);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(100, 40);
+            this.gunaLabel1.TabIndex = 1;
+            this.gunaLabel1.Text = "RELAX";
+            this.gunaLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // gunaCirclePictureBox1
+            // 
+            this.gunaCirclePictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
+            this.gunaCirclePictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaCirclePictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gunaCirclePictureBox1.Image = global::MediaPlayerWindows.Properties.Resources.BackgroundLogin;
+            this.gunaCirclePictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.gunaCirclePictureBox1.Name = "gunaCirclePictureBox1";
+            this.gunaCirclePictureBox1.Size = new System.Drawing.Size(100, 80);
+            this.gunaCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gunaCirclePictureBox1.TabIndex = 2;
+            this.gunaCirclePictureBox1.TabStop = false;
+            this.gunaCirclePictureBox1.UseTransfarantBackground = false;
             // 
             // UcPlayList_Name
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.Controls.Add(this.PlayList_Name);
+            this.Controls.Add(this.gunaCirclePictureBox1);
+            this.Controls.Add(this.gunaLabel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UcPlayList_Name";
-            this.Size = new System.Drawing.Size(200, 40);
+            this.Size = new System.Drawing.Size(100, 120);
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Bunifu.Framework.UI.BunifuFlatButton PlayList_Name;
+        private Guna.UI.WinForms.GunaLabel gunaLabel1;
+        private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox1;
     }
 }

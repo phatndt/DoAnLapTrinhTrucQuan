@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -11,6 +12,23 @@ namespace MediaPlayerWindows.DTO
 {
     class FavoriteSong
     {
+        public FavoriteSong()
+        {
+
+        }
+        public FavoriteSong(string a)
+        {
+            this.Path = a;
+        }    
+        public FavoriteSong(string a, string b, string c, Image d, double e)
+        {
+            this.path = a;
+            this.name = b;
+            this.artist = c;
+            this.image = d;
+            this.length = e;
+        }
+
         private string path;
         private string name;
         private string artist;
@@ -21,15 +39,10 @@ namespace MediaPlayerWindows.DTO
         public string Artist { get => artist; set => artist = value; }
         public Image IMage { get => image; set => image = value; }
         public double Length { get => length; set => length = value; }
+        public byte[] Source { get => source; set => source = value; }
 
-        public FavoriteSong(string a, string b, string c, Image d, double e)
-        {
-            this.path = a;
-            this.name = b;
-            this.artist = c;
-            this.image = d;
-            this.length = e;
-        }
+        private byte[] source;
+
         public Image byteArrayToImage(byte[] byteArrayIn)
         {
             MemoryStream ms = new MemoryStream(byteArrayIn);
@@ -41,30 +54,10 @@ namespace MediaPlayerWindows.DTO
             this.Path = Row["PATHSONG"].ToString();
             this.name = Row["NAMESONG"].ToString();
             this.artist = Row["ARTISTSONG"].ToString();
-            //byte[] bytes = (byte[])(Row["IMAGESONG"]);
-            //MemoryStream ms = new MemoryStream(bytes);
-            //Image returnImage = Image.FromStream(ms);
-            //var v = new Bitmap(ms, false);
-            //this.IMage = v;
-            //this.image = (Image)Row["IMAGESONG"];
-            //var mStream = new MemoryStream();
-            //byte[] pData = (byte[])(Row["IMAGESONG"]);
-            //mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
-            //var bm = new Bitmap(mStream, false);
-            //mStream.Dispose();
-            //byte[] pData = ;
-            //pDat
-            //byte[] imageBytes = (byte[])(Row["IMAGESONG"]);
-            //MemoryStream ms = new MemoryStream(imageBytes, 0, imageBytes.Length);
-            //ms.Write(imageBytes, 0, imageBytes.Length);
-            //System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
-            //this.IMage = image;
+            this.source = Convert.FromBase64String(Row["IMAGESONG"].ToString());
+            //this.source = Encoding.ASCII.GetBytes(Row["IMAGESONG"]);
             this.length = (double)Row["LENGTHSONG"];
         }
-        public System.Drawing.Image Base64ToImage(string base64String)
-        {
-            
-            return image;
-        }
+
     }
 }

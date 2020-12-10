@@ -18,12 +18,8 @@ namespace MediaPlayerWindows.DAO
             private set { DataProvider.instance = value; }
         }
 
-        private DataProvider() 
-        {
-
-        }
-
         private string connectionSTR = "Data Source=MSI;Initial Catalog=MEDIA_PLAYER_WINDOWS;Integrated Security=True";
+        private string cs = "Data Source=MSI;Initial Catalog=TP219;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
@@ -57,11 +53,43 @@ namespace MediaPlayerWindows.DAO
             }
             return data;
         }
-        public int ExecuteNonQuery(string query, object[] parameter = null)
-        {
-            int data = 0;
+        //public int ExecuteNonQuery(string query, object[] parameter = null)
+        //{
+        //    int data = 0;
+        //    SqlDataReader reader = null;
+        //    //using (SqlConnection connection = new SqlConnection(connectionSTR))
+        //    using (SqlConnection connection = new SqlConnection(cs))
+        //    {
+        //        connection.Open();
 
-            using (SqlConnection connection = new SqlConnection(connectionSTR))
+        //        SqlCommand command = new SqlCommand(query, connection);
+
+        //        if (parameter != null)
+        //        {
+        //            string[] listPara = query.Split(' ');
+        //            int i = 0;
+        //            foreach (string item in listPara)
+        //            {
+        //                if (item.Contains('@'))
+        //                {
+        //                    command.Parameters.AddWithValue(item, parameter[i]);
+        //                    i++;
+        //                }
+        //            }
+        //        }
+
+        //        //data = command.ExecuteNonQuery();
+
+        //        reader = command.ExecuteReader();
+
+        //        connection.Close();
+        //    }
+
+        //    return data;
+        //}
+        public void ExecuteNonQuery(string query, object[] parameter = null)
+        {
+            using (SqlConnection connection = new SqlConnection(cs))
             {
                 connection.Open();
 
@@ -80,13 +108,10 @@ namespace MediaPlayerWindows.DAO
                         }
                     }
                 }
-
-                data = command.ExecuteNonQuery();
+                SqlDataReader reader = command.ExecuteReader();
 
                 connection.Close();
             }
-
-            return data;
         }
         public object ExecuteScalar(string query, object[] parameter = null)
         {

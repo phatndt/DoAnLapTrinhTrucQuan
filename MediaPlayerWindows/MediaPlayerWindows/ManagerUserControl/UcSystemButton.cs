@@ -15,11 +15,12 @@ namespace MediaPlayerWindows.ManagerUserControl
         public UcSystemButton()
         {
             InitializeComponent();
-            btnMaximize.Click += BtnMaximize_Click;
-            btnMinimize.Click += BtnMinimize_Click; ;
             btnExit.Click += BtnExit_Click;
+            btnMaximize.Click += BtnMaximize_Click;
+            btnMiximize.Click += BtnMiximize_Click;
         }
-        private void BtnMinimize_Click(object sender, EventArgs e)
+
+        private void BtnMiximize_Click(object sender, EventArgs e)
         {
             this.FindForm().WindowState = FormWindowState.Minimized;
         }
@@ -31,6 +32,7 @@ namespace MediaPlayerWindows.ManagerUserControl
             else
                 this.FindForm().WindowState = FormWindowState.Maximized;
         }
+        
         private void BtnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();

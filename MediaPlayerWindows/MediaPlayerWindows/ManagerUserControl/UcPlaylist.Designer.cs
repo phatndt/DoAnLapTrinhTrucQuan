@@ -28,58 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucSongList1 = new MediaPlayerWindows.ManagerUserControl.UcSongList();
-            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.UcplayList_Name = new MediaPlayerWindows.ManagerUserControl.UcPlayList_Name();
-            this.flowLayoutPanel.SuspendLayout();
+            this.ucPlayList_Name1 = new MediaPlayerWindows.ManagerUserControl.UcPlayList_Name();
+            this.ucPlayList_Name2 = new MediaPlayerWindows.ManagerUserControl.UcPlayList_Name();
             this.SuspendLayout();
             // 
-            // ucSongList1
+            // ucPlayList_Name1
             // 
-            this.ucSongList1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.ucSongList1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucSongList1.Location = new System.Drawing.Point(0, 0);
-            this.ucSongList1.Name = "ucSongList1";
-            this.ucSongList1.Size = new System.Drawing.Size(750, 475);
-            this.ucSongList1.TabIndex = 1;
+            this.ucPlayList_Name1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.ucPlayList_Name1.Location = new System.Drawing.Point(2, 2);
+            this.ucPlayList_Name1.Margin = new System.Windows.Forms.Padding(2);
+            this.ucPlayList_Name1.Name = "ucPlayList_Name1";
+            this.ucPlayList_Name1.Size = new System.Drawing.Size(100, 120);
+            this.ucPlayList_Name1.TabIndex = 0;
             // 
-            // flowLayoutPanel
+            // ucPlayList_Name2
             // 
-            this.flowLayoutPanel.Controls.Add(this.UcplayList_Name);
-            this.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(202, 475);
-            this.flowLayoutPanel.TabIndex = 2;
-            // 
-            // UcplayList_Name
-            // 
-            this.UcplayList_Name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.UcplayList_Name.Dock = System.Windows.Forms.DockStyle.Top;
-            this.UcplayList_Name.Location = new System.Drawing.Point(2, 2);
-            this.UcplayList_Name.Margin = new System.Windows.Forms.Padding(2);
-            this.UcplayList_Name.Name = "UcplayList_Name";
-            this.UcplayList_Name.Size = new System.Drawing.Size(200, 40);
-            this.UcplayList_Name.TabIndex = 1;
+            this.ucPlayList_Name2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.ucPlayList_Name2.Location = new System.Drawing.Point(106, 2);
+            this.ucPlayList_Name2.Margin = new System.Windows.Forms.Padding(2);
+            this.ucPlayList_Name2.Name = "ucPlayList_Name2";
+            this.ucPlayList_Name2.Size = new System.Drawing.Size(100, 120);
+            this.ucPlayList_Name2.TabIndex = 0;
             // 
             // UcPlaylist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.flowLayoutPanel);
-            this.Controls.Add(this.ucSongList1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
+            this.Controls.Add(this.ucPlayList_Name2);
+            this.Controls.Add(this.ucPlayList_Name1);
             this.Name = "UcPlaylist";
-            this.Size = new System.Drawing.Size(750, 475);
-            this.flowLayoutPanel.ResumeLayout(false);
+            this.Size = new System.Drawing.Size(950, 120);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private ManagerUserControl.UcSongList ucSongList1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
-        private ManagerUserControl.UcPlayList_Name UcplayList_Name;
+        private ManagerUserControl.UcPlayList_Name ucPlayList_Name1;
+        private ManagerUserControl.UcPlayList_Name ucPlayList_Name2;
     }
 }

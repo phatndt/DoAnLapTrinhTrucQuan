@@ -26,9 +26,10 @@ namespace MediaPlayerWindows.ManagerUserControl
             List<FavoriteSong> favoriteSongs = FavoriteSongDAO.Instance.LoadFavoriteSong();
             foreach (FavoriteSong favorite in favoriteSongs)
             {
-                UcNameSong ucFavoriteSong = new UcNameSong(favorite.Path, favorite.Name, favorite.Artist, favorite.IMage, favorite.Length);
+                UcNameSong ucFavoriteSong = new UcNameSong(favorite.Path, favorite.Name, favorite.Artist, favorite.IMage, favorite.Length, favorite.Source);
                 flowLayoutPanel.Controls.Add(ucFavoriteSong);
             }    
         }
+
     }
 }
