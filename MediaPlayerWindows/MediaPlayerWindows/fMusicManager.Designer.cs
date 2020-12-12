@@ -65,11 +65,10 @@
             this.btnBrowse = new Guna.UI.WinForms.GunaButton();
             this.btnHome = new Guna.UI.WinForms.GunaButton();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.ucPlaylist1 = new MediaPlayerWindows.UcPlaylist();
+            this.ucNameSong1 = new MediaPlayerWindows.ManagerUserControl.UcNameSong();
             this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaResize1 = new Guna.UI.WinForms.GunaResize(this.components);
-            this.ucNameSong1 = new MediaPlayerWindows.ManagerUserControl.UcNameSong();
             this.panelMainButton.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnTym)).BeginInit();
@@ -602,21 +601,20 @@
             this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(24)))), ((int)(((byte)(45)))));
             this.panelMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panelMain.Controls.Add(this.ucNameSong1);
-            this.panelMain.Controls.Add(this.ucPlaylist1);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(250, 30);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(950, 640);
             this.panelMain.TabIndex = 5;
             // 
-            // ucPlaylist1
+            // ucNameSong1
             // 
-            this.ucPlaylist1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
-            this.ucPlaylist1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ucPlaylist1.Location = new System.Drawing.Point(0, 520);
-            this.ucPlaylist1.Name = "ucPlaylist1";
-            this.ucPlaylist1.Size = new System.Drawing.Size(950, 120);
-            this.ucPlaylist1.TabIndex = 0;
+            this.ucNameSong1.BackColor = System.Drawing.Color.White;
+            this.ucNameSong1.Location = new System.Drawing.Point(2, 5);
+            this.ucNameSong1.Margin = new System.Windows.Forms.Padding(2);
+            this.ucNameSong1.Name = "ucNameSong1";
+            this.ucNameSong1.Size = new System.Drawing.Size(543, 41);
+            this.ucNameSong1.TabIndex = 1;
             // 
             // gunaDragControl1
             // 
@@ -629,15 +627,6 @@
             // gunaResize1
             // 
             this.gunaResize1.TargetForm = this;
-            // 
-            // ucNameSong1
-            // 
-            this.ucNameSong1.BackColor = System.Drawing.Color.White;
-            this.ucNameSong1.Location = new System.Drawing.Point(2, 5);
-            this.ucNameSong1.Margin = new System.Windows.Forms.Padding(2);
-            this.ucNameSong1.Name = "ucNameSong1";
-            this.ucNameSong1.Size = new System.Drawing.Size(543, 41);
-            this.ucNameSong1.TabIndex = 1;
             // 
             // fMusicManager
             // 
@@ -714,7 +703,6 @@
         private Guna.UI.WinForms.GunaButton btnTopKorea;
         private Guna.UI.WinForms.GunaButton btnTopVN;
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
-        private UcPlaylist ucPlaylist1;
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
         public Guna.UI.WinForms.GunaResize gunaResize1;
         private ManagerUserControl.UcMusicControl ucMusicControl;

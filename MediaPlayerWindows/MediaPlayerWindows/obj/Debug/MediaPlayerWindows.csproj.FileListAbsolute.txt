@@ -110,4 +110,3 @@ D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindo
 D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.ManagerUserControl.UcFavoriteSong.resources
 D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\bin\Debug\Guna.UI.dll
 D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.ManagerUserControl.UcMusicControl.resources
-D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\bin\Debug\LollipoUi.dll

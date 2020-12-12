@@ -62,6 +62,21 @@ namespace MediaPlayerWindows
             this.DoubleBuffered = true;
             LoadOneMusic();
             ucNameSong1.PlayUcSong += UcNameSong1_PlayUcSong;
+            btnPlaylist.Click += BtnPlaylist_Click;
+
+            this.SizeChanged += FMusicManager_SizeChanged;
+        }
+
+        private void FMusicManager_SizeChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show(this.Size.Height.ToString());
+            //panelMainButton.Size = new Size(panelMainButton.Size.Width + 20, panelMainButton.Size.Height + 20);
+            ucMusicControl.Size = new Size(this.Size.Width * 25 / 4, this.Size.Height);
+        }
+
+        private void BtnPlaylist_Click(object sender, EventArgs e)
+        {
+            OpenUserControlDockBottom(new UcPlaylist());
         }
 
         private void UcNameSong1_PlayUcSong(string s)
@@ -94,7 +109,8 @@ namespace MediaPlayerWindows
         }
         private void BtnHome_Click(object sender, EventArgs e)
         {
-            openChildForm(new UcMusicControl());
+            panelMain.Controls.Clear();
+            //openChildForm(new UcMusicControl());
         }
 
         void LoadAccountList()
@@ -118,7 +134,7 @@ namespace MediaPlayerWindows
         #region FavoriteSong
         private void BtnFavoriteSong_Click(object sender, EventArgs e)
         {
-            openChildForm(new UcFavoriteSong());
+            OpenUserControlDockFill(new UcFavoriteSong());
 
         }
 
@@ -151,7 +167,23 @@ namespace MediaPlayerWindows
             //panelMain.Controls.Add(childForm);
             panelMainButton.Controls.Add(childForm);
         }
-
+        private void OpenUserControlDockBottom(UserControl childForm)
+        {
+            //panelMain.Controls.Clear();
+            childForm.Dock = DockStyle.Bottom;
+            childForm.BringToFront();
+            childForm.Show();
+            //panelMain.Controls.Add(childForm);
+            panelMain.Controls.Add(childForm);
+        }
+        private void OpenUserControlDockFill(UserControl childForm)
+        {
+            panelMain.Controls.Clear();
+            childForm.Dock = DockStyle.Fill;
+            childForm.BringToFront();
+            childForm.Show();
+            panelMain.Controls.Add(childForm);
+        }
         //private void BtnPlaying_Click(object sender, EventArgs e)
         //{
         //    insert();

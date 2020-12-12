@@ -47,16 +47,46 @@ namespace MediaPlayerWindows.DAO
         public void AddFavoriteSong(FavoriteSong favoriteSong)
         {
             //favoriteSong.Source = File.ReadAllBytes(favoriteSong.Path);
-            string query = "Data Source=MSI;Initial Catalog=TP219;Integrated Security=True";
-            favoriteSong.Source = convert(favoriteSong);
+            string query = "Data Source=MSI;Initial Catalog=MEDIA_PLAYER_WINDOWS;Integrated Security=True";
             using (SqlConnection connection = new SqlConnection(query))
             {
                 connection.Open();
 
                 //SqlCommand command = new SqlCommand("INSERT INTO DATAMUSIC VALUES (CONVERT(VARBINARY(MAX),'" + favoriteSong.Source + "'))", connection);
-                SqlCommand command = new SqlCommand("INSERT INTO DATAMUSIC VALUES (@file)", connection);
+                //SqlCommand command = new SqlCommand("INSERT INTO DATAMUSIC VALUES (@file)", connection);
+                SqlCommand command = new SqlCommand("INSERT INTO FAVORITESONGS VALUES (@path,@name,@artist,@image,@data,@length,@status)", connection);
                 //command.Parameters.AddWithValue("file", SqlDbType.VarBinary).Value = File.ReadAllBytes(favoriteSong.Path);
-                command.Parameters.AddWithValue("@file", Convert.ToBase64String(favoriteSong.Source));
+                command.Parameters.AddWithValue("@path", favoriteSong.Path);
+                command.Parameters.AddWithValue("@name", favoriteSong.Name);
+                command.Parameters.AddWithValue("@artist", favoriteSong.Artist);
+                command.Parameters.AddWithValue("@image", Convert.ToBase64String(favoriteSong.IMage));
+                command.Parameters.AddWithValue("@data", Convert.ToBase64String(favoriteSong.Source));
+                command.Parameters.AddWithValue("@length", favoriteSong.Length);
+                command.Parameters.AddWithValue("@status", favoriteSong.Status);
+                command.ExecuteNonQuery();
+                //SqlDataReader reader = command.ExecuteReader();
+                connection.Close();
+            }
+        }
+        public void CheckExistFavoriteSong(FavoriteSong favoriteSong)
+        {
+            //favoriteSong.Source = File.ReadAllBytes(favoriteSong.Path);
+            string query = "Data Source=MSI;Initial Catalog=MEDIA_PLAYER_WINDOWS;Integrated Security=True";
+            using (SqlConnection connection = new SqlConnection(query))
+            {
+                connection.Open();
+
+                //SqlCommand command = new SqlCommand("INSERT INTO DATAMUSIC VALUES (CONVERT(VARBINARY(MAX),'" + favoriteSong.Source + "'))", connection);
+                //SqlCommand command = new SqlCommand("INSERT INTO DATAMUSIC VALUES (@file)", connection);
+                SqlCommand command = new SqlCommand("INSERT INTO FAVORITESONGS VALUES (@path,@name,@artist,@image,@data,@length,@status)", connection);
+                //command.Parameters.AddWithValue("file", SqlDbType.VarBinary).Value = File.ReadAllBytes(favoriteSong.Path);
+                command.Parameters.AddWithValue("@path", favoriteSong.Path);
+                command.Parameters.AddWithValue("@name", favoriteSong.Name);
+                command.Parameters.AddWithValue("@artist", favoriteSong.Artist);
+                command.Parameters.AddWithValue("@image", Convert.ToBase64String(favoriteSong.IMage));
+                command.Parameters.AddWithValue("@data", Convert.ToBase64String(favoriteSong.Source));
+                command.Parameters.AddWithValue("@length", favoriteSong.Length);
+                command.Parameters.AddWithValue("@status", favoriteSong.Status);
                 command.ExecuteNonQuery();
                 //SqlDataReader reader = command.ExecuteReader();
                 connection.Close();

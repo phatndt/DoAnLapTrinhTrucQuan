@@ -39,9 +39,6 @@
     <Reference Include="Guna.UI">
       <HintPath>..\..\..\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
     </Reference>
-    <Reference Include="LollipoUi">
-      <HintPath>C:\Windows\SysWOW64\LollipoUi.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="NAudio">
       <HintPath>..\..\Library\NAudio.dll</HintPath>
@@ -70,9 +67,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Authenticater\Authenticater.cs" />
+    <Compile Include="ConvertClass.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\FavoriteSongDAO.cs" />
+    <Compile Include="DAO\SongDAO.cs" />
     <Compile Include="DTO\FavoriteSong.cs" />
+    <Compile Include="DTO\Playlist.cs" />
+    <Compile Include="DTO\Song.cs" />
     <Compile Include="fLogin.cs">
       <SubType>Form</SubType>
     </Compile>

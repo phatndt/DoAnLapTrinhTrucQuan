@@ -20,28 +20,31 @@ namespace MediaPlayerWindows.DTO
         {
             this.Path = a;
         }    
-        public FavoriteSong(string a, string b, string c, Image d, double e)
+        public FavoriteSong(string a, string b, string c, byte[] d, byte[] e, string f, int status)
         {
             this.path = a;
             this.name = b;
             this.artist = c;
             this.image = d;
-            this.length = e;
+            this.source = e;
+            this.length = f;
+            this.status = status;
         }
 
         private string path;
         private string name;
         private string artist;
-        private Image image;
-        private double length;
+        private byte[] image;
+        private string length;
+        private byte[] source;
+        private int status;
         public string Path { get => path; set => path = value; }
         public string Name { get => name; set => name = value; }
         public string Artist { get => artist; set => artist = value; }
-        public Image IMage { get => image; set => image = value; }
-        public double Length { get => length; set => length = value; }
+        public byte[] IMage { get => image; set => image = value; }
+        public string Length { get => length; set => length = value; }
         public byte[] Source { get => source; set => source = value; }
-
-        private byte[] source;
+        public int Status { get => status; set => status = value; }
 
         public Image byteArrayToImage(byte[] byteArrayIn)
         {
@@ -56,7 +59,7 @@ namespace MediaPlayerWindows.DTO
             this.artist = Row["ARTISTSONG"].ToString();
             this.source = Convert.FromBase64String(Row["IMAGESONG"].ToString());
             //this.source = Encoding.ASCII.GetBytes(Row["IMAGESONG"]);
-            this.length = (double)Row["LENGTHSONG"];
+            this.length = Row["LENGTHSONG"].ToString();
         }
 
     }

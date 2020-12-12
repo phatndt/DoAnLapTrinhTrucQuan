@@ -30,6 +30,7 @@ namespace MediaPlayerWindows.ManagerUserControl
             InitializeComponent();
             this.Click += UcNameSong_Click;
             btnSelect.Click += BtnSelect_Click;
+            
         }
 
         private void BtnSelect_Click(object sender, EventArgs e)

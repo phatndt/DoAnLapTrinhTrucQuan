@@ -87,8 +87,9 @@ namespace MediaPlayerWindows.DAO
 
         //    return data;
         //}
-        public void ExecuteNonQuery(string query, object[] parameter = null)
+        public int ExecuteNonQuery(string query, object[] parameter = null)
         {
+            int data;
             using (SqlConnection connection = new SqlConnection(cs))
             {
                 connection.Open();
@@ -108,10 +109,12 @@ namespace MediaPlayerWindows.DAO
                         }
                     }
                 }
+                data = command.ExecuteNonQuery();
                 SqlDataReader reader = command.ExecuteReader();
 
                 connection.Close();
             }
+            return data;
         }
         public object ExecuteScalar(string query, object[] parameter = null)
         {

@@ -165,7 +165,7 @@
             this.btnPlayPause.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnPlayPause.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnPlayPause.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnPlayPause.OnHoverImage = global::MediaPlayerWindows.Properties.Resources.play_40px;
+            this.btnPlayPause.OnHoverImage = null;
             this.btnPlayPause.OnPressedColor = System.Drawing.Color.Black;
             this.btnPlayPause.Size = new System.Drawing.Size(40, 40);
             this.btnPlayPause.TabIndex = 59;
