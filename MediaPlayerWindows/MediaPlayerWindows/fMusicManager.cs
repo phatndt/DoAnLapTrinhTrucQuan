@@ -86,7 +86,7 @@ namespace MediaPlayerWindows
 
         public void LoadOneMusic()
         {
-            string s = @"C:\Users\THANHPHAT219\Downloads\MusicTest\Tình Sầu Thiên Thu Muôn Lối ( Htrol Remix ) Doãn Hiếu Nhạc Tiktok Gây Nghiện 2020.mp3";
+            string s = @"C:\Users\PC\Downloads\BongHoaDepNhat-QuanAP-6607955.mp3";
             TagLib.File fileTag = TagLib.File.Create(s, "audio/mp3", TagLib.ReadStyle.None);
             string Name = fileTag.Tag.Title;
             string Artist = fileTag.Tag.FirstPerformer;

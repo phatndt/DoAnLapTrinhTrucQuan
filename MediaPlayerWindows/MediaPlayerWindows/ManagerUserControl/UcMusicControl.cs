@@ -29,6 +29,8 @@ namespace MediaPlayerWindows.ManagerUserControl
 
         private bool CheckPlayPauseImage = true;
 
+        private bool CheckRepeat = false;
+
         private string path;
         private string name;
         private string artist;
@@ -51,6 +53,29 @@ namespace MediaPlayerWindows.ManagerUserControl
             this.SizeChanged += UcMusicControl_SizeChanged;
 
             btnTym.Click += BtnTym_Click;
+
+            TrackbarMusic.Scroll += TrackbarMusic_Scroll;
+
+            btnRepeat.Click += BtnRepeat_Click;
+        }
+
+        private void BtnRepeat_Click(object sender, EventArgs e)
+        {
+            if (CheckRepeat)
+            {
+                btnRepeat.Image = global::MediaPlayerWindows.Properties.Resources.repeat_40px;
+                CheckRepeat = false;
+            }
+            else
+            {
+                btnRepeat.Image = global::MediaPlayerWindows.Properties.Resources.repeat_40px_green;
+                CheckRepeat = true;
+            }
+        }
+
+        private void TrackbarMusic_Scroll(object sender, ScrollEventArgs e)
+        {
+            WindowsMediaPlayer.controls.currentPosition = TrackbarMusic.Value;
         }
 
         private void BtnTym_Click(object sender, EventArgs e)
@@ -135,6 +160,11 @@ namespace MediaPlayerWindows.ManagerUserControl
             lblTime_start.Text = WindowsMediaPlayer.controls.currentPositionString;
             lblTime_end.Text = WindowsMediaPlayer.controls.currentItem.durationString;
             this.length = WindowsMediaPlayer.controls.currentItem.durationString;
+
+            if (((int)WindowsMediaPlayer.controls.currentPosition == (int)WindowsMediaPlayer.currentMedia.duration) && (CheckRepeat == true))
+            {
+                WindowsMediaPlayer.controls.currentPosition = 0;
+            }
         }
 
         public void SetupPausePlayButton()
