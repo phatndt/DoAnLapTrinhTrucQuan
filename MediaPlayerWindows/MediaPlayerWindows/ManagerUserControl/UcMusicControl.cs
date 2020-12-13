@@ -55,8 +55,9 @@ namespace MediaPlayerWindows.ManagerUserControl
 
         private void BtnTym_Click(object sender, EventArgs e)
         {
-            string query = "SELECT * FROM FAVORITESONGS WHERE NAMESONG = " + this.name + " AND ARTISTSONG = " + this.artist + "";
-            if (DataProvider.Instance.ExecuteNonQuery(query) == 0)
+            string query = "SELECT * FROM FAVORITESONGS WHERE NAMESONG = '" + this.name + "' AND ARTISTSONG = '" + this.artist +"'";
+            MessageBox.Show(query);
+            if (DataProvider.Instance.ExecuteNonQuery(query) == false)
             {
                 favoriteSong = new FavoriteSong(path, name, artist, image, source, length, 1);
                 FavoriteSongDAO.Instance.AddFavoriteSong(favoriteSong);
