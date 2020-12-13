@@ -87,10 +87,11 @@ namespace MediaPlayerWindows.DAO
 
         //    return data;
         //}
-        public int ExecuteNonQuery(string query, object[] parameter = null)
+        public bool ExecuteNonQuery(string query, object[] parameter = null)
         {
-            int data;
-            using (SqlConnection connection = new SqlConnection(cs))
+            bool data;
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(connectionSTR))
             {
                 connection.Open();
 
@@ -109,11 +110,15 @@ namespace MediaPlayerWindows.DAO
                         }
                     }
                 }
-                data = command.ExecuteNonQuery();
-                SqlDataReader reader = command.ExecuteReader();
+                //SqlDataAdapter adapter = new SqlDataAdapter(command);
 
+                //adapter.Fill(dataTable);
+                SqlDataReader reader = command.ExecuteReader();
+                data = reader.Read();
                 connection.Close();
             }
+            //if (dataTable.Rows.Count > 0)
+            //    return false;
             return data;
         }
         public object ExecuteScalar(string query, object[] parameter = null)
