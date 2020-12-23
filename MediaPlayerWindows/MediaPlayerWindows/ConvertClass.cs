@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace MediaPlayerWindows
 {
@@ -17,6 +18,7 @@ namespace MediaPlayerWindows
             get { if (instance == null) instance = new ConvertClass(); return ConvertClass.instance; }
             private set { ConvertClass.instance = value; }
         }
+
         public byte[] ConvertImageToByte(Image image)
         {
             MemoryStream ms = new MemoryStream();
@@ -32,14 +34,21 @@ namespace MediaPlayerWindows
             //fs.Read(imgByteArr, 0, Convert.ToInt32(fs.Length));
             //fs.Close();
             //return imgByteArr;
-
+        }
+        public Image ConvertByteToBitmap(byte[] bytes)
+        {
+            Bitmap bmp;
+            using (var ms = new MemoryStream(bytes))
+            {
+                return Image.FromStream(ms);
+            }
         }
         public byte[] ConvertDataMusicToByte(string s)
         {
-            FileStream fs = new FileStream(s, FileMode.Open, FileAccess.Read);
-            byte[] imgByteArr = new byte[fs.Length];
-            fs.Read(imgByteArr, 0, Convert.ToInt32(fs.Length));
-            fs.Close();
+            FileStream fileStream = new FileStream(s, FileMode.Open, FileAccess.Read);
+            byte[] imgByteArr = new byte[fileStream.Length];
+            fileStream.Read(imgByteArr, 0, Convert.ToInt32(fileStream.Length));
+            fileStream.Close();
             return imgByteArr;
         }
 

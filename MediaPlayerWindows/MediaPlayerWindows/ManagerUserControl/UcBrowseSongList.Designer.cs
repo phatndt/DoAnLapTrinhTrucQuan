@@ -1,6 +1,6 @@
 ﻿namespace MediaPlayerWindows.ManagerUserControl
 {
-    partial class UcSongList
+    partial class UcBrowseSongList
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,38 +29,25 @@
         private void InitializeComponent()
         {
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.ucNameSong = new MediaPlayerWindows.ManagerUserControl.UcSong();
-            this.flowLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel
             // 
-            //this.flowLayoutPanel.Controls.Add(this.ucNameSong);
+            this.flowLayoutPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(24)))), ((int)(((byte)(45)))));
             this.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(600, 378);
+            this.flowLayoutPanel.Size = new System.Drawing.Size(950, 640);
             this.flowLayoutPanel.TabIndex = 0;
             // 
-            // ucNameSong
-            // 
-            //this.ucNameSong.BackColor = System.Drawing.Color.White;
-            //this.ucNameSong.Dock = System.Windows.Forms.DockStyle.Top;
-            //this.ucNameSong.Location = new System.Drawing.Point(2, 2);
-            //this.ucNameSong.Margin = new System.Windows.Forms.Padding(2);
-            //this.ucNameSong.Name = "ucNameSong";
-            //this.ucNameSong.Size = new System.Drawing.Size(596, 41);
-            //this.ucNameSong.TabIndex = 0;
-            // 
-            // UcSongList
+            // UcBrowseSongList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(this.flowLayoutPanel);
-            this.Name = "UcSongList";
-            this.Size = new System.Drawing.Size(600, 378);
-            this.flowLayoutPanel.ResumeLayout(false);
+            this.Name = "UcBrowseSongList";
+            this.Size = new System.Drawing.Size(950, 640);
             this.ResumeLayout(false);
 
         }
@@ -68,6 +55,5 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
-        private UcSong ucNameSong;
     }
 }

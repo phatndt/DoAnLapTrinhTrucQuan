@@ -14,22 +14,46 @@ namespace MediaPlayerWindows.ManagerUserControl
 {
     public partial class UcFavoriteSong : UserControl
     {
-        List<UcNameSong> listControls = new List<UcNameSong>();
+        public event PlayFavoriteSong Play;
+        //public event Action load;
+        public event RemoveFavoriteSong Remove;
+
+        public event RemoveFavoriteSong RemoveTym;
+
+        private FavoriteSong favoriteSong;
+        internal FavoriteSong FavoriteSong { get => favoriteSong; set => favoriteSong = value; }
+
         public UcFavoriteSong()
         {
             InitializeComponent();
-            Load();
         }
-        public void Load()
+        public UcFavoriteSong(string b, string c, byte[] d, byte[] e, string f, int g )
         {
-            flowLayoutPanel.Controls.Clear();
-            List<FavoriteSong> favoriteSongs = FavoriteSongDAO.Instance.LoadFavoriteSong();
-            foreach (FavoriteSong favorite in favoriteSongs)
-            {
-                //UcNameSong ucFavoriteSong = new UcNameSong(favorite.Path, favorite.Name, favorite.Artist, favorite.IMage, favorite.Length, favorite.Source);
-                //flowLayoutPanel.Controls.Add(ucFavoriteSong);
-            }    
+            InitializeComponent();
+            favoriteSong = new FavoriteSong(b,c,d,e,f,g);
+            lbName.Text = favoriteSong.Name;
+            lbArtist.Text = favoriteSong.Artist;
+            lbTime.Text = favoriteSong.Length;
+            btnSelect.Click += BtnSelect_Click;
+            btnTym.Click += BtnTym_Click;
+        }
+
+        private void BtnTym_Click(object sender, EventArgs e)
+        {
+            if (FavoriteSongDAO.Instance.RemoveFavoriteSong(favoriteSong))
+                MessageBox.Show("co xoa");
+            //if (load != null)
+            //    load();
+            Remove(this);
+            RemoveTym(this);
+        }
+
+        private void BtnSelect_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("a");
+            Play(this);
         }
 
     }
+    
 }

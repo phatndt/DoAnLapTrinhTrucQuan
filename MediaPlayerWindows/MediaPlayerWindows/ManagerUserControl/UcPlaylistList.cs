@@ -14,10 +14,10 @@ namespace MediaPlayerWindows
     public delegate void ChangeListHandler();
     public delegate void CreatePlayList();
 
-    public partial class UcPlaylist : UserControl
+    public partial class UcPlaylistList : UserControl
     {
         public bool check = false;
-        public UcPlaylist()
+        public UcPlaylistList()
         {
             InitializeComponent();
         }

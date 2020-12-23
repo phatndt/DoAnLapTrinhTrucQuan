@@ -234,7 +234,7 @@
             this.btnVolumn.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
             this.btnVolumn.OnHoverBorderColor = System.Drawing.Color.Gainsboro;
             this.btnVolumn.OnHoverForeColor = System.Drawing.Color.Gainsboro;
-            this.btnVolumn.OnHoverImage = global::MediaPlayerWindows.Properties.Resources.mute_40px;
+            this.btnVolumn.OnHoverImage = null;
             this.btnVolumn.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnVolumn.OnPressedDepth = 15;
             this.btnVolumn.Size = new System.Drawing.Size(40, 40);
@@ -246,10 +246,10 @@
             this.btnTym.AnimationHoverSpeed = 0.07F;
             this.btnTym.AnimationSpeed = 0.03F;
             this.btnTym.BaseColor = System.Drawing.Color.White;
-            this.btnTym.BorderColor = System.Drawing.Color.Black;
+            this.btnTym.BorderColor = System.Drawing.Color.White;
             this.btnTym.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnTym.Enabled = false;
-            this.btnTym.FocusedColor = System.Drawing.Color.Empty;
+            this.btnTym.FocusedColor = System.Drawing.Color.White;
             this.btnTym.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnTym.ForeColor = System.Drawing.Color.White;
             this.btnTym.Image = global::MediaPlayerWindows.Properties.Resources.heart_40px;
@@ -259,7 +259,7 @@
             this.btnTym.OnHoverBaseColor = System.Drawing.Color.White;
             this.btnTym.OnHoverBorderColor = System.Drawing.Color.White;
             this.btnTym.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnTym.OnHoverImage = global::MediaPlayerWindows.Properties.Resources.heart_outline_40px;
+            this.btnTym.OnHoverImage = null;
             this.btnTym.OnPressedColor = System.Drawing.Color.White;
             this.btnTym.Size = new System.Drawing.Size(20, 20);
             this.btnTym.TabIndex = 59;

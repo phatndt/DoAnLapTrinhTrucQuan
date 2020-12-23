@@ -30,63 +30,56 @@ using Guna.UI.WinForms;
 namespace MediaPlayerWindows
 {
     public delegate void CreatPlayList();
-    public delegate void ClickAddFavoriteSong();
+
+
     public partial class fMusicManager : Form
     {
-        WindowsMediaPlayer w = new WindowsMediaPlayer();
-        MediaPlayer M = new MediaPlayer();
-        private int lastSoundValue = 0;
-        private bool CheckFavoriteSong = true;
-        private bool CheckShuffleSong = true;
-        private int CheckRepeatSong = 0;
-        private UserControl active;
-        SaveFileDialog sv = new SaveFileDialog();
-        private byte[] bytes;
+        UcFavoriteSongList ucFavoriteSongList = new UcFavoriteSongList();
+        UcBrowseSongList ucBrowseSongList = null;
+        UcSongList UcSongList = new UcSongList("LoadRecentlySongs");
+        string[] Path;
         public fMusicManager()
         {
+            this.DoubleBuffered = true;
             InitializeComponent();
             LoadAccountList();
-            btnBrowse.Click += BtnBrowse_Click;
-            btnMute.Click += BtnMute_Click;
-            btnUnMute.Click += BtnUnMute_Click;
-            btnShuffle.Click += BtnShuffle_Click;
+            LoadOneMusic();
 
-            btnPlay.Click += BtnPlay_Click;
-            btnPause.Click += BtnPause_Click;
             this.FormClosing += FMusicManager_FormClosing;
-
-            btnTym.Click += BtnTym_Click;
-            btnFavoriteSong.Click += BtnFavoriteSong_Click;
+            this.SizeChanged += FMusicManager_SizeChanged;
 
             btnHome.Click += BtnHome_Click;
-            this.DoubleBuffered = true;
-            LoadOneMusic();
-            ucNameSong1.PlayUcSong += UcNameSong1_PlayUcSong;
+            btnBrowse.Click += BtnBrowse_Click;
+            btnRecently.Click += BtnRecently_Click;
+            btnFavoriteSong.Click += BtnFavoriteSong_Click;
             btnPlaylist.Click += BtnPlaylist_Click;
 
-            this.SizeChanged += FMusicManager_SizeChanged;
+
+            ucMusicControl.ReLoad += UcMusicControl_ReLoad;
+            ucMusicControl.Remove += UcMusicControl_Remove;
+
         }
 
+        #region FormEvent
         private void FMusicManager_SizeChanged(object sender, EventArgs e)
         {
             MessageBox.Show(this.Size.Height.ToString());
-            //panelMainButton.Size = new Size(panelMainButton.Size.Width + 20, panelMainButton.Size.Height + 20);
+            //panelMainButton.Size = new Size(panelMainButton.Size.Width + 20, panelMainButton.Size.Height + 20); 
             ucMusicControl.Size = new Size(this.Size.Width * 25 / 4, this.Size.Height);
         }
-
+        private void FMusicManager_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+        #endregion
         private void BtnPlaylist_Click(object sender, EventArgs e)
         {
-            OpenUserControlDockBottom(new UcPlaylist());
+            OpenUserControlDockBottom(new UcPlaylistList());
         }
-
-        private void UcNameSong1_PlayUcSong(string s)
-        {
-            ucMusicControl.Setup(s);
-        }
-
         public void LoadOneMusic()
         {
-            string s = @"C:\Users\PC\Downloads\BongHoaDepNhat-QuanAP-6607955.mp3";
+            //string s = @"C:\Users\PC\Downloads\BongHoaDepNhat-QuanAP-6607955.mp3";
+            string s = @"C:\Users\THANHPHAT219\Downloads\MusicTest\Tình Sầu Thiên Thu Muôn Lối ( Htrol Remix ) Doãn Hiếu Nhạc Tiktok Gây Nghiện 2020.mp3";
             TagLib.File fileTag = TagLib.File.Create(s, "audio/mp3", TagLib.ReadStyle.None);
             string Name = fileTag.Tag.Title;
             string Artist = fileTag.Tag.FirstPerformer;
@@ -103,60 +96,90 @@ namespace MediaPlayerWindows
             }
             else
             {
-                pictureSong.Image = global::MediaPlayerWindows.Properties.Resources.pictureBoxNotFound;
+                //pictureSong.Image = global::MediaPlayerWindows.Properties.Resources.pictureBoxNotFound;
             }
-            ucNameSong1.Set(s, Name, Artist, image);
+            //ucNameSong1.Set(s, Name, Artist, image);
         }
         private void BtnHome_Click(object sender, EventArgs e)
         {
-            panelMain.Controls.Clear();
-            //openChildForm(new UcMusicControl());
+            if (Path != null)
+            {
+                panelMain.Controls.Clear();
+                OpenUserControlDockFill(ucBrowseSongList);
+            }    
+
+        }
+        #region RecentlySong
+        private void BtnRecently_Click(object sender, EventArgs e)
+        {
+            
+            OpenUserControlDockFill(UcSongList);
+            LoadEventUcRecentlySong();
+        }
+        private void LoadEventUcRecentlySong()
+        {
+            foreach (UcSong ucSong in UcSongList.GetFlowLayoutPanel().Controls)
+            {
+                ucSong.PlaySong += UcSong_PlaySong1;
+            }
         }
 
+        private void UcSong_PlaySong1(UcSong ucSong)
+        {
+            ucMusicControl.Setup(ucSong);
+        }
+        #endregion
         void LoadAccountList()
         {
 
             string query = "SELECT * FROM ACCOUNT";
         }
-        private void BtnShuffle_Click(object sender, EventArgs e)
+        #region FavoriteSong
+        private void LoadEventUcFavoriteSong()
         {
-            if (CheckShuffleSong)
+            foreach (UcFavoriteSong ucFavoriteSong in ucFavoriteSongList.FlowLayoutPanel().Controls)
             {
-                btnShuffle.Image = global::MediaPlayerWindows.Properties.Resources.shuffle_40px_green;
-                CheckShuffleSong = false;
-            }
-            else
-            {
-                btnShuffle.Image = global::MediaPlayerWindows.Properties.Resources.shuffle_40px;
-                CheckShuffleSong = true;
+                ucFavoriteSong.Play += UcFavoriteSong_Play;
+                ucFavoriteSong.RemoveTym += UcFavoriteSong_RemoveTym;
             }
         }
-        #region FavoriteSong
+
+        private void UcFavoriteSong_RemoveTym(UcFavoriteSong ucFavoriteSong)
+        {
+            ucMusicControl.SetTymImage();
+        }
+
         private void BtnFavoriteSong_Click(object sender, EventArgs e)
         {
-            OpenUserControlDockFill(new UcFavoriteSong());
-
+            ucFavoriteSongList.Load();
+            LoadEventUcFavoriteSong();
+            OpenUserControlDockFill(ucFavoriteSongList);
         }
 
-        private void BtnTym_Click(object sender, EventArgs e)
+        private void UcFavoriteSong_Play(UcFavoriteSong ucFavoriteSong)
         {
-            if (CheckFavoriteSong)
-            {
-                btnTym.Image = global::MediaPlayerWindows.Properties.Resources.heart_outline_40px;
-                CheckFavoriteSong = false;
-                
-            }    
-            else
-            {
-                btnTym.Image = global::MediaPlayerWindows.Properties.Resources.heart_40px;
-                CheckFavoriteSong = true;
-                
-                MessageBox.Show("a");
-            }
-
+            ucMusicControl.Setup(ucFavoriteSong);
+            
+        }
+        #endregion
+        #region UcMusicControl
+        private void UcMusicControl_ReLoad()
+        {
+            ucFavoriteSongList.Load();
+            LoadEventUcFavoriteSong();
         }
 
+        private void UcMusicControl_Remove(string a, string b)
+        {
+            foreach (UcFavoriteSong ucFavoriteSong in ucFavoriteSongList.FlowLayoutPanel().Controls)
+            {
+                if (ucFavoriteSong.FavoriteSong.Name == a && ucFavoriteSong.FavoriteSong.Artist == b)
+                    ucFavoriteSongList.FlowLayoutPanel().Controls.Remove(ucFavoriteSong);
+            }
+            LoadEventUcFavoriteSong();
+        }
         #endregion
+        #region OpenUserControl
         private void openChildForm(UserControl childForm)
         {
             panelMainButton.Controls.Clear();
@@ -184,43 +207,8 @@ namespace MediaPlayerWindows
             childForm.Show();
             panelMain.Controls.Add(childForm);
         }
-        //private void BtnPlaying_Click(object sender, EventArgs e)
-        //{
-        //    insert();
-        //}
-        //private void insert()
-        //{
-        //    bytes = File.ReadAllBytes(sv.FileName);
-        //    var bit = new BitArray(bytes);
-        //    DataProvider.Instance.ExecuteNonQuery("exec USE_INSERT &SV", new object[] { bit });
-        //    DataProvider.Instance.ExecuteNonQuery("insert into datamusic values( '" + bytes + "'))");
-        //    FavoriteSong favoriteSong = new FavoriteSong(w.URL);
-        //    FavoriteSongDAO.Instance.AddFavoriteSong(favoriteSong);
-
-        //    FavoriteSongDAO.Instance.PlayfavoriteSongFromDB(favoriteSong);
-        //    string cs = "Data Source=MSI;Initial Catalog=TP219;Integrated Security=True";
-        //    try
-        //    {
-        //        SqlConnection connection;
-        //        connection = new SqlConnection(cs);
-        //        SqlCommand selectcom = new SqlCommand("insert into datamusic values( '" + bytes + "'))", connection);
-        //        SqlDataReader myread;
-
-        //        connection.Open();
-        //        myread = selectcom.ExecuteReader();
-        //        while (myread.Read())
-        //        {
-
-        //        }
-
-        //        connection.Close();
-        //        MessageBox.Show("Data saved successfully");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.ToString());
-        //    }
-        //}
+        #endregion
+        
         #region Browser
         private void BtnBrowse_Click(object sender, EventArgs e)
         {
@@ -228,160 +216,31 @@ namespace MediaPlayerWindows
             dlg.Filter =
                 "Audio Files (*.mp3,*.m4a,*.wav,*.aac)|*.mp3|Video Files(*.mp4,*.wmv,*.3gp,*.mkv)|*.mp4|All Files(*.*)|*.*";
             dlg.FilterIndex = 1;
+            dlg.Multiselect = true;
             DialogResult dlgResult = dlg.ShowDialog();
             if (dlgResult == DialogResult.OK)
             {
-                ucMusicControl.Setup(dlg) ;
+                Path = dlg.FileNames;
+                ucBrowseSongList = new UcBrowseSongList(Path);
+                ucMusicControl.CleanUcSong();
+                LoadEventUcSong();
+                OpenUserControlDockFill(ucBrowseSongList);
             }
-            //setnewsong(dlg);
         }
-        private void setnewsong(OpenFileDialog dlg)
+        private void LoadEventUcSong()
         {
-            dlg.Filter =
-                "Audio Files (*.mp3,*.m4a,*.wav,*.aac)|*.mp3|Video Files(*.mp4,*.wmv,*.3gp,*.mkv)|*.mp4|All Files(*.*)|*.*";
-            dlg.FilterIndex = 1;
-            DialogResult dlgResult = dlg.ShowDialog();
-            if (dlgResult == DialogResult.OK)
+            foreach (UcSong ucSong in ucBrowseSongList.FlowLayoutPanel().Controls)
             {
-                try
-                {
-                   w.URL = dlg.FileName;
-                    MessageBox.Show(dlg.FileName);
-                    btnTym.Enabled = true;
-                    btnPlay.Hide();
-                    btnPause.Show();
-                    TrackbarVolumn.Value = 30;
-                    this.lastSoundValue = TrackbarVolumn.Value;
-                    setbtnMute();
-                    var fileTag = TagLib.File.Create(dlg.FileName);
-                    lbName.Text = fileTag.Tag.Title;
-                    lbArtist.Text = fileTag.Tag.FirstPerformer;
-                    var mStream = new MemoryStream();
-                    var firstPicture = fileTag.Tag.Pictures.FirstOrDefault();
-                    if (firstPicture != null)
-                    {
-                        byte[] pData = firstPicture.Data.Data;
-                        mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
-                        var bm = new Bitmap(mStream, false);
-                        mStream.Dispose();
-                        pictureSong.Image = bm;
-                    }
-                    else
-                    {
-                        pictureSong.Image = global::MediaPlayerWindows.Properties.Resources.pictureBoxNotFound;
-                    }
-                    timer.Start();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error" + ex.Message);
-                }
+                ucSong.PlaySong += UcSong_PlaySong;
+                ucMusicControl.AddUcSong(ucSong);
             }
-            sv.FileName = dlg.FileName;
+        }
+
+        private void UcSong_PlaySong(UcSong ucSong)
+        {
+            ucMusicControl.Setup(ucSong);
         }
         #endregion
-        private void FMusicManager_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            w.controls.stop();
-        }
-
-        //private void BtnRepeat_Click(object sender, EventArgs e)
-        //{
-        //    if (CheckRepeatSong == 0)
-        //    {
-        //        btnRepeat.Image = global::MediaPlayerWindows.Properties.Resources.repeat_one_40px_green;
-        //        CheckRepeatSong = 1;
-        //    }
-        //    else
-        //    {
-        //        if (CheckRepeatSong == 1)
-        //        {
-        //            btnRepeat.Image = global::MediaPlayerWindows.Properties.Resources.repeat_40px_green;
-        //            CheckRepeatSong = 2;
-        //        }    
-        //        else
-        //        {
-        //            btnRepeat.Image = global::MediaPlayerWindows.Properties.Resources.repeat_40px;
-        //            CheckRepeatSong = 0;
-        //        }    
-        //    }
-        //}
-        private void BtnUnMute_Click(object sender, EventArgs e)
-        {
-            btnUnMute.Enabled = false;
-            btnUnMute.Visible = false;
-            btnMute.Enabled = true;
-            btnMute.Visible = true;
-            int temp = TrackbarVolumn.Value;
-            TrackbarVolumn.Value = 0;
-            this.lastSoundValue = temp;
-            w.settings.volume = TrackbarVolumn.Value;
-        }
-
-        private void BtnMute_Click(object sender, EventArgs e)
-        {
-            TrackbarVolumn.Value = 0;
-            btnUnMute.Enabled = true;
-            btnUnMute.Visible = true;
-            btnMute.Enabled = false;
-            btnMute.Visible = false;
-            if (this.lastSoundValue != 0)
-                TrackbarVolumn.Value = this.lastSoundValue;
-            else
-                TrackbarVolumn.Value = 30;
-            w.settings.volume = TrackbarVolumn.Value;
-        }
-        private void BtnPause_Click(object sender, EventArgs e)
-        {           
-            w.controls.pause();
-            btnPause.Hide();
-            btnPlay.Show();
-        }
-
-        private void BtnPlay_Click(object sender, EventArgs e)
-        {
-            w.controls.play();
-            btnPlay.Hide();
-            btnPause.Show();
-        }
-       
-        private void timer_Tick(object sender, EventArgs e)
-        {
-
-            if (w.playState == WMPLib.WMPPlayState.wmppsPlaying)
-            {
-                ProgressBar2.MaximumValue = (int)w.currentMedia.duration;
-                ProgressBar2.Value = (int)w.controls.currentPosition;
-            }
-            lblTime_start.Text = w.controls.currentPositionString;
-            lblTime_end.Text = w.controls.currentItem.durationString;
-        }
-        public void setbtnMute()
-        {
-            if (TrackbarVolumn.Value == 0)
-            {
-                btnMute.Show();
-                btnUnMute.Hide();
-            }
-            else
-            {
-                btnUnMute.Show();
-                btnMute.Hide();
-            }
-        }
-        private void TrackbarVolumn_ValueChanged(object sender, EventArgs e)
-        {
-            w.settings.volume = TrackbarVolumn.Value;
-            if (TrackbarVolumn.Value == 0 && btnUnMute.Enabled == true)
-            {
-                BtnUnMute_Click(sender, e);
-            }
-            else if (TrackbarVolumn.Value > 0 && btnUnMute.Enabled == false)
-            {
-                BtnMute_Click(sender, e);
-            }
-            setbtnMute();
-        }
         public String getCurTime(int time)
         {
             String rs = "";

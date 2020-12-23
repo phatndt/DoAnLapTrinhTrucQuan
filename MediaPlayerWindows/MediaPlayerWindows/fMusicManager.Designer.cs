@@ -33,25 +33,7 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.panelMainButton = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ucMusicControl = new MediaPlayerWindows.ManagerUserControl.UcMusicControl();
-            this.btnTym = new Bunifu.Framework.UI.BunifuImageButton();
-            this.lblTime_end = new System.Windows.Forms.Label();
-            this.lblTime_start = new System.Windows.Forms.Label();
-            this.ProgressBar2 = new Bunifu.Framework.UI.BunifuProgressBar();
-            this.btnUnMute = new Bunifu.Framework.UI.BunifuImageButton();
-            this.pictureSong = new System.Windows.Forms.PictureBox();
-            this.btnShuffle = new Bunifu.Framework.UI.BunifuImageButton();
-            this.lbArtist = new System.Windows.Forms.Label();
-            this.btnRepeat = new Bunifu.Framework.UI.BunifuImageButton();
-            this.lbName = new System.Windows.Forms.Label();
-            this.btnNext = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnPlay = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnPause = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnPrevious = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnMute = new Bunifu.Framework.UI.BunifuImageButton();
-            this.TrackbarVolumn = new Bunifu.Framework.UI.BunifuSlider();
             this.panelButtonExit = new System.Windows.Forms.Panel();
-            this.ucSystemButton = new MediaPlayerWindows.ManagerUserControl.UcSystemButton();
             this.panelControl = new System.Windows.Forms.Panel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
@@ -65,30 +47,18 @@
             this.btnBrowse = new Guna.UI.WinForms.GunaButton();
             this.btnHome = new Guna.UI.WinForms.GunaButton();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.ucNameSong1 = new MediaPlayerWindows.ManagerUserControl.UcNameSong();
-            this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaResize1 = new Guna.UI.WinForms.GunaResize(this.components);
+            this.ucSystemButton = new MediaPlayerWindows.ManagerUserControl.UcSystemButton();
+            this.ucMusicControl = new MediaPlayerWindows.ManagerUserControl.UcMusicControl();
+            this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
+            this.ucPlaylistList1 = new MediaPlayerWindows.UcPlaylistList();
             this.panelMainButton.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnTym)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnUnMute)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureSong)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnShuffle)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRepeat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnNext)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPlay)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPause)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPrevious)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMute)).BeginInit();
             this.panelButtonExit.SuspendLayout();
             this.panelControl.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // timer
-            // 
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // panelMainButton
             // 
@@ -103,234 +73,11 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.ucMusicControl);
-            this.panel1.Controls.Add(this.btnTym);
-            this.panel1.Controls.Add(this.lblTime_end);
-            this.panel1.Controls.Add(this.lblTime_start);
-            this.panel1.Controls.Add(this.ProgressBar2);
-            this.panel1.Controls.Add(this.btnUnMute);
-            this.panel1.Controls.Add(this.pictureSong);
-            this.panel1.Controls.Add(this.btnShuffle);
-            this.panel1.Controls.Add(this.lbArtist);
-            this.panel1.Controls.Add(this.btnRepeat);
-            this.panel1.Controls.Add(this.lbName);
-            this.panel1.Controls.Add(this.btnNext);
-            this.panel1.Controls.Add(this.btnPlay);
-            this.panel1.Controls.Add(this.btnPause);
-            this.panel1.Controls.Add(this.btnPrevious);
-            this.panel1.Controls.Add(this.btnMute);
-            this.panel1.Controls.Add(this.TrackbarVolumn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1200, 80);
             this.panel1.TabIndex = 35;
-            // 
-            // ucMusicControl
-            // 
-            this.ucMusicControl.Location = new System.Drawing.Point(0, 0);
-            this.ucMusicControl.Name = "ucMusicControl";
-            this.ucMusicControl.Size = new System.Drawing.Size(1200, 80);
-            this.ucMusicControl.TabIndex = 41;
-            // 
-            // btnTym
-            // 
-            this.btnTym.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnTym.Image = global::MediaPlayerWindows.Properties.Resources.heart_40px;
-            this.btnTym.ImageActive = null;
-            this.btnTym.Location = new System.Drawing.Point(103, 56);
-            this.btnTym.Name = "btnTym";
-            this.btnTym.Size = new System.Drawing.Size(34, 21);
-            this.btnTym.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnTym.TabIndex = 3;
-            this.btnTym.TabStop = false;
-            this.btnTym.Zoom = 10;
-            // 
-            // lblTime_end
-            // 
-            this.lblTime_end.AutoSize = true;
-            this.lblTime_end.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblTime_end.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblTime_end.Location = new System.Drawing.Point(755, 49);
-            this.lblTime_end.Name = "lblTime_end";
-            this.lblTime_end.Size = new System.Drawing.Size(44, 17);
-            this.lblTime_end.TabIndex = 40;
-            this.lblTime_end.Text = "00:00";
-            // 
-            // lblTime_start
-            // 
-            this.lblTime_start.AutoSize = true;
-            this.lblTime_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblTime_start.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblTime_start.Location = new System.Drawing.Point(247, 49);
-            this.lblTime_start.Name = "lblTime_start";
-            this.lblTime_start.Size = new System.Drawing.Size(44, 17);
-            this.lblTime_start.TabIndex = 39;
-            this.lblTime_start.Text = "00:00";
-            // 
-            // ProgressBar2
-            // 
-            this.ProgressBar2.BackColor = System.Drawing.Color.Silver;
-            this.ProgressBar2.BorderRadius = 5;
-            this.ProgressBar2.Location = new System.Drawing.Point(298, 50);
-            this.ProgressBar2.Margin = new System.Windows.Forms.Padding(4);
-            this.ProgressBar2.MaximumValue = 100;
-            this.ProgressBar2.Name = "ProgressBar2";
-            this.ProgressBar2.ProgressColor = System.Drawing.Color.Teal;
-            this.ProgressBar2.Size = new System.Drawing.Size(450, 15);
-            this.ProgressBar2.TabIndex = 38;
-            this.ProgressBar2.Value = 0;
-            // 
-            // btnUnMute
-            // 
-            this.btnUnMute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnUnMute.Image = global::MediaPlayerWindows.Properties.Resources.voice_40px;
-            this.btnUnMute.ImageActive = null;
-            this.btnUnMute.Location = new System.Drawing.Point(840, 39);
-            this.btnUnMute.Name = "btnUnMute";
-            this.btnUnMute.Size = new System.Drawing.Size(35, 35);
-            this.btnUnMute.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnUnMute.TabIndex = 0;
-            this.btnUnMute.TabStop = false;
-            this.btnUnMute.Zoom = 10;
-            // 
-            // pictureSong
-            // 
-            this.pictureSong.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureSong.Location = new System.Drawing.Point(0, 0);
-            this.pictureSong.Name = "pictureSong";
-            this.pictureSong.Size = new System.Drawing.Size(91, 80);
-            this.pictureSong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureSong.TabIndex = 36;
-            this.pictureSong.TabStop = false;
-            // 
-            // btnShuffle
-            // 
-            this.btnShuffle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnShuffle.Image = global::MediaPlayerWindows.Properties.Resources.shuffle_40px;
-            this.btnShuffle.ImageActive = null;
-            this.btnShuffle.Location = new System.Drawing.Point(399, 13);
-            this.btnShuffle.Name = "btnShuffle";
-            this.btnShuffle.Size = new System.Drawing.Size(25, 25);
-            this.btnShuffle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnShuffle.TabIndex = 0;
-            this.btnShuffle.TabStop = false;
-            this.btnShuffle.Zoom = 10;
-            // 
-            // lbArtist
-            // 
-            this.lbArtist.AutoSize = true;
-            this.lbArtist.Font = new System.Drawing.Font("Roboto", 10F);
-            this.lbArtist.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbArtist.Location = new System.Drawing.Point(100, 35);
-            this.lbArtist.Name = "lbArtist";
-            this.lbArtist.Size = new System.Drawing.Size(81, 18);
-            this.lbArtist.TabIndex = 34;
-            this.lbArtist.Text = "ArtistName";
-            // 
-            // btnRepeat
-            // 
-            this.btnRepeat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnRepeat.Image = global::MediaPlayerWindows.Properties.Resources.repeat_40px;
-            this.btnRepeat.ImageActive = null;
-            this.btnRepeat.InitialImage = null;
-            this.btnRepeat.Location = new System.Drawing.Point(599, 13);
-            this.btnRepeat.Name = "btnRepeat";
-            this.btnRepeat.Size = new System.Drawing.Size(25, 25);
-            this.btnRepeat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnRepeat.TabIndex = 0;
-            this.btnRepeat.TabStop = false;
-            this.btnRepeat.Zoom = 10;
-            // 
-            // lbName
-            // 
-            this.lbName.AutoSize = true;
-            this.lbName.Font = new System.Drawing.Font("Roboto", 12F);
-            this.lbName.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbName.Location = new System.Drawing.Point(99, 10);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(95, 20);
-            this.lbName.TabIndex = 33;
-            this.lbName.Text = "MusicName";
-            // 
-            // btnNext
-            // 
-            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnNext.Image = global::MediaPlayerWindows.Properties.Resources.end_40px;
-            this.btnNext.ImageActive = null;
-            this.btnNext.Location = new System.Drawing.Point(549, 13);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(25, 25);
-            this.btnNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnNext.TabIndex = 0;
-            this.btnNext.TabStop = false;
-            this.btnNext.Zoom = 10;
-            // 
-            // btnPlay
-            // 
-            this.btnPlay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnPlay.Image = global::MediaPlayerWindows.Properties.Resources.play_40px;
-            this.btnPlay.ImageActive = null;
-            this.btnPlay.Location = new System.Drawing.Point(499, 8);
-            this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Size = new System.Drawing.Size(35, 35);
-            this.btnPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnPlay.TabIndex = 0;
-            this.btnPlay.TabStop = false;
-            this.btnPlay.Zoom = 10;
-            // 
-            // btnPause
-            // 
-            this.btnPause.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnPause.Image = global::MediaPlayerWindows.Properties.Resources.pause_40px;
-            this.btnPause.ImageActive = null;
-            this.btnPause.Location = new System.Drawing.Point(499, 8);
-            this.btnPause.Name = "btnPause";
-            this.btnPause.Size = new System.Drawing.Size(35, 35);
-            this.btnPause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnPause.TabIndex = 0;
-            this.btnPause.TabStop = false;
-            this.btnPause.Zoom = 10;
-            // 
-            // btnPrevious
-            // 
-            this.btnPrevious.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnPrevious.Image = global::MediaPlayerWindows.Properties.Resources.skip_to_start_40px;
-            this.btnPrevious.ImageActive = null;
-            this.btnPrevious.Location = new System.Drawing.Point(449, 13);
-            this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(25, 25);
-            this.btnPrevious.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnPrevious.TabIndex = 0;
-            this.btnPrevious.TabStop = false;
-            this.btnPrevious.Zoom = 10;
-            // 
-            // btnMute
-            // 
-            this.btnMute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnMute.Image = global::MediaPlayerWindows.Properties.Resources.mute_40px;
-            this.btnMute.ImageActive = null;
-            this.btnMute.Location = new System.Drawing.Point(840, 39);
-            this.btnMute.Name = "btnMute";
-            this.btnMute.Size = new System.Drawing.Size(35, 35);
-            this.btnMute.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMute.TabIndex = 0;
-            this.btnMute.TabStop = false;
-            this.btnMute.Zoom = 10;
-            // 
-            // TrackbarVolumn
-            // 
-            this.TrackbarVolumn.BackColor = System.Drawing.Color.Transparent;
-            this.TrackbarVolumn.BackgroudColor = System.Drawing.Color.DarkGray;
-            this.TrackbarVolumn.BorderRadius = 0;
-            this.TrackbarVolumn.IndicatorColor = System.Drawing.Color.SeaGreen;
-            this.TrackbarVolumn.Location = new System.Drawing.Point(882, 45);
-            this.TrackbarVolumn.Margin = new System.Windows.Forms.Padding(4);
-            this.TrackbarVolumn.MaximumValue = 100;
-            this.TrackbarVolumn.Name = "TrackbarVolumn";
-            this.TrackbarVolumn.Size = new System.Drawing.Size(105, 30);
-            this.TrackbarVolumn.TabIndex = 19;
-            this.TrackbarVolumn.Value = 0;
-            this.TrackbarVolumn.ValueChanged += new System.EventHandler(this.TrackbarVolumn_ValueChanged);
             // 
             // panelButtonExit
             // 
@@ -341,15 +88,6 @@
             this.panelButtonExit.Name = "panelButtonExit";
             this.panelButtonExit.Size = new System.Drawing.Size(1200, 30);
             this.panelButtonExit.TabIndex = 3;
-            // 
-            // ucSystemButton
-            // 
-            this.ucSystemButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(24)))), ((int)(((byte)(45)))));
-            this.ucSystemButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucSystemButton.Location = new System.Drawing.Point(0, 0);
-            this.ucSystemButton.Name = "ucSystemButton";
-            this.ucSystemButton.Size = new System.Drawing.Size(1200, 30);
-            this.ucSystemButton.TabIndex = 0;
             // 
             // panelControl
             // 
@@ -600,25 +338,12 @@
             // 
             this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(24)))), ((int)(((byte)(45)))));
             this.panelMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panelMain.Controls.Add(this.ucNameSong1);
+            this.panelMain.Controls.Add(this.ucPlaylistList1);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(250, 30);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(950, 640);
             this.panelMain.TabIndex = 5;
-            // 
-            // ucNameSong1
-            // 
-            this.ucNameSong1.BackColor = System.Drawing.Color.White;
-            this.ucNameSong1.Location = new System.Drawing.Point(2, 5);
-            this.ucNameSong1.Margin = new System.Windows.Forms.Padding(2);
-            this.ucNameSong1.Name = "ucNameSong1";
-            this.ucNameSong1.Size = new System.Drawing.Size(543, 41);
-            this.ucNameSong1.TabIndex = 1;
-            // 
-            // gunaDragControl1
-            // 
-            this.gunaDragControl1.TargetControl = this.ucSystemButton;
             // 
             // gunaElipse1
             // 
@@ -627,6 +352,35 @@
             // gunaResize1
             // 
             this.gunaResize1.TargetForm = this;
+            // 
+            // ucSystemButton
+            // 
+            this.ucSystemButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(24)))), ((int)(((byte)(45)))));
+            this.ucSystemButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucSystemButton.Location = new System.Drawing.Point(0, 0);
+            this.ucSystemButton.Name = "ucSystemButton";
+            this.ucSystemButton.Size = new System.Drawing.Size(1200, 30);
+            this.ucSystemButton.TabIndex = 0;
+            // 
+            // ucMusicControl
+            // 
+            this.ucMusicControl.Location = new System.Drawing.Point(0, 0);
+            this.ucMusicControl.Name = "ucMusicControl";
+            this.ucMusicControl.Size = new System.Drawing.Size(1200, 80);
+            this.ucMusicControl.TabIndex = 41;
+            // 
+            // gunaDragControl1
+            // 
+            this.gunaDragControl1.TargetControl = this.ucSystemButton;
+            // 
+            // ucPlaylistList1
+            // 
+            this.ucPlaylistList1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
+            this.ucPlaylistList1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ucPlaylistList1.Location = new System.Drawing.Point(0, 520);
+            this.ucPlaylistList1.Name = "ucPlaylistList1";
+            this.ucPlaylistList1.Size = new System.Drawing.Size(950, 120);
+            this.ucPlaylistList1.TabIndex = 0;
             // 
             // fMusicManager
             // 
@@ -648,17 +402,6 @@
             this.Text = "Phần mềm nghe nhạc";
             this.panelMainButton.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnTym)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnUnMute)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureSong)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnShuffle)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRepeat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnNext)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPlay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPause)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPrevious)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMute)).EndInit();
             this.panelButtonExit.ResumeLayout(false);
             this.panelControl.ResumeLayout(false);
             this.panelControl.PerformLayout();
@@ -675,22 +418,6 @@
         private System.Windows.Forms.Panel panelControl;
         private Guna.UI.WinForms.GunaDragControl gunaDragControl1;
         private System.Windows.Forms.Panel panel1;
-        private Bunifu.Framework.UI.BunifuImageButton btnTym;
-        private System.Windows.Forms.Label lblTime_end;
-        private System.Windows.Forms.Label lblTime_start;
-        private Bunifu.Framework.UI.BunifuProgressBar ProgressBar2;
-        private Bunifu.Framework.UI.BunifuImageButton btnUnMute;
-        private System.Windows.Forms.PictureBox pictureSong;
-        private Bunifu.Framework.UI.BunifuImageButton btnShuffle;
-        private System.Windows.Forms.Label lbArtist;
-        private Bunifu.Framework.UI.BunifuImageButton btnRepeat;
-        private System.Windows.Forms.Label lbName;
-        private Bunifu.Framework.UI.BunifuImageButton btnNext;
-        private Bunifu.Framework.UI.BunifuImageButton btnPlay;
-        private Bunifu.Framework.UI.BunifuImageButton btnPause;
-        private Bunifu.Framework.UI.BunifuImageButton btnPrevious;
-        private Bunifu.Framework.UI.BunifuImageButton btnMute;
-        private Bunifu.Framework.UI.BunifuSlider TrackbarVolumn;
         private Guna.UI.WinForms.GunaButton btnHome;
         private ManagerUserControl.UcSystemButton ucSystemButton;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
@@ -706,6 +433,6 @@
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
         public Guna.UI.WinForms.GunaResize gunaResize1;
         private ManagerUserControl.UcMusicControl ucMusicControl;
-        private ManagerUserControl.UcNameSong ucNameSong1;
+        private UcPlaylistList ucPlaylistList1;
     }
 }

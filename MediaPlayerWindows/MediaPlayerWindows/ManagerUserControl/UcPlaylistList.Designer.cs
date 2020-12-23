@@ -1,6 +1,6 @@
 ﻿namespace MediaPlayerWindows
 {
-    partial class UcPlaylist
+    partial class UcPlaylistList
     {
         /// <summary> 
         /// Required designer variable.

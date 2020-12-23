@@ -70,9 +70,11 @@
     <Compile Include="ConvertClass.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\FavoriteSongDAO.cs" />
+    <Compile Include="DAO\RecentlySongDAO.cs" />
     <Compile Include="DAO\SongDAO.cs" />
     <Compile Include="DTO\FavoriteSong.cs" />
     <Compile Include="DTO\Playlist.cs" />
+    <Compile Include="DTO\RecentlySong.cs" />
     <Compile Include="DTO\Song.cs" />
     <Compile Include="fLogin.cs">
       <SubType>Form</SubType>
@@ -104,11 +106,23 @@
     <Compile Include="fMusicPlaying_Search.Designer.cs">
       <DependentUpon>fMusicPlaying_Search.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerUserControl\UcBrowseSongList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManagerUserControl\UcBrowseSongList.Designer.cs">
+      <DependentUpon>UcBrowseSongList.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerUserControl\UcFavoriteSong.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ManagerUserControl\UcFavoriteSong.Designer.cs">
       <DependentUpon>UcFavoriteSong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerUserControl\UcFavoriteSongList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManagerUserControl\UcFavoriteSongList.Designer.cs">
+      <DependentUpon>UcFavoriteSongList.cs</DependentUpon>
     </Compile>
     <Compile Include="ManagerUserControl\UcMusicControl.cs">
       <SubType>UserControl</SubType>
@@ -122,11 +136,11 @@
     <Compile Include="ManagerUserControl\UcPlayList_Name.Designer.cs">
       <DependentUpon>UcPlayList_Name.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerUserControl\UcNameSong.cs">
+    <Compile Include="ManagerUserControl\UcSong.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ManagerUserControl\UcNameSong.Designer.cs">
-      <DependentUpon>UcNameSong.cs</DependentUpon>
+    <Compile Include="ManagerUserControl\UcSong.Designer.cs">
+      <DependentUpon>UcSong.cs</DependentUpon>
     </Compile>
     <Compile Include="ManagerUserControl\UcSongList.cs">
       <SubType>UserControl</SubType>
@@ -148,11 +162,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ManagerUserControl\UcPlaylist.cs">
+    <Compile Include="ManagerUserControl\UcPlaylistList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ManagerUserControl\UcPlaylist.Designer.cs">
-      <DependentUpon>UcPlaylist.cs</DependentUpon>
+    <Compile Include="ManagerUserControl\UcPlaylistList.Designer.cs">
+      <DependentUpon>UcPlaylistList.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
     <EmbeddedResource Include="fLogin.resx">
@@ -170,8 +184,14 @@
     <EmbeddedResource Include="fMusicPlaying_Search.resx">
       <DependentUpon>fMusicPlaying_Search.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManagerUserControl\UcBrowseSongList.resx">
+      <DependentUpon>UcBrowseSongList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManagerUserControl\UcFavoriteSong.resx">
       <DependentUpon>UcFavoriteSong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerUserControl\UcFavoriteSongList.resx">
+      <DependentUpon>UcFavoriteSongList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerUserControl\UcMusicControl.resx">
       <DependentUpon>UcMusicControl.cs</DependentUpon>
@@ -179,8 +199,8 @@
     <EmbeddedResource Include="ManagerUserControl\UcPlayList_Name.resx">
       <DependentUpon>UcPlayList_Name.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerUserControl\UcNameSong.resx">
-      <DependentUpon>UcNameSong.cs</DependentUpon>
+    <EmbeddedResource Include="ManagerUserControl\UcSong.resx">
+      <DependentUpon>UcSong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerUserControl\UcSongList.resx">
       <DependentUpon>UcSongList.cs</DependentUpon>
@@ -193,8 +213,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerUserControl\UcPlaylist.resx">
-      <DependentUpon>UcPlaylist.cs</DependentUpon>
+    <EmbeddedResource Include="ManagerUserControl\UcPlaylistList.resx">
+      <DependentUpon>UcPlaylistList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

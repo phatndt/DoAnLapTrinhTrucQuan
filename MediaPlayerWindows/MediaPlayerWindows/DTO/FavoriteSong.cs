@@ -10,19 +10,14 @@ using System.Threading.Tasks;
 
 namespace MediaPlayerWindows.DTO
 {
-    class FavoriteSong
-    {
+     class FavoriteSong : Song
+     {
         public FavoriteSong()
         {
 
         }
-        public FavoriteSong(string a)
+        public FavoriteSong(string b, string c, byte[] d, byte[] e, string f, int status)
         {
-            this.Path = a;
-        }    
-        public FavoriteSong(string a, string b, string c, byte[] d, byte[] e, string f, int status)
-        {
-            this.path = a;
             this.name = b;
             this.artist = c;
             this.image = d;
@@ -30,37 +25,18 @@ namespace MediaPlayerWindows.DTO
             this.length = f;
             this.status = status;
         }
-
-        private string path;
-        private string name;
-        private string artist;
-        private byte[] image;
-        private string length;
-        private byte[] source;
         private int status;
-        public string Path { get => path; set => path = value; }
-        public string Name { get => name; set => name = value; }
-        public string Artist { get => artist; set => artist = value; }
-        public byte[] IMage { get => image; set => image = value; }
-        public string Length { get => length; set => length = value; }
-        public byte[] Source { get => source; set => source = value; }
         public int Status { get => status; set => status = value; }
 
-        public Image byteArrayToImage(byte[] byteArrayIn)
-        {
-            MemoryStream ms = new MemoryStream(byteArrayIn);
-            var returnImage = Image.FromStream(ms);
-            return returnImage;
-        }
         public FavoriteSong(DataRow Row)
         {
-            this.Path = Row["PATHSONG"].ToString();
             this.name = Row["NAMESONG"].ToString();
             this.artist = Row["ARTISTSONG"].ToString();
-            this.source = Convert.FromBase64String(Row["IMAGESONG"].ToString());
-            //this.source = Encoding.ASCII.GetBytes(Row["IMAGESONG"]);
+            this.image = Convert.FromBase64String(Row["IMAGESONG"].ToString());
+            this.source = Convert.FromBase64String(Row["DATASONG"].ToString());
             this.length = Row["LENGTHSONG"].ToString();
+            this.status = (int)Row["STATUSSONG"];
         }
 
-    }
+     }
 }
