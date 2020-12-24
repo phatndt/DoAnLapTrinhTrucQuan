@@ -83,6 +83,16 @@ namespace MediaPlayerWindows.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap download_40px {
+            get {
+                object obj = ResourceManager.GetObject("download_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap end_40px {
             get {
                 object obj = ResourceManager.GetObject("end_40px", resourceCulture);
@@ -96,6 +106,16 @@ namespace MediaPlayerWindows.Properties {
         internal static System.Drawing.Bitmap end_40px_greej {
             get {
                 object obj = ResourceManager.GetObject("end_40px_greej", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap explicit_30px {
+            get {
+                object obj = ResourceManager.GetObject("explicit_30px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -16,5 +16,12 @@ namespace MediaPlayerWindows.ManagerUserControl
         {
             InitializeComponent();
         }
+        public UcOnlineSong(string a, string b, string c, string d)
+        {
+            InitializeComponent();
+            this.lbName.Text = a;
+            this.lbArtist.Text = b;
+            this.gunaPictureBox1.ImageLocation = c;
+        }
     }
 }

@@ -47,6 +47,9 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\Library\System.Data.SQLite.dll</HintPath>
+    </Reference>
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -71,7 +74,7 @@
     <Reference Include="WindowsBase" />
     <Reference Include="xNet, Version=3.3.3.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\xNet.dll</HintPath>
+      <HintPath>..\..\Library\xNet.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -236,6 +239,7 @@
     <EmbeddedResource Include="ManagerUserControl\UcPlaylistList.resx">
       <DependentUpon>UcPlaylistList.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -435,6 +439,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\heart_white_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\explicit_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download_40px1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
