@@ -32,7 +32,6 @@ namespace MediaPlayerWindows.DAO
         }
         public void AddRecentlyToDB(RecentlySong recentlySong)
         {
-            string query = "Data Source=MSI;Initial Catalog=MEDIA_PLAYER_WINDOWS;Integrated Security=True";
 
             //if (DataProvider.Instance.ExecuteNonQueryCount("SELECT COUNT(*) FROM RECENTLYSONGS") > 3 )
             //{
@@ -50,7 +49,7 @@ namespace MediaPlayerWindows.DAO
 
             if (DataProvider.Instance.ExecuteNonQuery(queryCheckExist))
             {
-                using (SqlConnection connection = new SqlConnection(query))
+                using (SqlConnection connection = new SqlConnection(connectionSTR))
                 {
                     connection.Open();
                     string s = "DELETE FROM RECENTLYSONGS WHERE NAMESONG = N'" + recentlySong.Name + "'";
@@ -59,7 +58,7 @@ namespace MediaPlayerWindows.DAO
                     connection.Close();
                 }
             }
-            using (SqlConnection connection = new SqlConnection(query))
+            using (SqlConnection connection = new SqlConnection(connectionSTR))
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand("INSERT INTO RECENTLYSONGS VALUES (@name,@artist,@image,@data,@length)", connection);

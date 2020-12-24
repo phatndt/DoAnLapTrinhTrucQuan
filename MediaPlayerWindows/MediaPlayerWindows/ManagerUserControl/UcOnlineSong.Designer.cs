@@ -1,6 +1,6 @@
 ﻿namespace MediaPlayerWindows.ManagerUserControl
 {
-    partial class UcSong
+    partial class UcOnlineSong
     {
         /// <summary> 
         /// Required designer variable.
@@ -53,7 +53,7 @@
             this.PlayList_NameSong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PlayList_NameSong.Name = "PlayList_NameSong";
             this.PlayList_NameSong.Size = new System.Drawing.Size(1260, 62);
-            this.PlayList_NameSong.TabIndex = 18;
+            this.PlayList_NameSong.TabIndex = 19;
             // 
             // gunaPictureBox1
             // 
@@ -61,7 +61,7 @@
             this.gunaPictureBox1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(85)))), ((int)(((byte)(135)))));
             this.gunaPictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.gunaPictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.gunaPictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gunaPictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.gunaPictureBox1.Name = "gunaPictureBox1";
             this.gunaPictureBox1.Size = new System.Drawing.Size(67, 62);
             this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -82,7 +82,7 @@
             this.btnSelect.Image = global::MediaPlayerWindows.Properties.Resources.pause_40px;
             this.btnSelect.ImageSize = new System.Drawing.Size(16, 16);
             this.btnSelect.Location = new System.Drawing.Point(105, 12);
-            this.btnSelect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSelect.Margin = new System.Windows.Forms.Padding(4);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnSelect.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -130,14 +130,12 @@
             this.gunaElipse1.Radius = 2;
             this.gunaElipse1.TargetControl = this;
             // 
-            // UcSong
+            // UcOnlineSong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.PlayList_NameSong);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "UcSong";
+            this.Name = "UcOnlineSong";
             this.Size = new System.Drawing.Size(1260, 62);
             this.PlayList_NameSong.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
@@ -148,11 +146,11 @@
         #endregion
 
         private System.Windows.Forms.Panel PlayList_NameSong;
+        private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
         private Guna.UI.WinForms.GunaCircleButton btnSelect;
         private Bunifu.Framework.UI.BunifuCustomLabel lbTime;
         private Bunifu.Framework.UI.BunifuCustomLabel lbArtist;
         private Bunifu.Framework.UI.BunifuCustomLabel lbName;
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
-        private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
     }
 }

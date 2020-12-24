@@ -35,7 +35,6 @@ namespace MediaPlayerWindows.ManagerUserControl
         }
         private void BtnSelect_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("aaaa");
             PlaySong(this);
         }
         public UcSong(string b, string c, byte[] d, byte[] e, string f)
@@ -49,11 +48,19 @@ namespace MediaPlayerWindows.ManagerUserControl
             //MessageBox.Show(b);
             song = new Song(b, c, d, e, f);
             this.gunaPictureBox1.Image = ConvertClass.Instance.ConvertByteToBitmap(d);
-            this.lbName.Text = b.ToString();
-            this.lbArtist.Text = c.ToString();
+            this.lbName.Text = b;
+            this.lbArtist.Text = c;
             this.lbTime.Text = f.ToString();
             btnSelect.Click += BtnSelect_Click;
         }
+        public UcSong(string a, string b, string c, string d)
+        {
+            InitializeComponent();
+            this.lbName.Text = a;
+            this.lbArtist.Text = b;
+            this.gunaPictureBox1.ImageLocation = c;
+        }
+
         public void Set(string a, string b, string c, Image d)
         {
             //this.path = a.ToString();

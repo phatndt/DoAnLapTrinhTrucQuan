@@ -18,8 +18,8 @@ namespace MediaPlayerWindows.DAO
             private set { DataProvider.instance = value; }
         }
 
-        private string connectionSTR = "Data Source=MSI;Initial Catalog=MEDIA_PLAYER_WINDOWS;Integrated Security=True";
-        private string cs = "Data Source=MSI;Initial Catalog=TP219;Integrated Security=True";
+        //private string connectionSTR = "Data Source=MSI;Initial Catalog=MEDIA_PLAYER_WINDOWS;Integrated Security=True";
+        protected string connectionSTR = @"Data Source=DESKTOP-2D2JACT\SQLEXPRESS;Initial Catalog=MEDIA_PLAYER_WINDOWS;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {

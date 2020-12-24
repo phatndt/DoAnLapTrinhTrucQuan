@@ -26,6 +26,7 @@ using System.Collections;
 using Bunifu.Framework;
 using MediaPlayerWindows.DTO;
 using Guna.UI.WinForms;
+using xNet;
 
 namespace MediaPlayerWindows
 {
@@ -53,11 +54,29 @@ namespace MediaPlayerWindows
             btnRecently.Click += BtnRecently_Click;
             btnFavoriteSong.Click += BtnFavoriteSong_Click;
             btnPlaylist.Click += BtnPlaylist_Click;
-
+            btnTopVN.Click += BtnTopVN_Click;
+            btnTopEA.Click += BtnTopEA_Click;
+            btnTopKO.Click += BtnTopKO_Click;
 
             ucMusicControl.ReLoad += UcMusicControl_ReLoad;
             ucMusicControl.Remove += UcMusicControl_Remove;
 
+
+        }
+
+        private void BtnTopKO_Click(object sender, EventArgs e)
+        {
+            OpenUserControlDockFill(new UcSongList("LoadTopKOSong"));
+        }
+
+        private void BtnTopEA_Click(object sender, EventArgs e)
+        {
+            OpenUserControlDockFill(new UcSongList("LoadTopEASong"));
+        }
+
+        private void BtnTopVN_Click(object sender, EventArgs e)
+        {
+            OpenUserControlDockFill(new UcSongList("LoadTopVNSong"));
         }
 
         #region FormEvent
@@ -78,8 +97,8 @@ namespace MediaPlayerWindows
         }
         public void LoadOneMusic()
         {
-            //string s = @"C:\Users\PC\Downloads\BongHoaDepNhat-QuanAP-6607955.mp3";
-            string s = @"C:\Users\THANHPHAT219\Downloads\MusicTest\Tình Sầu Thiên Thu Muôn Lối ( Htrol Remix ) Doãn Hiếu Nhạc Tiktok Gây Nghiện 2020.mp3";
+            string s = @"C:\Users\PC\Downloads\BongHoaDepNhat-QuanAP-6607955.mp3";
+            //string s = @"C:\Users\THANHPHAT219\Downloads\MusicTest\Tình Sầu Thiên Thu Muôn Lối ( Htrol Remix ) Doãn Hiếu Nhạc Tiktok Gây Nghiện 2020.mp3";
             TagLib.File fileTag = TagLib.File.Create(s, "audio/mp3", TagLib.ReadStyle.None);
             string Name = fileTag.Tag.Title;
             string Artist = fileTag.Tag.FirstPerformer;

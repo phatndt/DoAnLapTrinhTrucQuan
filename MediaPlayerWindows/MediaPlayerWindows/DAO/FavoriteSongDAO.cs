@@ -46,8 +46,7 @@ namespace MediaPlayerWindows.DAO
         //}
         public void AddFavoriteSong(FavoriteSong favoriteSong)
         {
-            string query = "Data Source=MSI;Initial Catalog=MEDIA_PLAYER_WINDOWS;Integrated Security=True";
-            using (SqlConnection connection = new SqlConnection(query))
+            using (SqlConnection connection = new SqlConnection(connectionSTR))
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand("INSERT INTO FAVORITESONGS VALUES (@name,@artist,@image,@data,@length,@status)", connection);
@@ -65,7 +64,7 @@ namespace MediaPlayerWindows.DAO
         public bool  RemoveFavoriteSong(FavoriteSong favoriteSong)
         {
             string query = "Data Source=MSI;Initial Catalog=MEDIA_PLAYER_WINDOWS;Integrated Security=True";
-            using (SqlConnection connection = new SqlConnection(query))
+            using (SqlConnection connection = new SqlConnection(connectionSTR))
             {
                 connection.Open();
                 string s = "DELETE FROM FAVORITESONGS WHERE NAMESONG = N'" + favoriteSong.Name +"'";

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace MediaPlayerWindows.DAO
 {
-    class SongDAO
+    class SongDAO : DataProvider
     {
         private static SongDAO instance;
 
@@ -73,9 +73,8 @@ namespace MediaPlayerWindows.DAO
         }
         public void AddSongToDB(Song song)
         {
-            //favoriteSong.Source = File.ReadAllBytes(favoriteSong.Path);
-            string query = "Data Source=MSI;Initial Catalog=MEDIA_PLAYER_WINDOWS;Integrated Security=True";
-            using (SqlConnection connection = new SqlConnection(query))
+            //favoriteSong.Source = File.ReadAllBytes(favoriteSong.Path)
+            using (SqlConnection connection = new SqlConnection(connectionSTR))
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand("INSERT INTO DATAMUSIC VALUES (@file)", connection);

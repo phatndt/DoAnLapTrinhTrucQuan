@@ -15,6 +15,7 @@ namespace MediaPlayerWindows.DTO
         protected byte[] image;
         protected string length;
         protected byte[] source;
+
         public string Name { get => name; set => name = value; }
         public string Artist { get => artist; set => artist = value; }
         public byte[] IMage { get => image; set => image = value; }
@@ -25,6 +26,7 @@ namespace MediaPlayerWindows.DTO
         {
 
         }
+        
         public Song(string b, string c, byte[] d, byte[] e, string f)
         {
             this.name = b;

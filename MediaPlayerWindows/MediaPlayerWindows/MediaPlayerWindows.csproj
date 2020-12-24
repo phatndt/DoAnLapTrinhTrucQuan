@@ -37,7 +37,7 @@
       <HintPath>C:\Windows\SysWOW64\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI">
-      <HintPath>..\..\..\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
+      <HintPath>..\..\..\..\DoAnMedia\DoAnLapTrinhTrucQuan\Library\Guna.UI.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="NAudio">
@@ -49,6 +49,11 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.RegularExpressions.4.3.1\lib\net463\System.Text.RegularExpressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -64,15 +69,21 @@
       <HintPath>..\..\Library\TagLibSharp.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
+    <Reference Include="xNet, Version=3.3.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\xNet.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Authenticater\Authenticater.cs" />
     <Compile Include="ConvertClass.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\FavoriteSongDAO.cs" />
+    <Compile Include="DAO\OnlineSongDAO.cs" />
     <Compile Include="DAO\RecentlySongDAO.cs" />
     <Compile Include="DAO\SongDAO.cs" />
     <Compile Include="DTO\FavoriteSong.cs" />
+    <Compile Include="DTO\OnlineSong.cs" />
     <Compile Include="DTO\Playlist.cs" />
     <Compile Include="DTO\RecentlySong.cs" />
     <Compile Include="DTO\Song.cs" />
@@ -129,6 +140,12 @@
     </Compile>
     <Compile Include="ManagerUserControl\UcMusicControl.Designer.cs">
       <DependentUpon>UcMusicControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerUserControl\UcOnlineSong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManagerUserControl\UcOnlineSong.Designer.cs">
+      <DependentUpon>UcOnlineSong.cs</DependentUpon>
     </Compile>
     <Compile Include="ManagerUserControl\UcPlayList_Name.cs">
       <SubType>UserControl</SubType>
@@ -195,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerUserControl\UcMusicControl.resx">
       <DependentUpon>UcMusicControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerUserControl\UcOnlineSong.resx">
+      <DependentUpon>UcOnlineSong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerUserControl\UcPlayList_Name.resx">
       <DependentUpon>UcPlayList_Name.cs</DependentUpon>

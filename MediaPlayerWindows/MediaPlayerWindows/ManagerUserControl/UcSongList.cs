@@ -12,6 +12,9 @@ using WMPLib;
 using System.IO;
 using MediaPlayerWindows.DTO;
 using MediaPlayerWindows.DAO;
+using xNet;
+using System.Text.RegularExpressions;
+using System.Net;
 
 namespace MediaPlayerWindows.ManagerUserControl
 {
@@ -25,6 +28,12 @@ namespace MediaPlayerWindows.ManagerUserControl
             InitializeComponent();
             if (s == "LoadRecentlySongs")
                 LoadRecentlySongs();
+            if (s == "LoadTopVNSong")
+                LoadTopVNSongs();
+            if (s == "LoadTopEASong")
+                LoadTopEASongs();
+            if (s == "LoadTopKOSong")
+                LoadTopKOSongs();
         }
         public UcSongList(string[] pathSongs)
         {
@@ -90,6 +99,36 @@ namespace MediaPlayerWindows.ManagerUserControl
         public FlowLayoutPanel GetFlowLayoutPanel()
         {
             return flowLayoutPanel;
+        }
+        public void LoadTopVNSongs()
+        {
+            flowLayoutPanel.Controls.Clear();
+            List<OnlineSong> TopVNSongs = OnlineSongDAO.Instance.LoadOnlineSongVN();
+            foreach (OnlineSong songVN in TopVNSongs)
+            {
+                UcSong ucSong = new UcSong(songVN.Name,songVN.Artist,songVN.ImageOnline,songVN.DownloadURL);
+                flowLayoutPanel.Controls.Add(ucSong);
+            }
+        }
+        public void LoadTopEASongs()
+        {
+            flowLayoutPanel.Controls.Clear();
+            List<OnlineSong> TopVNSongs = OnlineSongDAO.Instance.LoadOnlineSongEA();
+            foreach (OnlineSong songVN in TopVNSongs)
+            {
+                UcSong ucSong = new UcSong(songVN.Name, songVN.Artist, songVN.ImageOnline, songVN.DownloadURL);
+                flowLayoutPanel.Controls.Add(ucSong);
+            }
+        }
+        public void LoadTopKOSongs()
+        {
+            flowLayoutPanel.Controls.Clear();
+            List<OnlineSong> TopVNSongs = OnlineSongDAO.Instance.LoadOnlineSongKO();
+            foreach (OnlineSong songVN in TopVNSongs)
+            {
+                UcSong ucSong = new UcSong(songVN.Name, songVN.Artist, songVN.ImageOnline, songVN.DownloadURL);
+                flowLayoutPanel.Controls.Add(ucSong);
+            }
         }
     }
 }
