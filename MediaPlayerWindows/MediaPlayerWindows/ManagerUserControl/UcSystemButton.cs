@@ -16,7 +16,6 @@ namespace MediaPlayerWindows.ManagerUserControl
         {
             InitializeComponent();
             btnExit.Click += BtnExit_Click;
-            btnMaximize.Click += BtnMaximize_Click;
             btnMiximize.Click += BtnMiximize_Click;
         }
 
@@ -25,13 +24,13 @@ namespace MediaPlayerWindows.ManagerUserControl
             this.FindForm().WindowState = FormWindowState.Minimized;
         }
 
-        private void BtnMaximize_Click(object sender, EventArgs e)
-        {
-            if (this.FindForm().WindowState == FormWindowState.Maximized)
-                this.FindForm().WindowState = FormWindowState.Normal;
-            else
-                this.FindForm().WindowState = FormWindowState.Maximized;
-        }
+        //private void BtnMaximize_Click(object sender, EventArgs e)
+        //{
+        //    if (this.FindForm().WindowState == FormWindowState.Maximized)
+        //        this.FindForm().WindowState = FormWindowState.Normal;
+        //    else
+        //        this.FindForm().WindowState = FormWindowState.Maximized;
+        //}
         
         private void BtnExit_Click(object sender, EventArgs e)
         {

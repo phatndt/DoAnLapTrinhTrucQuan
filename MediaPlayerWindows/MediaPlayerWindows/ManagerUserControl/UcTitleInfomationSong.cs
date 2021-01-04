@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MediaPlayerWindows
+namespace MediaPlayerWindows.ManagerUserControl
 {
-    public partial class fMusicPlaying : UserControl
+    public partial class UcTitleInfomationSong : UserControl
     {
-        public fMusicPlaying()
+        public UcTitleInfomationSong()
         {
             InitializeComponent();
         }
-
     }
 }

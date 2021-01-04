@@ -35,6 +35,8 @@
             this.lbName = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnTym = new Guna.UI.WinForms.GunaCircleButton();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSelect
@@ -50,7 +52,7 @@
             this.btnSelect.ForeColor = System.Drawing.Color.White;
             this.btnSelect.Image = global::MediaPlayerWindows.Properties.Resources.pause_40px;
             this.btnSelect.ImageSize = new System.Drawing.Size(16, 16);
-            this.btnSelect.Location = new System.Drawing.Point(16, 10);
+            this.btnSelect.Location = new System.Drawing.Point(100, 15);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnSelect.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -65,7 +67,7 @@
             this.lbTime.AutoEllipsis = true;
             this.lbTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.lbTime.ForeColor = System.Drawing.Color.White;
-            this.lbTime.Location = new System.Drawing.Point(538, 15);
+            this.lbTime.Location = new System.Drawing.Point(790, 20);
             this.lbTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTime.Name = "lbTime";
             this.lbTime.Size = new System.Drawing.Size(62, 20);
@@ -77,10 +79,10 @@
             // 
             this.lbArtist.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lbArtist.ForeColor = System.Drawing.Color.White;
-            this.lbArtist.Location = new System.Drawing.Point(392, 18);
+            this.lbArtist.Location = new System.Drawing.Point(600, 20);
             this.lbArtist.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbArtist.Name = "lbArtist";
-            this.lbArtist.Size = new System.Drawing.Size(74, 20);
+            this.lbArtist.Size = new System.Drawing.Size(232, 20);
             this.lbArtist.TabIndex = 62;
             this.lbArtist.Text = "TÊN CA SĨ";
             this.lbArtist.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -89,10 +91,10 @@
             // 
             this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbName.ForeColor = System.Drawing.Color.White;
-            this.lbName.Location = new System.Drawing.Point(62, 15);
+            this.lbName.Location = new System.Drawing.Point(185, 20);
             this.lbName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(291, 25);
+            this.lbName.Size = new System.Drawing.Size(326, 25);
             this.lbName.TabIndex = 61;
             this.lbName.Text = "1.TÊN NHẠC";
             this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -109,7 +111,7 @@
             this.btnTym.ForeColor = System.Drawing.Color.White;
             this.btnTym.Image = global::MediaPlayerWindows.Properties.Resources.heart_outline_40px;
             this.btnTym.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnTym.Location = new System.Drawing.Point(615, 15);
+            this.btnTym.Location = new System.Drawing.Point(880, 20);
             this.btnTym.Name = "btnTym";
             this.btnTym.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(24)))), ((int)(((byte)(45)))));
             this.btnTym.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(24)))), ((int)(((byte)(45)))));
@@ -123,18 +125,31 @@
             // 
             this.gunaElipse1.TargetControl = this;
             // 
+            // gunaPictureBox1
+            // 
+            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gunaPictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.gunaPictureBox1.Name = "gunaPictureBox1";
+            this.gunaPictureBox1.Size = new System.Drawing.Size(66, 60);
+            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaPictureBox1.TabIndex = 66;
+            this.gunaPictureBox1.TabStop = false;
+            // 
             // UcFavoriteSong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(24)))), ((int)(((byte)(45)))));
+            this.Controls.Add(this.gunaPictureBox1);
             this.Controls.Add(this.btnTym);
             this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.lbTime);
             this.Controls.Add(this.lbArtist);
             this.Controls.Add(this.lbName);
             this.Name = "UcFavoriteSong";
-            this.Size = new System.Drawing.Size(650, 50);
+            this.Size = new System.Drawing.Size(924, 60);
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -147,5 +162,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel lbName;
         private Guna.UI.WinForms.GunaCircleButton btnTym;
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
+        private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
     }
 }

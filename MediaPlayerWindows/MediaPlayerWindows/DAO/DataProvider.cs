@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SQLite;
 
 namespace MediaPlayerWindows.DAO
 {
@@ -18,18 +19,21 @@ namespace MediaPlayerWindows.DAO
             private set { DataProvider.instance = value; }
         }
 
-        protected string connectionSTR = "Data Source=MSI;Initial Catalog=MEDIA_PLAYER_WINDOWS;Integrated Security=True";
+        //protected string connectionSTR = "Data Source=MSI;Initial Catalog=MEDIA_PLAYER_WINDOWS;Integrated Security=True";
         //protected string connectionSTR = @"Data Source=DESKTOP-2D2JACT\SQLEXPRESS;Initial Catalog=MEDIA_PLAYER_WINDOWS;Integrated Security=True";
+        //protected string connectionSTR = "Data Source=:MEDIA_PLAYER_WINDOWS.db";
+        protected string connectionSTR = "Data Source=MEDIA_PLAYER_WINDOWS.db;Version=3;";
+
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();
 
-            using (SqlConnection connection = new SqlConnection(connectionSTR))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionSTR))
             {
                 connection.Open();
 
-                SqlCommand command = new SqlCommand(query, connection);
+                SQLiteCommand command = new SQLiteCommand(query, connection);
 
                 if (parameter != null)
                 {
@@ -45,7 +49,7 @@ namespace MediaPlayerWindows.DAO
                     }
                 }
 
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
 
                 adapter.Fill(data);
 
@@ -91,11 +95,11 @@ namespace MediaPlayerWindows.DAO
         {
             int data = 0;
 
-            using (SqlConnection connection = new SqlConnection(connectionSTR))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionSTR))
             {
                 connection.Open();
 
-                SqlCommand command = new SqlCommand(query, connection);
+                SQLiteCommand command = new SQLiteCommand(query, connection);
 
                 if (parameter != null)
                 {
@@ -122,31 +126,37 @@ namespace MediaPlayerWindows.DAO
         {
             bool data;
             DataTable dataTable = new DataTable();
-            using (SqlConnection connection = new SqlConnection(connectionSTR))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionSTR))
             {
                 connection.Open();
-
-                SqlCommand command = new SqlCommand(query, connection);
-
-                if (parameter != null)
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {
-                    string[] listPara = query.Split(' ');
-                    int i = 0;
-                    foreach (string item in listPara)
+                    command.CommandType = CommandType.Text;
+                    if (parameter != null)
                     {
-                        if (item.Contains('@'))
+                        string[] listPara = query.Split(' ');
+                        int i = 0;
+                        foreach (string item in listPara)
                         {
-                            command.Parameters.AddWithValue(item, parameter[i]);
-                            i++;
+                            if (item.Contains('@'))
+                            {
+                                command.Parameters.AddWithValue(item, parameter[i]);
+                                i++;
+                            }
                         }
                     }
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        data = reader.Read();
+                    }
+
                 }
+                connection.Close();
+
                 //SqlDataAdapter adapter = new SqlDataAdapter(command);
 
                 //adapter.Fill(dataTable);
-                SqlDataReader reader = command.ExecuteReader();
-                data = reader.Read();
-                connection.Close();
+
             }
             //if (dataTable.Rows.Count > 0)
             //    return false;

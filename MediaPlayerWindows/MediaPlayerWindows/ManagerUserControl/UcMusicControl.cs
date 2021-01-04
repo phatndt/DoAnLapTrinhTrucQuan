@@ -25,8 +25,6 @@ namespace MediaPlayerWindows.ManagerUserControl
 
         public event Action ReLoad;
 
-        public event Action<UcSong> Next;
-
         WindowsMediaPlayer WindowsMediaPlayer = new WindowsMediaPlayer();
 
 
@@ -42,7 +40,13 @@ namespace MediaPlayerWindows.ManagerUserControl
 
         private Song song = new Song();
 
+        private FavoriteSong FavoriteSong = new FavoriteSong();
+
+        private PlaylistSong PlaylistSong = new PlaylistSong();
+
         List<UcSong> ucSongs = new List<UcSong>();
+
+        List<UcFavoriteSong> ucFavoriteSongLists = new List<UcFavoriteSong>();
 
         ListBox ListBox = new ListBox();
         public UcMusicControl()
@@ -63,18 +67,70 @@ namespace MediaPlayerWindows.ManagerUserControl
 
             btnTym.Click += BtnTym_Click;
 
+            btnAddPlaylist.Click += BtnAddPlaylist_Click;
+
             TrackbarMusic.Scroll += TrackbarMusic_Scroll;
 
             btnRepeat.Click += BtnRepeat_Click;
 
             btnNext.Click += BtnNext_Click;
 
-            //WindowsMediaPlayer.PlayStateChange += WindowsMediaPlayer_PlayStateChange;
+            btnPreivous.Click += BtnPreivous_Click;
 
             TrackbarMusic.MouseUp += TrackbarMusic_MouseUp;
 
             TrackbarMusic.MouseDown += TrackbarMusic_MouseDown;
 
+        }
+
+        private void BtnPreivous_Click(object sender, EventArgs e)
+        {
+            if (ucSongs.Count > 0)
+            {
+                foreach (UcSong ucSong in ucSongs)
+                {
+                    if (ucSong.Song.Name == song.Name && ucSong.Song.Artist == song.Artist)
+                    {
+                        int i = ucSongs.IndexOf(ucSong);
+                        if (i == 0)
+                        {
+                            Setup(ucSongs[ucSongs.Count - 1]);
+                        }
+                        else
+                        {
+                            i = i - 1;
+                            Setup(ucSongs[i]);
+                        }    
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                foreach (UcFavoriteSong ucFavoriteSong in ucFavoriteSongLists)
+                {
+                    if (ucFavoriteSong.FavoriteSong.Name == FavoriteSong.Name && ucFavoriteSong.FavoriteSong.Artist == FavoriteSong.Artist)
+                    {
+                        int i = ucFavoriteSongLists.IndexOf(ucFavoriteSong);
+                        if (i == 0)
+                        {
+                            Setup(ucFavoriteSongLists[ucFavoriteSongLists.Count - 1]);
+                        }
+                        else
+                        {
+                            i = i - 1;
+                            Setup(ucFavoriteSongLists[i]);
+                        }    
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void BtnAddPlaylist_Click(object sender, EventArgs e)
+        {
+            fAddMusicToPlaylist fAddMusicToPlaylist = new fAddMusicToPlaylist(PlaylistSong.Name, PlaylistSong.Artist, PlaylistSong.IMage, PlaylistSong.Source, PlaylistSong.Length);
+            fAddMusicToPlaylist.Show();
         }
 
         private void TrackbarMusic_MouseDown(object sender, MouseEventArgs e)
@@ -102,17 +158,15 @@ namespace MediaPlayerWindows.ManagerUserControl
             }
         }
 
-
-        private void WindowsMediaPlayer_PlayStateChange(int NewState)
+        private void BtnNext_Click(object sender, EventArgs e)
         {
-            if (NewState == 1)
+            if (ucSongs.Count > 0)
             {
                 foreach (UcSong ucSong in ucSongs)
                 {
                     if (ucSong.Song.Name == song.Name && ucSong.Song.Artist == song.Artist)
                     {
                         int i = ucSongs.IndexOf(ucSong);
-                        //MessageBox.Show(i.ToString(), ucSongs.Count.ToString());
                         if (i == ucSongs.Count - 1)
                         {
                             Setup(ucSongs[0]);
@@ -123,24 +177,22 @@ namespace MediaPlayerWindows.ManagerUserControl
                     }
                 }
             }    
-        }
-
-        private void BtnNext_Click(object sender, EventArgs e)
-        {
-            foreach (UcSong ucSong in ucSongs)
+            else
             {
-                if (ucSong.Song.Name == song.Name && ucSong.Song.Artist == song.Artist)
+                foreach (UcFavoriteSong ucFavoriteSong in ucFavoriteSongLists)
                 {
-                    int i = ucSongs.IndexOf(ucSong);
-                    //MessageBox.Show(i.ToString(), ucSongs.Count.ToString());
-                    if (i == ucSongs.Count - 1)
+                    if (ucFavoriteSong.FavoriteSong.Name == FavoriteSong.Name && ucFavoriteSong.FavoriteSong.Artist == FavoriteSong.Artist)
                     {
-                        Setup(ucSongs[0]);
-                    }    
-                    else
-                        Setup(ucSongs[i+1]);
-                    break;
-                }    
+                        int i = ucFavoriteSongLists.IndexOf(ucFavoriteSong);
+                        if (i == ucFavoriteSongLists.Count - 1)
+                        {
+                            Setup(ucFavoriteSongLists[0]);
+                        }
+                        else
+                            Setup(ucFavoriteSongLists[i + 1]);
+                        break;
+                    }
+                }
             }    
         }
 
@@ -153,7 +205,7 @@ namespace MediaPlayerWindows.ManagerUserControl
             }
             else
             {
-                btnRepeat.Image = global::MediaPlayerWindows.Properties.Resources.repeat_40px_green;
+                btnRepeat.Image = global::MediaPlayerWindows.Properties.Resources.repeat_one_40px_green;
                 CheckRepeat = true;
             }
 
@@ -165,15 +217,13 @@ namespace MediaPlayerWindows.ManagerUserControl
         }
         private void BtnTym_Click(object sender, EventArgs e)
         {
-            FavoriteSong favoriteSong = new FavoriteSong(song.Name, song.Artist, song.IMage, song.Source, song.Length, 1);
-            MessageBox.Show(CheckTym.ToString());
+            FavoriteSong favoriteSong = new FavoriteSong(song.Name, song.Artist, song.IMage, song.Source, song.Length);
             if (CheckTym)
             {
                 btnTym.Image = global::MediaPlayerWindows.Properties.Resources.heart_40px;
                 CheckTym = false;
                 FavoriteSongDAO.Instance.RemoveFavoriteSong(favoriteSong);
                 Remove(favoriteSong.Name, favoriteSong.Artist);
-                MessageBox.Show("Qua day xoa ra");
                 ReLoad();
             }
             else
@@ -185,7 +235,6 @@ namespace MediaPlayerWindows.ManagerUserControl
                     btnTym.Image = global::MediaPlayerWindows.Properties.Resources.heart_outline_40px;
                     CheckTym = true;
                     FavoriteSongDAO.Instance.AddFavoriteSong(favoriteSong);
-                    MessageBox.Show("Qua day them vao");
                     ReLoad();
                 }    
                 
@@ -256,26 +305,22 @@ namespace MediaPlayerWindows.ManagerUserControl
                 TrackbarMusic.Value = (int)WindowsMediaPlayer.controls.currentPosition;
             }
             lblTime_start.Text = WindowsMediaPlayer.controls.currentPositionString;
+            TrackbarMusic.ValueChanged -= TrackbarMusic_ValueChanged;
+            TrackbarMusic.MouseUp -= TrackbarMusic_MouseUp;
+
             if (CheckRepeat)
             {
-                if ((int)WindowsMediaPlayer.controls.currentPosition == (int)WindowsMediaPlayer.currentMedia.duration)
+                //if ((int)WindowsMediaPlayer.controls.currentPosition == (int)WindowsMediaPlayer.currentMedia.duration)
+                //    WindowsMediaPlayer.controls.currentPosition = 0;
+                if (TrackbarMusic.Value == TrackbarMusic.Maximum)
                     WindowsMediaPlayer.controls.currentPosition = 0;
 
             }    
             else
             {
-                if (WindowsMediaPlayer.controls.currentPositionString == song.Length)
-                {
-                    //WindowsMediaPlayer.controls.stop();
-                    //BtnNext_Click(sender, e);
-                    //TrackbarMusic.Value = 0;
-                }
+                TrackbarMusic.ValueChanged += TrackbarMusic_ValueChanged;
+                TrackbarMusic.MouseUp += TrackbarMusic_MouseUp;
             }
-            //if (((int)WindowsMediaPlayer.controls.currentPosition == (int)WindowsMediaPlayer.currentMedia.duration) && (CheckRepeat == true))
-            //{
-
-            //    WindowsMediaPlayer.controls.currentPosition = 0;
-            //}
         }
 
         public void SetupPausePlayButton()
@@ -283,6 +328,7 @@ namespace MediaPlayerWindows.ManagerUserControl
             btnPlayPause.Image = global::MediaPlayerWindows.Properties.Resources.pause_40px;
             btnTym.Image = global::MediaPlayerWindows.Properties.Resources.heart_40px;
             CheckTym = false;
+            btnAddPlaylist.Enabled = true;
         }
         public void SetMuteButton()
         {
@@ -346,6 +392,7 @@ namespace MediaPlayerWindows.ManagerUserControl
             try
             {
                 song = new Song(ucSong.Song.Name,ucSong.Song.Artist,ucSong.Song.IMage,ucSong.Song.Source,ucSong.Song.Length);
+                PlaylistSong = new PlaylistSong(ucSong.Song.Name, ucSong.Song.Artist, ucSong.Song.IMage, ucSong.Song.Source, ucSong.Song.Length, "");
                 RecentlySongDAO.Instance.AddRecentlyToDB(new RecentlySong(ucSong.Song.Name, ucSong.Song.Artist, ucSong.Song.IMage, ucSong.Song.Source, ucSong.Song.Length));
                 string name = Path.ChangeExtension(Path.GetRandomFileName(), ".wav"); // tạo random 1 cái tên đẻ l luuw
                 string path = Path.Combine(Path.GetTempPath(), name); // tạo 1 cái đường dẫn
@@ -378,12 +425,23 @@ namespace MediaPlayerWindows.ManagerUserControl
         }
         public void AddUcSong(UcSong ucSong)
         {
-            ListBox.Items.Add(ucSong);
             ucSongs.Add(ucSong);
         }
         public void CleanUcSong()
         {
             ucSongs.Clear();
+        }
+        public void AddUcFavoriteSong(UcFavoriteSong ucFavoriteSong)
+        {
+            ucFavoriteSongLists.Add(ucFavoriteSong);
+        }
+        public void CleanUcFavoriteSong()
+        {
+            ucFavoriteSongLists.Clear();
+        }
+        public void PlayFirstSong()
+        {
+            this.Setup(ucSongs.First());
         }
         #endregion
         #region FavoriteSong
@@ -391,7 +449,9 @@ namespace MediaPlayerWindows.ManagerUserControl
         {
             try
             {
-                MessageBox.Show("aaa0");
+                FavoriteSong = new FavoriteSong(ucFavoriteSong.FavoriteSong.Name, ucFavoriteSong.FavoriteSong.Artist, ucFavoriteSong.FavoriteSong.IMage, ucFavoriteSong.FavoriteSong.Source, ucFavoriteSong.FavoriteSong.Length);
+                PlaylistSong = new PlaylistSong(ucFavoriteSong.FavoriteSong.Name, ucFavoriteSong.FavoriteSong.Artist, ucFavoriteSong.FavoriteSong.IMage, ucFavoriteSong.FavoriteSong.Source, ucFavoriteSong.FavoriteSong.Length, "");
+                RecentlySongDAO.Instance.AddRecentlyToDB(new RecentlySong(ucFavoriteSong.FavoriteSong.Name, ucFavoriteSong.FavoriteSong.Artist, ucFavoriteSong.FavoriteSong.IMage, ucFavoriteSong.FavoriteSong.Source, ucFavoriteSong.FavoriteSong.Length));
                 string name = Path.ChangeExtension(Path.GetRandomFileName(), ".wav"); // tạo random 1 cái tên đẻ l luuw
                 string path = Path.Combine(Path.GetTempPath(), name); // tạo 1 cái đường dẫn
                 File.WriteAllBytes(path, ucFavoriteSong.FavoriteSong.Source); // ghi cái data từ Vs vào cái đường dẫn
@@ -400,11 +460,13 @@ namespace MediaPlayerWindows.ManagerUserControl
                 btnTym.Image = global::MediaPlayerWindows.Properties.Resources.heart_outline_40px;
                 btnTym.Enabled = false;
                 TrackbarVolumn.Value = 50;
+                TrackbarMusic.Value = TrackbarMusic.Minimum;
                 this.LastSoundValue = TrackbarVolumn.Value;
                 SetMuteButton();
                 lbName.Text = ucFavoriteSong.FavoriteSong.Name;
                 lbArtist.Text = ucFavoriteSong.FavoriteSong.Artist;
                 pictureSong.Image = ConvertClass.Instance.ConvertByteToBitmap(ucFavoriteSong.FavoriteSong.IMage);
+                lblTime_end.Text = ucFavoriteSong.FavoriteSong.Length;
                 timer.Start();
             }
             catch (Exception ex)
@@ -419,7 +481,7 @@ namespace MediaPlayerWindows.ManagerUserControl
         }
         private bool ExecuteQuerySearchFavoriteSong(string name, string artist)
         {
-            string query = "SELECT * FROM FAVORITESONGS WHERE NAMESONG = N'" + name + "' AND ARTISTSONG = N'" + artist + "'";
+            string query = "SELECT * FROM FAVORITESONGS WHERE ( NAMESONG = '" + name + "') AND ARTISTSONG = ('" + artist + "')";
             return DataProvider.Instance.ExecuteNonQuery(query);
         }
         #endregion

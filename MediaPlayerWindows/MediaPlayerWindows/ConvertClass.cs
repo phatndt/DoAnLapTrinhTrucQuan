@@ -37,7 +37,6 @@ namespace MediaPlayerWindows
         }
         public Image ConvertByteToBitmap(byte[] bytes)
         {
-            Bitmap bmp;
             using (var ms = new MemoryStream(bytes))
             {
                 return Image.FromStream(ms);

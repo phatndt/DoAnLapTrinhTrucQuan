@@ -39,7 +39,7 @@
             this.gunaLabel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.gunaLabel1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.gunaLabel1.Location = new System.Drawing.Point(0, 80);
+            this.gunaLabel1.Location = new System.Drawing.Point(0, 75);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(100, 40);
             this.gunaLabel1.TabIndex = 1;
@@ -69,7 +69,7 @@
             this.Controls.Add(this.gunaLabel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UcPlayList_Name";
-            this.Size = new System.Drawing.Size(100, 120);
+            this.Size = new System.Drawing.Size(100, 115);
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
             this.ResumeLayout(false);
 

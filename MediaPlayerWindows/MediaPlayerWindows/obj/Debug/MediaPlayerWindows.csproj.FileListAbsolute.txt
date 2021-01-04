@@ -55,17 +55,13 @@ D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindo
 D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\Interop.WMPLib.dll
 D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\AxInterop.WMPLib.dll
 D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.csproj.ResolveComReference.cache
-D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.fLogin.resources
 D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.fMusicManager.resources
-D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.fSignUp.resources
 D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.Properties.Resources.resources
 D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.csproj.GenerateResource.cache
 D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.csproj.CoreCompileInputs.cache
 D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.csproj.CopyComplete
 D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.exe
 D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.pdb
-D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.fMusicPlaying.resources
-D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.fMusicPlaying_Search.resources
 D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.ManagerUserControl.UcSystemButton.resources
 C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\bin\Debug\MediaPlayerWindows.exe.config
 C:\Users\Admin\Desktop\HỌC TẬP\Github\LAP TRINH TRUC QUAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\bin\Debug\MediaPlayerWindows.exe
@@ -178,3 +174,10 @@ E:\Media\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\Me
 D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.ManagerUserControl.UcOnlineSong.resources
 D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\bin\Debug\xNet.dll
 D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\bin\Debug\System.Data.SQLite.dll
+D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\bin\Debug\MEDIA_PLAYER_WINDOWS.db
+D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.fCreatePlaylist.resources
+D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.fDeletePlaylist.resources
+D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.ManagerUserControl.UcDelelePlayList.resources
+D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.fAddMusicToPlaylist.resources
+D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.ManagerUserControl.UcPlaylistSong.resources
+D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.ManagerUserControl.UcTitleInfomationSong.resources

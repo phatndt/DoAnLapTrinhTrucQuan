@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcMusicControl));
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
@@ -39,7 +40,9 @@
             this.btnRepeat = new Guna.UI.WinForms.GunaCircleButton();
             this.btnNext = new Guna.UI.WinForms.GunaCircleButton();
             this.btnVolumn = new Guna.UI.WinForms.GunaCircleButton();
+            this.btnAddPlaylist = new Guna.UI.WinForms.GunaCircleButton();
             this.btnTym = new Guna.UI.WinForms.GunaCircleButton();
+            this.gunaCircleButton1 = new Guna.UI.WinForms.GunaCircleButton();
             this.TrackbarVolumn = new Guna.UI.WinForms.GunaTrackBar();
             this.lblTime_end = new Guna.UI.WinForms.GunaLabel();
             this.lblTime_start = new Guna.UI.WinForms.GunaLabel();
@@ -47,8 +50,6 @@
             this.lbName = new Guna.UI.WinForms.GunaLabel();
             this.pictureSong = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.TrackbarMusic = new Guna.UI.WinForms.GunaTrackBar();
-            this.timer = new System.Windows.Forms.Timer(this.components);
-            this.gunaCircleButton1 = new Guna.UI.WinForms.GunaCircleButton();
             this.bunifuGradientPanel1.SuspendLayout();
             this.gunaPanel1.SuspendLayout();
             this.gunaPanel2.SuspendLayout();
@@ -76,6 +77,7 @@
             this.gunaPanel1.BackColor = System.Drawing.Color.White;
             this.gunaPanel1.Controls.Add(this.gunaPanel2);
             this.gunaPanel1.Controls.Add(this.btnVolumn);
+            this.gunaPanel1.Controls.Add(this.btnAddPlaylist);
             this.gunaPanel1.Controls.Add(this.btnTym);
             this.gunaPanel1.Controls.Add(this.gunaCircleButton1);
             this.gunaPanel1.Controls.Add(this.TrackbarVolumn);
@@ -148,6 +150,7 @@
             this.btnShuffle.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnShuffle.Size = new System.Drawing.Size(40, 40);
             this.btnShuffle.TabIndex = 59;
+            this.btnShuffle.Visible = false;
             // 
             // btnPlayPause
             // 
@@ -190,7 +193,7 @@
             this.btnRepeat.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
             this.btnRepeat.OnHoverBorderColor = System.Drawing.Color.Gainsboro;
             this.btnRepeat.OnHoverForeColor = System.Drawing.Color.Gainsboro;
-            this.btnRepeat.OnHoverImage = global::MediaPlayerWindows.Properties.Resources.repeat_40px_green;
+            this.btnRepeat.OnHoverImage = global::MediaPlayerWindows.Properties.Resources.repeat_one_40px_green;
             this.btnRepeat.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnRepeat.Size = new System.Drawing.Size(40, 40);
             this.btnRepeat.TabIndex = 59;
@@ -243,6 +246,29 @@
             this.btnVolumn.TabIndex = 59;
             this.btnVolumn.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.SingleBitPerPixelGridFit;
             // 
+            // btnAddPlaylist
+            // 
+            this.btnAddPlaylist.AnimationHoverSpeed = 0.07F;
+            this.btnAddPlaylist.AnimationSpeed = 0.03F;
+            this.btnAddPlaylist.BaseColor = System.Drawing.Color.White;
+            this.btnAddPlaylist.BorderColor = System.Drawing.Color.White;
+            this.btnAddPlaylist.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAddPlaylist.Enabled = false;
+            this.btnAddPlaylist.FocusedColor = System.Drawing.Color.White;
+            this.btnAddPlaylist.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAddPlaylist.ForeColor = System.Drawing.Color.White;
+            this.btnAddPlaylist.Image = global::MediaPlayerWindows.Properties.Resources.plus_40pxx;
+            this.btnAddPlaylist.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnAddPlaylist.Location = new System.Drawing.Point(137, 55);
+            this.btnAddPlaylist.Name = "btnAddPlaylist";
+            this.btnAddPlaylist.OnHoverBaseColor = System.Drawing.Color.White;
+            this.btnAddPlaylist.OnHoverBorderColor = System.Drawing.Color.White;
+            this.btnAddPlaylist.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnAddPlaylist.OnHoverImage = global::MediaPlayerWindows.Properties.Resources.plus_40px_green;
+            this.btnAddPlaylist.OnPressedColor = System.Drawing.Color.White;
+            this.btnAddPlaylist.Size = new System.Drawing.Size(20, 20);
+            this.btnAddPlaylist.TabIndex = 59;
+            // 
             // btnTym
             // 
             this.btnTym.AnimationHoverSpeed = 0.07F;
@@ -265,6 +291,29 @@
             this.btnTym.OnPressedColor = System.Drawing.Color.White;
             this.btnTym.Size = new System.Drawing.Size(20, 20);
             this.btnTym.TabIndex = 59;
+            // 
+            // gunaCircleButton1
+            // 
+            this.gunaCircleButton1.Animated = true;
+            this.gunaCircleButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaCircleButton1.AnimationSpeed = 0.03F;
+            this.gunaCircleButton1.BaseColor = System.Drawing.Color.White;
+            this.gunaCircleButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaCircleButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaCircleButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaCircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaCircleButton1.ForeColor = System.Drawing.Color.White;
+            this.gunaCircleButton1.Image = global::MediaPlayerWindows.Properties.Resources.explicit_30px;
+            this.gunaCircleButton1.ImageSize = new System.Drawing.Size(25, 25);
+            this.gunaCircleButton1.Location = new System.Drawing.Point(991, 20);
+            this.gunaCircleButton1.Name = "gunaCircleButton1";
+            this.gunaCircleButton1.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
+            this.gunaCircleButton1.OnHoverBorderColor = System.Drawing.Color.Gainsboro;
+            this.gunaCircleButton1.OnHoverForeColor = System.Drawing.Color.Gainsboro;
+            this.gunaCircleButton1.OnHoverImage = null;
+            this.gunaCircleButton1.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.gunaCircleButton1.Size = new System.Drawing.Size(40, 40);
+            this.gunaCircleButton1.TabIndex = 59;
             // 
             // TrackbarVolumn
             // 
@@ -342,29 +391,6 @@
             this.TrackbarMusic.TrackPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
             this.TrackbarMusic.Value = 0;
             // 
-            // gunaCircleButton1
-            // 
-            this.gunaCircleButton1.Animated = true;
-            this.gunaCircleButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaCircleButton1.AnimationSpeed = 0.03F;
-            this.gunaCircleButton1.BaseColor = System.Drawing.Color.White;
-            this.gunaCircleButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaCircleButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaCircleButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaCircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaCircleButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaCircleButton1.Image = global::MediaPlayerWindows.Properties.Resources.explicit_30px;
-            this.gunaCircleButton1.ImageSize = new System.Drawing.Size(25, 25);
-            this.gunaCircleButton1.Location = new System.Drawing.Point(991, 20);
-            this.gunaCircleButton1.Name = "gunaCircleButton1";
-            this.gunaCircleButton1.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
-            this.gunaCircleButton1.OnHoverBorderColor = System.Drawing.Color.Gainsboro;
-            this.gunaCircleButton1.OnHoverForeColor = System.Drawing.Color.Gainsboro;
-            this.gunaCircleButton1.OnHoverImage = global::MediaPlayerWindows.Properties.Resources.repeat_40px_green;
-            this.gunaCircleButton1.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.gunaCircleButton1.Size = new System.Drawing.Size(40, 40);
-            this.gunaCircleButton1.TabIndex = 59;
-            // 
             // UcMusicControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -401,5 +427,6 @@
         private Guna.UI.WinForms.GunaLabel lblTime_end;
         private System.Windows.Forms.Timer timer;
         private Guna.UI.WinForms.GunaCircleButton gunaCircleButton1;
+        private Guna.UI.WinForms.GunaCircleButton btnAddPlaylist;
     }
 }

@@ -6,6 +6,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SQLite;
+using System.Windows;
 
 namespace MediaPlayerWindows.DAO
 {
@@ -25,7 +27,7 @@ namespace MediaPlayerWindows.DAO
 
             foreach (DataRow row in data.Rows)
             {
-                RecentlySong recentlySong= new RecentlySong(row);
+                RecentlySong recentlySong = new RecentlySong(row);
                 SongList.Add(recentlySong);
             }
             return SongList;
@@ -45,32 +47,50 @@ namespace MediaPlayerWindows.DAO
             //    }
             //}    
 
-            string queryCheckExist = "SELECT * FROM RECENTLYSONGS WHERE NAMESONG = N'" + recentlySong.Name + "' AND ARTISTSONG = N'" + recentlySong.Artist + "'";
-
+            string queryCheckExist = "SELECT * FROM RECENTLYSONGS WHERE (NAMESONG = '" + recentlySong.Name + "') AND (ARTISTSONG = '" + recentlySong.Artist + "')";
             if (DataProvider.Instance.ExecuteNonQuery(queryCheckExist))
             {
-                using (SqlConnection connection = new SqlConnection(connectionSTR))
+                using (SQLiteConnection connection = new SQLiteConnection(connectionSTR))
                 {
                     connection.Open();
-                    string s = "DELETE FROM RECENTLYSONGS WHERE NAMESONG = N'" + recentlySong.Name + "'";
-                    SqlCommand command = new SqlCommand(s, connection);
-                    command.ExecuteNonQuery();
+                    //string s = "DELETE FROM RECENTLYSONGS WHERE (NAMESONG = '" + recentlySong.Name + "')";
+                    string s = String.Format("DELETE FROM RECENTLYSONGS WHERE (NAMESONG = '{0}')", recentlySong.Name);
+                    using (SQLiteCommand command = new SQLiteCommand(s, connection))
+                    {
+                        command.CommandType = CommandType.Text;
+                        command.ExecuteNonQuery();
+                    }
                     connection.Close();
                 }
             }
-            using (SqlConnection connection = new SqlConnection(connectionSTR))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionSTR))
             {
-                connection.Open();
-                SqlCommand command = new SqlCommand("INSERT INTO RECENTLYSONGS VALUES (@name,@artist,@image,@data,@length)", connection);
+                try
+                {
+                    connection.Open();
+                    using (SQLiteCommand command = new SQLiteCommand("INSERT INTO RECENTLYSONGS VALUES (@name,@artist,@image,@data,@length)", connection))
+                    {
+                        command.CommandType = CommandType.Text;
+                        command.Parameters.AddWithValue("@name", recentlySong.Name);
+                        command.Parameters.AddWithValue("@artist", recentlySong.Artist);
+                        command.Parameters.AddWithValue("@image", Convert.ToBase64String(recentlySong.IMage));
+                        command.Parameters.AddWithValue("@data", Convert.ToBase64String(recentlySong.Source));
+                        command.Parameters.AddWithValue("@length", recentlySong.Length);
 
-                command.Parameters.AddWithValue("@name", recentlySong.Name);
-                command.Parameters.AddWithValue("@artist", recentlySong.Artist);
-                command.Parameters.AddWithValue("@image", Convert.ToBase64String(recentlySong.IMage));
-                command.Parameters.AddWithValue("@data", Convert.ToBase64String(recentlySong.Source));
-                command.Parameters.AddWithValue("@length", recentlySong.Length);
+                        command.ExecuteNonQuery();
+                    }
 
-                command.ExecuteNonQuery();
-                connection.Close();
+                }
+                catch 
+                {
+                    MessageBox.Show("");
+                }
+                finally
+                {
+                    connection.Close();
+
+                }
+
             }
         }
     }

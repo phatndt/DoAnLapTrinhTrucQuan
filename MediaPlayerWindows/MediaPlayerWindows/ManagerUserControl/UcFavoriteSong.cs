@@ -27,21 +27,21 @@ namespace MediaPlayerWindows.ManagerUserControl
         {
             InitializeComponent();
         }
-        public UcFavoriteSong(string b, string c, byte[] d, byte[] e, string f, int g )
+        public UcFavoriteSong(string b, string c, byte[] d, byte[] e, string f)
         {
             InitializeComponent();
-            favoriteSong = new FavoriteSong(b,c,d,e,f,g);
+            favoriteSong = new FavoriteSong(b,c,d,e,f);
             lbName.Text = favoriteSong.Name;
             lbArtist.Text = favoriteSong.Artist;
             lbTime.Text = favoriteSong.Length;
+            gunaPictureBox1.Image = ConvertClass.Instance.ConvertByteToBitmap(d);
             btnSelect.Click += BtnSelect_Click;
             btnTym.Click += BtnTym_Click;
         }
 
         private void BtnTym_Click(object sender, EventArgs e)
         {
-            if (FavoriteSongDAO.Instance.RemoveFavoriteSong(favoriteSong))
-                MessageBox.Show("co xoa");
+            FavoriteSongDAO.Instance.RemoveFavoriteSong(favoriteSong);
             //if (load != null)
             //    load();
             Remove(this);

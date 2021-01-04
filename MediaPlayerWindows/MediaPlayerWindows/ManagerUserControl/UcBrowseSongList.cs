@@ -58,17 +58,17 @@ namespace MediaPlayerWindows.ManagerUserControl
         //}
         public void LoadBrowse(string[] pathSongs)
         {
-            flowLayoutPanel.Controls.Clear();
+            flowLayoutPanel1.Controls.Clear();
             List<Song> songs = SongDAO.Instance.LoadBrowser(pathSongs);
             foreach (Song song in songs)
             {
                 UcSong ucSong = new UcSong(song.Name, song.Artist, song.IMage, song.Source, song.Length);
-                flowLayoutPanel.Controls.Add(ucSong);
+                flowLayoutPanel1.Controls.Add(ucSong);
             }
         }
         public FlowLayoutPanel FlowLayoutPanel()
         {
-            return flowLayoutPanel;
+            return flowLayoutPanel1;
         }
     }
 }

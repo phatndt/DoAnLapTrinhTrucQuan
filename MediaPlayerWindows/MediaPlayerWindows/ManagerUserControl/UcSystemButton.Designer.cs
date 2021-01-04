@@ -32,7 +32,6 @@
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
             this.btnExit = new Guna.UI.WinForms.GunaButton();
-            this.btnMaximize = new Guna.UI.WinForms.GunaButton();
             this.btnMiximize = new Guna.UI.WinForms.GunaButton();
             this.SuspendLayout();
             // 
@@ -71,31 +70,6 @@
             this.btnExit.Size = new System.Drawing.Size(30, 30);
             this.btnExit.TabIndex = 0;
             // 
-            // btnMaximize
-            // 
-            this.btnMaximize.Animated = true;
-            this.btnMaximize.AnimationHoverSpeed = 0.07F;
-            this.btnMaximize.AnimationSpeed = 0.03F;
-            this.btnMaximize.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(24)))), ((int)(((byte)(45)))));
-            this.btnMaximize.BorderColor = System.Drawing.Color.Black;
-            this.btnMaximize.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnMaximize.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMaximize.FocusedColor = System.Drawing.Color.Empty;
-            this.btnMaximize.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnMaximize.ForeColor = System.Drawing.Color.White;
-            this.btnMaximize.Image = global::MediaPlayerWindows.Properties.Resources.maximize_button_40px;
-            this.btnMaximize.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnMaximize.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnMaximize.Location = new System.Drawing.Point(1140, 0);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
-            this.btnMaximize.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnMaximize.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnMaximize.OnHoverImage = null;
-            this.btnMaximize.OnPressedColor = System.Drawing.Color.Black;
-            this.btnMaximize.Size = new System.Drawing.Size(30, 30);
-            this.btnMaximize.TabIndex = 0;
-            // 
             // btnMiximize
             // 
             this.btnMiximize.Animated = true;
@@ -111,7 +85,7 @@
             this.btnMiximize.Image = global::MediaPlayerWindows.Properties.Resources.subtract_40px;
             this.btnMiximize.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnMiximize.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnMiximize.Location = new System.Drawing.Point(1110, 0);
+            this.btnMiximize.Location = new System.Drawing.Point(1140, 0);
             this.btnMiximize.Name = "btnMiximize";
             this.btnMiximize.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
             this.btnMiximize.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -127,7 +101,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(24)))), ((int)(((byte)(45)))));
             this.Controls.Add(this.btnMiximize);
-            this.Controls.Add(this.btnMaximize);
             this.Controls.Add(this.btnExit);
             this.Name = "UcSystemButton";
             this.Size = new System.Drawing.Size(1200, 30);
@@ -140,7 +113,6 @@
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.NotifyIcon notifyIcon2;
         private Guna.UI.WinForms.GunaButton btnExit;
-        private Guna.UI.WinForms.GunaButton btnMaximize;
         private Guna.UI.WinForms.GunaButton btnMiximize;
     }
 }

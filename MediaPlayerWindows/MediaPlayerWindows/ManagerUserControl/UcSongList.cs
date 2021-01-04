@@ -18,11 +18,16 @@ using System.Net;
 
 namespace MediaPlayerWindows.ManagerUserControl
 {
+    public delegate void PlaySong(UcSong ucSong);
+
     public partial class UcSongList : UserControl
     {
-        public delegate void PlaySong(UcSong ucSong);
 
         List<Song> songs = null;
+        public UcSongList( )
+        {
+            InitializeComponent();
+        }
         public UcSongList(string s)
         {
             InitializeComponent();
@@ -42,7 +47,7 @@ namespace MediaPlayerWindows.ManagerUserControl
         }
         public void LoadBrowser(string[] pathSongs)
         {
-            flowLayoutPanel.Controls.Clear();
+            flowLayoutPanel1.Controls.Clear();
             try
             {
                 foreach (string s in pathSongs)
@@ -65,7 +70,7 @@ namespace MediaPlayerWindows.ManagerUserControl
                     }
                     pSourceData = ConvertClass.Instance.ConvertDataMusicToByte(s);
                     UcSong ucSong = new UcSong(fileTag.Tag.Title, fileTag.Tag.FirstPerformer, pImageData, pSourceData, fileTag.Properties.Duration.ToString(@"mm\:ss"));
-                    flowLayoutPanel.Controls.Add(ucSong);
+                    flowLayoutPanel1.Controls.Add(ucSong);
                     songs.Add(new Song(fileTag.Tag.Title, fileTag.Tag.FirstPerformer, pImageData, pSourceData, fileTag.Properties.Duration.ToString(@"mm\:ss")));
                 }
             }
@@ -76,12 +81,12 @@ namespace MediaPlayerWindows.ManagerUserControl
         }
         public void LoadRecentlySongs()
         {
-            flowLayoutPanel.Controls.Clear();
+            flowLayoutPanel1.Controls.Clear();
             List<RecentlySong> recentlySongs = RecentlySongDAO.Instance.LoadRencentlySongsFromDB();
             foreach (RecentlySong recently in recentlySongs)
             {
                 UcSong ucSong = new UcSong(recently.Name, recently.Artist, recently.IMage, recently.Source, recently.Length);
-                flowLayoutPanel.Controls.Add(ucSong);
+                flowLayoutPanel1.Controls.Add(ucSong);
             }
         }
         public void Remove()
@@ -98,37 +103,41 @@ namespace MediaPlayerWindows.ManagerUserControl
 
         public FlowLayoutPanel GetFlowLayoutPanel()
         {
-            return flowLayoutPanel;
+            return flowLayoutPanel1;
         }
         public void LoadTopVNSongs()
         {
-            flowLayoutPanel.Controls.Clear();
+            flowLayoutPanel1.Controls.Clear();
             List<OnlineSong> TopVNSongs = OnlineSongDAO.Instance.LoadOnlineSongVN();
             foreach (OnlineSong songVN in TopVNSongs)
             {
                 UcSong ucSong = new UcSong(songVN.Name,songVN.Artist,songVN.ImageOnline,songVN.DownloadURL);
-                flowLayoutPanel.Controls.Add(ucSong);
+                flowLayoutPanel1.Controls.Add(ucSong);
             }
         }
         public void LoadTopEASongs()
         {
-            flowLayoutPanel.Controls.Clear();
+            flowLayoutPanel1.Controls.Clear();
             List<OnlineSong> TopVNSongs = OnlineSongDAO.Instance.LoadOnlineSongEA();
             foreach (OnlineSong songVN in TopVNSongs)
             {
                 UcSong ucSong = new UcSong(songVN.Name, songVN.Artist, songVN.ImageOnline, songVN.DownloadURL);
-                flowLayoutPanel.Controls.Add(ucSong);
+                flowLayoutPanel1.Controls.Add(ucSong);
             }
         }
         public void LoadTopKOSongs()
         {
-            flowLayoutPanel.Controls.Clear();
+            flowLayoutPanel1.Controls.Clear();
             List<OnlineSong> TopVNSongs = OnlineSongDAO.Instance.LoadOnlineSongKO();
             foreach (OnlineSong songVN in TopVNSongs)
             {
                 UcSong ucSong = new UcSong(songVN.Name, songVN.Artist, songVN.ImageOnline, songVN.DownloadURL);
-                flowLayoutPanel.Controls.Add(ucSong);
+                flowLayoutPanel1.Controls.Add(ucSong);
             }
+        }
+        public FlowLayoutPanel FlowLayoutPanel()
+        {
+            return flowLayoutPanel1;
         }
     }
 }

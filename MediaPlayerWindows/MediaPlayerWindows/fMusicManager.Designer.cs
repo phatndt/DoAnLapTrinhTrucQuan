@@ -38,6 +38,7 @@
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.btnTopEA = new Guna.UI.WinForms.GunaButton();
             this.btnTopKO = new Guna.UI.WinForms.GunaButton();
             this.btnTopVN = new Guna.UI.WinForms.GunaButton();
@@ -47,10 +48,10 @@
             this.btnBrowse = new Guna.UI.WinForms.GunaButton();
             this.btnHome = new Guna.UI.WinForms.GunaButton();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaResize1 = new Guna.UI.WinForms.GunaResize(this.components);
-            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
-            this.ucPlaylistList1 = new MediaPlayerWindows.UcPlaylistList();
             this.ucSystemButton = new MediaPlayerWindows.ManagerUserControl.UcSystemButton();
             this.ucMusicControl = new MediaPlayerWindows.ManagerUserControl.UcMusicControl();
             this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
@@ -59,6 +60,7 @@
             this.panelButtonExit.SuspendLayout();
             this.panelControl.SuspendLayout();
             this.panelMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMainButton
@@ -143,6 +145,30 @@
             this.gunaLabel1.Size = new System.Drawing.Size(124, 25);
             this.gunaLabel1.TabIndex = 2;
             this.gunaLabel1.Text = "MY LIBRARY";
+            // 
+            // gunaButton1
+            // 
+            this.gunaButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaButton1.AnimationSpeed = 0.03F;
+            this.gunaButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
+            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.gunaButton1.ForeColor = System.Drawing.Color.White;
+            this.gunaButton1.Image = global::MediaPlayerWindows.Properties.Resources.playlist_40px;
+            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton1.Location = new System.Drawing.Point(28, 595);
+            this.gunaButton1.Name = "gunaButton1";
+            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
+            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(126)))), ((int)(((byte)(146)))));
+            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.gunaButton1.OnHoverImage = global::MediaPlayerWindows.Properties.Resources.playlist_green_40px;
+            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton1.Size = new System.Drawing.Size(224, 38);
+            this.gunaButton1.TabIndex = 1;
+            this.gunaButton1.Text = "DOWNLOAD MUSIC";
+            this.gunaButton1.TextOffsetX = 10;
             // 
             // btnTopEA
             // 
@@ -340,12 +366,33 @@
             // 
             this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(24)))), ((int)(((byte)(45)))));
             this.panelMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panelMain.Controls.Add(this.ucPlaylistList1);
+            this.panelMain.Controls.Add(this.panel2);
+            this.panelMain.Controls.Add(this.gunaPictureBox1);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(250, 30);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(950, 640);
             this.panelMain.TabIndex = 5;
+            // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 186);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(950, 454);
+            this.panel2.TabIndex = 2;
+            // 
+            // gunaPictureBox1
+            // 
+            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gunaPictureBox1.Image = global::MediaPlayerWindows.Properties.Resources._5e9d9ba6cdb3f;
+            this.gunaPictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.gunaPictureBox1.Name = "gunaPictureBox1";
+            this.gunaPictureBox1.Size = new System.Drawing.Size(950, 186);
+            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gunaPictureBox1.TabIndex = 1;
+            this.gunaPictureBox1.TabStop = false;
             // 
             // gunaElipse1
             // 
@@ -354,40 +401,6 @@
             // gunaResize1
             // 
             this.gunaResize1.TargetForm = this;
-            // 
-            // gunaButton1
-            // 
-            this.gunaButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaButton1.AnimationSpeed = 0.03F;
-            this.gunaButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
-            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.gunaButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaButton1.Image = global::MediaPlayerWindows.Properties.Resources.playlist_40px;
-            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(28, 595);
-            this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
-            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(126)))), ((int)(((byte)(146)))));
-            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.gunaButton1.OnHoverImage = global::MediaPlayerWindows.Properties.Resources.playlist_green_40px;
-            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Size = new System.Drawing.Size(224, 38);
-            this.gunaButton1.TabIndex = 1;
-            this.gunaButton1.Text = "DOWNLOAD MUSIC";
-            this.gunaButton1.TextOffsetX = 10;
-            // 
-            // ucPlaylistList1
-            // 
-            this.ucPlaylistList1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
-            this.ucPlaylistList1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ucPlaylistList1.Location = new System.Drawing.Point(0, 520);
-            this.ucPlaylistList1.Margin = new System.Windows.Forms.Padding(4);
-            this.ucPlaylistList1.Name = "ucPlaylistList1";
-            this.ucPlaylistList1.Size = new System.Drawing.Size(950, 120);
-            this.ucPlaylistList1.TabIndex = 0;
             // 
             // ucSystemButton
             // 
@@ -424,7 +437,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fMusicManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "";
@@ -435,6 +448,7 @@
             this.panelControl.ResumeLayout(false);
             this.panelControl.PerformLayout();
             this.panelMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -462,7 +476,8 @@
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
         public Guna.UI.WinForms.GunaResize gunaResize1;
         private ManagerUserControl.UcMusicControl ucMusicControl;
-        private UcPlaylistList ucPlaylistList1;
         private Guna.UI.WinForms.GunaButton gunaButton1;
+        private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

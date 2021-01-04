@@ -121,6 +121,9 @@
   <data name="delete_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="minus_40px_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minus_40px_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="heart_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\heart_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,6 +145,9 @@
   <data name="end_40px_greej" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\end_40px_greej.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="plus_40px__whitepng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plus_40px._whitepng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="repeat_40px_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\repeat_40px_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -150,6 +156,12 @@
   </data>
   <data name="maximize_button_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\maximize_button_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="plus_40pxx" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plus_40pxx.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pause_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pause_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="repeat_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\repeat_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,8 +178,11 @@
   <data name="repeat_one_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\repeat_one_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="mute_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mute_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="plus_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plus_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minus_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minus_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="skip_to_start_40px_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\skip_to_start_40px_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,8 +208,11 @@
   <data name="playlist_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\playlist_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pause_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pause_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mute_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mute_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="download_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\download_40px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="home_green_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home_green_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,6 +229,9 @@
   <data name="time_machine_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\time_machine_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="_5e9d9ba6cdb3f" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\5e9d9ba6cdb3f.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="voice_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\voice_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -220,7 +241,7 @@
   <data name="explicit_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\explicit_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="download_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\download_40px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="plus_40px_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plus_40px_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

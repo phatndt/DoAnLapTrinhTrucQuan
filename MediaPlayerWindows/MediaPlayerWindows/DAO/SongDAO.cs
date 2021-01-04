@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SQLite;
 
 namespace MediaPlayerWindows.DAO
 {
@@ -65,23 +66,10 @@ namespace MediaPlayerWindows.DAO
                 }
                 return songs;
             }
-            catch (Exception ex)
+            catch
             {
                 return null;
 
-            }
-        }
-        public void AddSongToDB(Song song)
-        {
-            //favoriteSong.Source = File.ReadAllBytes(favoriteSong.Path)
-            using (SqlConnection connection = new SqlConnection(connectionSTR))
-            {
-                connection.Open();
-                SqlCommand command = new SqlCommand("INSERT INTO DATAMUSIC VALUES (@file)", connection);
-                
-                command.ExecuteNonQuery();
-                //SqlDataReader reader = command.ExecuteReader();
-                connection.Close();
             }
         }
     }

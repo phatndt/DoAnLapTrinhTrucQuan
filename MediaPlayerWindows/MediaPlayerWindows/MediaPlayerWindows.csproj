@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,7 +62,8 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.SQLite">
+    <Reference Include="System.Data.SQLite, Version=1.0.111.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Library\System.Data.SQLite.dll</HintPath>
     </Reference>
     <Reference Include="System.Design" />
@@ -78,23 +94,37 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Authenticater\Authenticater.cs" />
     <Compile Include="ConvertClass.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\FavoriteSongDAO.cs" />
     <Compile Include="DAO\OnlineSongDAO.cs" />
+    <Compile Include="DAO\PlaylistDAO.cs" />
+    <Compile Include="DAO\PlaylistSongDAO.cs" />
     <Compile Include="DAO\RecentlySongDAO.cs" />
     <Compile Include="DAO\SongDAO.cs" />
     <Compile Include="DTO\FavoriteSong.cs" />
     <Compile Include="DTO\OnlineSong.cs" />
     <Compile Include="DTO\Playlist.cs" />
+    <Compile Include="DTO\PlaylistSong.cs" />
     <Compile Include="DTO\RecentlySong.cs" />
     <Compile Include="DTO\Song.cs" />
-    <Compile Include="fLogin.cs">
+    <Compile Include="fAddMusicToPlaylist.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fLogin.Designer.cs">
-      <DependentUpon>fLogin.cs</DependentUpon>
+    <Compile Include="fAddMusicToPlaylist.Designer.cs">
+      <DependentUpon>fAddMusicToPlaylist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCreatePlaylist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fCreatePlaylist.Designer.cs">
+      <DependentUpon>fCreatePlaylist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fDeletePlaylist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fDeletePlaylist.Designer.cs">
+      <DependentUpon>fDeletePlaylist.cs</DependentUpon>
     </Compile>
     <Compile Include="fMusicManager.cs">
       <SubType>Form</SubType>
@@ -102,29 +132,17 @@
     <Compile Include="fMusicManager.Designer.cs">
       <DependentUpon>fMusicManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="Authenticater\fSignUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Authenticater\fSignUp.Designer.cs">
-      <DependentUpon>fSignUp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fMusicPlaying.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="fMusicPlaying.Designer.cs">
-      <DependentUpon>fMusicPlaying.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fMusicPlaying_Search.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="fMusicPlaying_Search.Designer.cs">
-      <DependentUpon>fMusicPlaying_Search.cs</DependentUpon>
-    </Compile>
     <Compile Include="ManagerUserControl\UcBrowseSongList.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ManagerUserControl\UcBrowseSongList.Designer.cs">
       <DependentUpon>UcBrowseSongList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerUserControl\UcDelelePlayList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManagerUserControl\UcDelelePlayList.Designer.cs">
+      <DependentUpon>UcDelelePlayList.cs</DependentUpon>
     </Compile>
     <Compile Include="ManagerUserControl\UcFavoriteSong.cs">
       <SubType>UserControl</SubType>
@@ -150,6 +168,12 @@
     <Compile Include="ManagerUserControl\UcOnlineSong.Designer.cs">
       <DependentUpon>UcOnlineSong.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerUserControl\UcPlaylistSong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManagerUserControl\UcPlaylistSong.Designer.cs">
+      <DependentUpon>UcPlaylistSong.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerUserControl\UcPlayList_Name.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -174,7 +198,12 @@
     <Compile Include="ManagerUserControl\UcSystemButton.Designer.cs">
       <DependentUpon>UcSystemButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="MediaPlayer.cs" />
+    <Compile Include="ManagerUserControl\UcTitleInfomationSong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManagerUserControl\UcTitleInfomationSong.Designer.cs">
+      <DependentUpon>UcTitleInfomationSong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -188,24 +217,30 @@
     <Compile Include="ManagerUserControl\UcPlaylistList.Designer.cs">
       <DependentUpon>UcPlaylistList.cs</DependentUpon>
     </Compile>
-    <Compile Include="User.cs" />
-    <EmbeddedResource Include="fLogin.resx">
-      <DependentUpon>fLogin.cs</DependentUpon>
+    <None Include="Resources\plus_40px_green.png" />
+    <None Include="Resources\plus_40pxx.png" />
+    <None Include="Resources\plus_40px._whitepng.png" />
+    <None Include="Resources\minus_40px_white.png" />
+    <None Include="Resources\plus_40px.png" />
+    <None Include="Resources\minus_40px.png" />
+    <None Include="Resources\5e9d9ba6cdb3f.png" />
+    <EmbeddedResource Include="fAddMusicToPlaylist.resx">
+      <DependentUpon>fAddMusicToPlaylist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCreatePlaylist.resx">
+      <DependentUpon>fCreatePlaylist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fDeletePlaylist.resx">
+      <DependentUpon>fDeletePlaylist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fMusicManager.resx">
       <DependentUpon>fMusicManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Authenticater\fSignUp.resx">
-      <DependentUpon>fSignUp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fMusicPlaying.resx">
-      <DependentUpon>fMusicPlaying.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fMusicPlaying_Search.resx">
-      <DependentUpon>fMusicPlaying_Search.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ManagerUserControl\UcBrowseSongList.resx">
       <DependentUpon>UcBrowseSongList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerUserControl\UcDelelePlayList.resx">
+      <DependentUpon>UcDelelePlayList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerUserControl\UcFavoriteSong.resx">
       <DependentUpon>UcFavoriteSong.cs</DependentUpon>
@@ -219,6 +254,9 @@
     <EmbeddedResource Include="ManagerUserControl\UcOnlineSong.resx">
       <DependentUpon>UcOnlineSong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManagerUserControl\UcPlaylistSong.resx">
+      <DependentUpon>UcPlaylistSong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManagerUserControl\UcPlayList_Name.resx">
       <DependentUpon>UcPlayList_Name.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,6 +269,9 @@
     <EmbeddedResource Include="ManagerUserControl\UcSystemButton.resx">
       <DependentUpon>UcSystemButton.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManagerUserControl\UcTitleInfomationSong.resx">
+      <DependentUpon>UcTitleInfomationSong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -239,6 +280,9 @@
     <EmbeddedResource Include="ManagerUserControl\UcPlaylistList.resx">
       <DependentUpon>UcPlaylistList.cs</DependentUpon>
     </EmbeddedResource>
+    <Content Include="MEDIA_PLAYER_WINDOWS.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -448,6 +492,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\download_40px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

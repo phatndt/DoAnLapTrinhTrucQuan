@@ -16,12 +16,16 @@ using System.Diagnostics;
 using static MediaPlayerWindows.ManagerUserControl.UcMusicControl;
 using MediaPlayerWindows.DTO;
 using static MediaPlayerWindows.ManagerUserControl.UcSongList;
+using MediaPlayerWindows.DAO;
 
 namespace MediaPlayerWindows.ManagerUserControl
 {
+    public delegate void DeletePlaylistSong(UcSong song);
     public partial class UcSong : UserControl
     {
         public event PlaySong PlaySong;
+
+        public event DeletePlaylistSong Delete;
 
         private Song song;
 
@@ -59,6 +63,25 @@ namespace MediaPlayerWindows.ManagerUserControl
             this.lbName.Text = a;
             this.lbArtist.Text = b;
             this.gunaPictureBox1.ImageLocation = c;
+        }
+
+        public UcSong(string b, string c, byte[] d, byte[] e, string f, string g)
+        {
+            InitializeComponent();
+            song = new Song(b, c, d, e, f);
+            this.gunaPictureBox1.Image = ConvertClass.Instance.ConvertByteToBitmap(d);
+            this.lbName.Text = b;
+            this.lbArtist.Text = c;
+            this.lbTime.Text = f.ToString();
+            btnSelect.Click += BtnSelect_Click;
+            btnRemove.Visible = true;
+            btnRemove.Click += BtnRemove_Click;
+        }
+
+        private void BtnRemove_Click(object sender, EventArgs e)
+        {
+            PlaylistSongDAO.Instance.RemoveFavoriteSong(new PlaylistSong(song.Name, song.Artist, song.IMage, song.Source, song.Length,""));
+            Delete(this);
         }
 
         public void Set(string a, string b, string c, Image d)

@@ -9,6 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using WMPLib;
 using NAudio.Wave;
+using System.Data.SQLite;
+using System.Windows;
+
 namespace MediaPlayerWindows.DAO
 {
     class FavoriteSongDAO : DataProvider
@@ -46,35 +49,52 @@ namespace MediaPlayerWindows.DAO
         //}
         public void AddFavoriteSong(FavoriteSong favoriteSong)
         {
-            using (SqlConnection connection = new SqlConnection(connectionSTR))
+            using (SQLiteConnection connection  = new SQLiteConnection(connectionSTR))
             {
-                connection.Open();
-                SqlCommand command = new SqlCommand("INSERT INTO FAVORITESONGS VALUES (@name,@artist,@image,@data,@length,@status)", connection);
-                command.Parameters.AddWithValue("@name", favoriteSong.Name);
-                command.Parameters.AddWithValue("@artist", favoriteSong.Artist);
-                command.Parameters.AddWithValue("@image", Convert.ToBase64String(favoriteSong.IMage));
-                command.Parameters.AddWithValue("@data", Convert.ToBase64String(favoriteSong.Source));
-                command.Parameters.AddWithValue("@length", favoriteSong.Length);
-                command.Parameters.AddWithValue("@status", favoriteSong.Status);
+               try
+               {
+                    connection.Open();
+                    SQLiteCommand command = new SQLiteCommand("INSERT INTO FAVORITESONGS VALUES (@name,@artist,@image,@data,@length)", connection);
+                    command.Parameters.AddWithValue("@name", favoriteSong.Name);
+                    command.Parameters.AddWithValue("@artist", favoriteSong.Artist);
+                    command.Parameters.AddWithValue("@image", Convert.ToBase64String(favoriteSong.IMage));
+                    command.Parameters.AddWithValue("@data", Convert.ToBase64String(favoriteSong.Source));
+                    command.Parameters.AddWithValue("@length", favoriteSong.Length);
 
-                command.ExecuteNonQuery();
-                connection.Close();
+                    command.ExecuteNonQuery();
+               }
+               catch
+               {
+
+               }
+               finally
+               {
+                    connection.Close();
+                    MessageBox.Show("Thêm vào nhạc yêu thích thành công");
+               }
             }
         }
-        public bool  RemoveFavoriteSong(FavoriteSong favoriteSong)
+        public void RemoveFavoriteSong(FavoriteSong favoriteSong)
         {
-            string query = "Data Source=MSI;Initial Catalog=MEDIA_PLAYER_WINDOWS;Integrated Security=True";
-            using (SqlConnection connection = new SqlConnection(connectionSTR))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionSTR))
             {
-                connection.Open();
-                string s = "DELETE FROM FAVORITESONGS WHERE NAMESONG = N'" + favoriteSong.Name +"'";
-                SqlCommand command = new SqlCommand(s, connection);
-                int i = command.ExecuteNonQuery();
-                connection.Close();
-                if (i == -1)
-                    return true;
-                else
-                    return false;
+                try
+                {
+                    connection.Open();
+                    string s = "DELETE FROM FAVORITESONGS WHERE ( NAMESONG = '" + favoriteSong.Name + "')";
+                    SQLiteCommand command = new SQLiteCommand(s, connection);
+                    int i = command.ExecuteNonQuery();
+
+                }
+                catch
+                {
+
+                }
+                finally
+                {
+                    connection.Close();
+                    MessageBox.Show("Xóa khỏi nhạc yêu thích thành công");
+                }
             }
         }
     }
