@@ -144,6 +144,12 @@
     <Compile Include="ManagerUserControl\UcDelelePlayList.Designer.cs">
       <DependentUpon>UcDelelePlayList.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerUserControl\UcDownload.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManagerUserControl\UcDownload.Designer.cs">
+      <DependentUpon>UcDownload.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerUserControl\UcFavoriteSong.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -241,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerUserControl\UcDelelePlayList.resx">
       <DependentUpon>UcDelelePlayList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerUserControl\UcDownload.resx">
+      <DependentUpon>UcDownload.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerUserControl\UcFavoriteSong.resx">
       <DependentUpon>UcFavoriteSong.cs</DependentUpon>

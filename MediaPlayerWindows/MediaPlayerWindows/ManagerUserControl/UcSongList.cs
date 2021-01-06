@@ -19,6 +19,7 @@ using System.Net;
 namespace MediaPlayerWindows.ManagerUserControl
 {
     public delegate void PlaySong(UcSong ucSong);
+    public delegate void PlayOnlineSong(UcOnlineSong ucOnlineSong);
 
     public partial class UcSongList : UserControl
     {
@@ -33,12 +34,35 @@ namespace MediaPlayerWindows.ManagerUserControl
             InitializeComponent();
             if (s == "LoadRecentlySongs")
                 LoadRecentlySongs();
-            if (s == "LoadTopVNSong")
-                LoadTopVNSongs();
-            if (s == "LoadTopEASong")
-                LoadTopEASongs();
-            if (s == "LoadTopKOSong")
-                LoadTopKOSongs();
+        }
+        public UcSongList(string s,bool check)
+        {
+            InitializeComponent();
+            if(check)
+            {
+                if (s == "LoadTopVNSong")
+                    LoadTopVNSongs();
+                if (s == "LoadTopEASong")
+                    LoadTopEASongs();
+                if (s == "LoadTopKOSong")
+                    LoadTopKOSongs();
+            }
+            else
+            {
+                if (s == "LoadTopVNSong")
+                {
+                    MessageBox.Show("Không thể tải BXH VN");
+                }   
+                if (s == "LoadTopEASong")
+                {
+                    MessageBox.Show("Không thể tải BXH EA");
+                }
+                if (s == "LoadTopKOSong")
+                {
+                    MessageBox.Show("Không thể tải BXH KO");
+                }
+            }
+           
         }
         public UcSongList(string[] pathSongs)
         {
@@ -77,6 +101,7 @@ namespace MediaPlayerWindows.ManagerUserControl
             catch (Exception ex)
             {
                 MessageBox.Show("Error" + ex.Message);
+                //aloooooooo
             }
         }
         public void LoadRecentlySongs()
@@ -111,28 +136,28 @@ namespace MediaPlayerWindows.ManagerUserControl
             List<OnlineSong> TopVNSongs = OnlineSongDAO.Instance.LoadOnlineSongVN();
             foreach (OnlineSong songVN in TopVNSongs)
             {
-                UcSong ucSong = new UcSong(songVN.Name,songVN.Artist,songVN.ImageOnline,songVN.DownloadURL);
-                flowLayoutPanel1.Controls.Add(ucSong);
+                UcOnlineSong ucOnlineSong = new UcOnlineSong(songVN.Name, songVN.Artist, songVN.ImageOnline, songVN.DownloadURL);
+                flowLayoutPanel1.Controls.Add(ucOnlineSong);
             }
         }
         public void LoadTopEASongs()
         {
             flowLayoutPanel1.Controls.Clear();
-            List<OnlineSong> TopVNSongs = OnlineSongDAO.Instance.LoadOnlineSongEA();
-            foreach (OnlineSong songVN in TopVNSongs)
+            List<OnlineSong> TopEASongs = OnlineSongDAO.Instance.LoadOnlineSongEA();
+            foreach (OnlineSong songVN in TopEASongs)
             {
-                UcSong ucSong = new UcSong(songVN.Name, songVN.Artist, songVN.ImageOnline, songVN.DownloadURL);
-                flowLayoutPanel1.Controls.Add(ucSong);
+                UcOnlineSong ucOnlineSong = new UcOnlineSong(songVN.Name, songVN.Artist, songVN.ImageOnline, songVN.DownloadURL);
+                flowLayoutPanel1.Controls.Add(ucOnlineSong);
             }
         }
         public void LoadTopKOSongs()
         {
             flowLayoutPanel1.Controls.Clear();
-            List<OnlineSong> TopVNSongs = OnlineSongDAO.Instance.LoadOnlineSongKO();
-            foreach (OnlineSong songVN in TopVNSongs)
+            List<OnlineSong> TopKOSongs = OnlineSongDAO.Instance.LoadOnlineSongKO();
+            foreach (OnlineSong songVN in TopKOSongs)
             {
-                UcSong ucSong = new UcSong(songVN.Name, songVN.Artist, songVN.ImageOnline, songVN.DownloadURL);
-                flowLayoutPanel1.Controls.Add(ucSong);
+                UcOnlineSong ucOnlineSong = new UcOnlineSong(songVN.Name, songVN.Artist, songVN.ImageOnline, songVN.DownloadURL);
+                flowLayoutPanel1.Controls.Add(ucOnlineSong);
             }
         }
         public FlowLayoutPanel FlowLayoutPanel()

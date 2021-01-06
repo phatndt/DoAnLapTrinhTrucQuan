@@ -12,6 +12,9 @@ using System.IO;
 using static MediaPlayerWindows.ManagerUserControl.UcSong;
 using MediaPlayerWindows.DTO;
 using MediaPlayerWindows.DAO;
+using System.Net;
+using xNet;
+using System.Text.RegularExpressions;
 
 namespace MediaPlayerWindows.ManagerUserControl
 {
@@ -81,6 +84,44 @@ namespace MediaPlayerWindows.ManagerUserControl
 
             TrackbarMusic.MouseDown += TrackbarMusic_MouseDown;
 
+            btnLyrics.Click += BtnLyrics_Click;
+        }
+
+        private void BtnLyrics_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                HttpRequest http = new HttpRequest();
+                string html = http.Get(@"https://www.nhaccuatui.com/tim-kiem/bai-hat?q=" + lbName.Text + " " + lbArtist.Text).ToString();
+                var htmlFindLyrics = Regex.Matches(html, @"<li class=""sn_search_single_song"">(.*?)</li>", RegexOptions.Singleline);
+                if (htmlFindLyrics.Count != 0)
+                {
+                    string ResultFind = htmlFindLyrics[0].ToString();
+                    var LyricsURL = Regex.Matches(ResultFind, @"<a href=""(.*?)""", RegexOptions.Singleline);
+                    string URL = LyricsURL[0].ToString().Replace("<a href=\"", "").Replace("\"", "");
+                    HttpRequest http1 = new HttpRequest();
+                    string htmlSong = http1.Get(@URL).ToString();
+
+                    var lyrics = Regex.Matches(htmlSong, @"<p id(.*?)</p>", RegexOptions.Singleline);
+
+                    string tempLiryc = "Chưa có lyric";
+                    if (lyrics.Count > 0)
+                    {
+                        tempLiryc = lyrics[0].ToString();
+                        string tempToCut = tempLiryc.Substring(0, tempLiryc.IndexOf('>') + 1);
+                        tempLiryc = tempLiryc.Replace(tempToCut, "").Replace("<br />", "").Replace("</p>", "");
+                        tempLiryc = WebUtility.HtmlDecode(tempLiryc);
+                    }
+                    MessageBox.Show(tempLiryc);
+                }
+                else
+                    MessageBox.Show("Không có lời bài hát");
+            }
+            catch
+            {
+                MessageBox.Show("Không có kết nối Internet");
+            }
+            
         }
 
         private void BtnPreivous_Click(object sender, EventArgs e)
@@ -240,6 +281,18 @@ namespace MediaPlayerWindows.ManagerUserControl
                 
             }
         }
+        public void SelectOnlineSong(UcOnlineSong ucOnlineSong)
+        {
+
+            string Filename = AppDomain.CurrentDomain.BaseDirectory + "Song\\" + ucOnlineSong.NameSong + ".mp3";
+            if (!File.Exists(Filename))
+            {
+                WebClient wb = new WebClient();
+                wb.DownloadFile(ucOnlineSong.DownloadURL, Filename);
+            }
+
+            Setup(Filename);
+        }
 
         private void UcMusicControl_SizeChanged(object sender, EventArgs e)
         {
@@ -387,6 +440,42 @@ namespace MediaPlayerWindows.ManagerUserControl
         //    }
         //}
         #region Song
+
+        public void Setup(string s)
+        {
+            try
+            {
+                WindowsMediaPlayer.URL = s;
+                btnTym.Enabled = true;
+                SetupPausePlayButton();
+                TrackbarVolumn.Value = 50;
+                this.LastSoundValue = TrackbarVolumn.Value;
+                SetMuteButton();
+                var fileTag = TagLib.File.Create(s);
+                lbName.Text = fileTag.Tag.Title;
+                lbArtist.Text = fileTag.Tag.FirstPerformer;
+                var mStream = new MemoryStream();
+                var firstPicture = fileTag.Tag.Pictures.FirstOrDefault();
+                if (firstPicture != null)
+                {
+                    byte[] pData = firstPicture.Data.Data;
+                    mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
+                    var bm = new Bitmap(mStream, false);
+                    mStream.Dispose();
+                    pictureSong.Image = bm;
+                }
+                else
+                {
+                    pictureSong.Image = global::MediaPlayerWindows.Properties.Resources.pictureBoxNotFound;
+                }
+                timer.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex.Message);
+            }
+        }
+
         public void Setup(UcSong ucSong)
         {
             try

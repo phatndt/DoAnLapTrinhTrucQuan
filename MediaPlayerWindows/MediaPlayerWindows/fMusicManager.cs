@@ -27,6 +27,7 @@ using Bunifu.Framework;
 using MediaPlayerWindows.DTO;
 using Guna.UI.WinForms;
 using xNet;
+using System.Net;
 
 namespace MediaPlayerWindows
 {
@@ -34,11 +35,17 @@ namespace MediaPlayerWindows
 
     public partial class fMusicManager : Form
     {
+
         UcFavoriteSongList ucFavoriteSongList = new UcFavoriteSongList();
         UcBrowseSongList ucBrowseSongList = null;
         UcSongList UcSongList = new UcSongList("LoadRecentlySongs");
+        UcSongList UcSongListVN = new UcSongList("LoadTopVNSong",CheckForInternetConnection());
+        UcSongList UcSongListEA = new UcSongList("LoadTopEASong",CheckForInternetConnection());
+        UcSongList UcSongListKO = new UcSongList("LoadTopKOSong",(CheckForInternetConnection()));
         UcPlaylistSong UcPlaylistSong = new UcPlaylistSong();
         string[] Path;
+
+
         public fMusicManager()
         {
             this.DoubleBuffered = true;
@@ -55,11 +62,22 @@ namespace MediaPlayerWindows
             btnTopVN.Click += BtnTopVN_Click;
             btnTopEA.Click += BtnTopEA_Click;
             btnTopKO.Click += BtnTopKO_Click;
+            btnDownload.Click += BtnDownload_Click;
 
             ucMusicControl.ReLoad += UcMusicControl_ReLoad;
             ucMusicControl.Remove += UcMusicControl_Remove;
 
 
+        }
+
+        private void BtnDownload_Click(object sender, EventArgs e)
+        {
+            UcDownload uc = new UcDownload();
+            panel2.Controls.Clear();
+            uc.Dock = DockStyle.Fill;
+            uc.BringToFront();
+            uc.Show();
+            panel2.Controls.Add(uc);
         }
         #region FormEvent
         private void FMusicManager_FormClosing(object sender, FormClosingEventArgs e)
@@ -196,18 +214,49 @@ namespace MediaPlayerWindows
         #region OnlineSong
         private void BtnTopKO_Click(object sender, EventArgs e)
         {
-            OpenUserControlDockFill(new UcSongList("LoadTopKOSong"));
+            OpenUserControlDockFill(UcSongListKO);
+            LoadEventUcOnlineSongKO();
         }
 
         private void BtnTopEA_Click(object sender, EventArgs e)
         {
-            OpenUserControlDockFill(new UcSongList("LoadTopEASong"));
+            OpenUserControlDockFill(UcSongListEA);
+            LoadEventUcOnlineSongEA();
         }
 
         private void BtnTopVN_Click(object sender, EventArgs e)
         {
-            OpenUserControlDockFill(new UcSongList("LoadTopVNSong"));
+            OpenUserControlDockFill(UcSongListVN);
+            LoadEventUcOnlineSongVN();
         }
+
+        private void LoadEventUcOnlineSongVN()
+        {
+            foreach (UcOnlineSong ucOnlineSong in UcSongListVN.GetFlowLayoutPanel().Controls)
+            {
+                ucOnlineSong.PlayOnlineSong += UcOnlineSong_PlayOnlineSong;
+            }
+        }
+        private void LoadEventUcOnlineSongEA()
+        {
+            foreach (UcOnlineSong ucOnlineSong in UcSongListEA.GetFlowLayoutPanel().Controls)
+            {
+                ucOnlineSong.PlayOnlineSong += UcOnlineSong_PlayOnlineSong;
+            }
+        }
+        private void LoadEventUcOnlineSongKO()
+        {
+            foreach (UcOnlineSong ucOnlineSong in UcSongListKO.GetFlowLayoutPanel().Controls)
+            {
+                ucOnlineSong.PlayOnlineSong += UcOnlineSong_PlayOnlineSong;
+            }
+        }
+
+        private void UcOnlineSong_PlayOnlineSong(UcOnlineSong ucOnlineSong)
+        {
+            ucMusicControl.SelectOnlineSong(ucOnlineSong);
+        }
+
         #endregion
         #region UcMusicControl
         private void UcMusicControl_ReLoad()
@@ -256,8 +305,8 @@ namespace MediaPlayerWindows
         #endregion
         public void LoadOneMusic()
         {
-            //string s = @"C:\Users\PC\Downloads\BongHoaDepNhat-QuanAP-6607955.mp3";
-            string s = @"C:\Users\THANHPHAT219\Downloads\MusicTest\Tình Sầu Thiên Thu Muôn Lối ( Htrol Remix ) Doãn Hiếu Nhạc Tiktok Gây Nghiện 2020.mp3";
+            string s = @"C:\Users\PC\Downloads\BongHoaDepNhat-QuanAP-6607955.mp3";
+            //string s = @"C:\Users\THANHPHAT219\Downloads\MusicTest\Tình Sầu Thiên Thu Muôn Lối ( Htrol Remix ) Doãn Hiếu Nhạc Tiktok Gây Nghiện 2020.mp3";
             TagLib.File fileTag = TagLib.File.Create(s, "audio/mp3", TagLib.ReadStyle.None);
             string Name = fileTag.Tag.Title;
             string Artist = fileTag.Tag.FirstPerformer;
@@ -277,6 +326,19 @@ namespace MediaPlayerWindows
                 //pictureSong.Image = global::MediaPlayerWindows.Properties.Resources.pictureBoxNotFound;
             }
             //ucNameSong1.Set(s, Name, Artist, image);
+        }
+        public static bool CheckForInternetConnection()
+        {
+            try
+            {
+                using (var client = new WebClient())
+                using (client.OpenRead("http://google.com/generate_204"))
+                    return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

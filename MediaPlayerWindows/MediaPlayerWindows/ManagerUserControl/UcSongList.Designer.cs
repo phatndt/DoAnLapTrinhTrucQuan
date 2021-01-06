@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucNameSong = new MediaPlayerWindows.ManagerUserControl.UcSong();
-            this.ucTitleInfomationSong1 = new MediaPlayerWindows.ManagerUserControl.UcTitleInfomationSong();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.ucTitleInfomationSong1 = new MediaPlayerWindows.ManagerUserControl.UcTitleInfomationSong();
+            this.ucNameSong = new MediaPlayerWindows.ManagerUserControl.UcSong();
             this.SuspendLayout();
             // 
-            // ucNameSong
+            // flowLayoutPanel1
             // 
-            this.ucNameSong.BackColor = System.Drawing.Color.White;
-            this.ucNameSong.Location = new System.Drawing.Point(0, 0);
-            this.ucNameSong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ucNameSong.Name = "ucNameSong";
-            this.ucNameSong.Size = new System.Drawing.Size(1260, 62);
-            this.ucNameSong.TabIndex = 0;
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 50);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(950, 404);
+            this.flowLayoutPanel1.TabIndex = 1;
             // 
             // ucTitleInfomationSong1
             // 
@@ -51,13 +51,14 @@
             this.ucTitleInfomationSong1.Size = new System.Drawing.Size(950, 50);
             this.ucTitleInfomationSong1.TabIndex = 0;
             // 
-            // flowLayoutPanel1
+            // ucNameSong
             // 
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 50);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(950, 404);
-            this.flowLayoutPanel1.TabIndex = 1;
+            this.ucNameSong.BackColor = System.Drawing.Color.White;
+            this.ucNameSong.Location = new System.Drawing.Point(0, 0);
+            this.ucNameSong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ucNameSong.Name = "ucNameSong";
+            this.ucNameSong.Size = new System.Drawing.Size(1260, 62);
+            this.ucNameSong.TabIndex = 0;
             // 
             // UcSongList
             // 
