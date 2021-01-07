@@ -93,5 +93,28 @@ namespace MediaPlayerWindows.DAO
 
             }
         }
+        public void RemoveRecentlySong(RecentlySong recentlySong)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(connectionSTR))
+            {
+                try
+                {
+                    connection.Open();
+                    string s = "DELETE FROM RECENTLYSONGS WHERE ( NAMESONG = '" + recentlySong.Name + "' ) AND ( ARTISTSONG = '" + recentlySong.Artist + "' )";
+                    SQLiteCommand command = new SQLiteCommand(s, connection);
+                    int i = command.ExecuteNonQuery();
+
+                }
+                catch
+                {
+
+                }
+                finally
+                {
+                    connection.Close();
+                    MessageBox.Show("Xóa khỏi nhạc gần đây thành công");
+                }
+            }
+        }
     }
 }

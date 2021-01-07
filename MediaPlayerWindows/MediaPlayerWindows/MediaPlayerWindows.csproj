@@ -52,7 +52,7 @@
       <HintPath>C:\Windows\SysWOW64\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI">
-      <HintPath>..\..\..\..\DoAnMedia\DoAnLapTrinhTrucQuan\Library\Guna.UI.dll</HintPath>
+      <HintPath>..\..\Library\Guna.UI.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="NAudio">

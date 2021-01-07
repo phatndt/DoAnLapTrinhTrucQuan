@@ -50,7 +50,6 @@ namespace MediaPlayerWindows.ManagerUserControl
 
         private void BtnSelect_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("a");
             Play(this);
         }
 

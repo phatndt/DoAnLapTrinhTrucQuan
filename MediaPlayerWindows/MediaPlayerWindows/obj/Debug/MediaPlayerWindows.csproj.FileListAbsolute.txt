@@ -221,3 +221,5 @@ E:\DOAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\Med
 E:\DOAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.exe
 E:\DOAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.pdb
 E:\DOAN\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.ManagerUserControl.UcDownload.resources
+D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\obj\Debug\MediaPlayerWindows.ManagerUserControl.UcDownload.resources
+D:\HocTap\Nam2_HK1\LTTQ\DoAnLapTrinhTrucQuan\MediaPlayerWindows\MediaPlayerWindows\bin\Debug\Guna.UI.dll

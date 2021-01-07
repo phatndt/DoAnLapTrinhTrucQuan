@@ -30,9 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.btnExit = new Guna.UI.WinForms.GunaButton();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // btnExit
@@ -60,15 +61,6 @@
             this.btnExit.Text = "Thoát";
             this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(400, 392);
-            this.flowLayoutPanel1.TabIndex = 5;
-            // 
             // gunaElipse1
             // 
             this.gunaElipse1.TargetControl = this;
@@ -78,6 +70,28 @@
             this.gunaElipse2.Radius = 5;
             this.gunaElipse2.TargetControl = this.btnExit;
             // 
+            // gunaLabel1
+            // 
+            this.gunaLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(47)))), ((int)(((byte)(80)))));
+            this.gunaLabel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gunaLabel1.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel1.ForeColor = System.Drawing.Color.White;
+            this.gunaLabel1.Location = new System.Drawing.Point(0, 0);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(400, 40);
+            this.gunaLabel1.TabIndex = 5;
+            this.gunaLabel1.Text = "CHỌN PLAYLIST";
+            this.gunaLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 40);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(400, 352);
+            this.flowLayoutPanel1.TabIndex = 6;
+            // 
             // fDeletePlaylist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -85,6 +99,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(47)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(400, 450);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.gunaLabel1);
             this.Controls.Add(this.btnExit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fDeletePlaylist";
@@ -96,8 +111,9 @@
 
         #endregion
         private Guna.UI.WinForms.GunaButton btnExit;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
         private Guna.UI.WinForms.GunaElipse gunaElipse2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private Guna.UI.WinForms.GunaLabel gunaLabel1;
     }
 }

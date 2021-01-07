@@ -563,10 +563,13 @@ namespace MediaPlayerWindows.ManagerUserControl
                 MessageBox.Show("Error" + ex.Message);
             }
         }
-        public void SetTymImage()
+        public void SetTymImage(UcFavoriteSong ucFavoriteSong)
         {
-            btnTym.Image = global::MediaPlayerWindows.Properties.Resources.heart_40px;
-            CheckTym = false;
+            if ( ucFavoriteSong.FavoriteSong.Name == FavoriteSong.Name && ucFavoriteSong.FavoriteSong.Artist == FavoriteSong.Artist)
+            {
+                btnTym.Image = global::MediaPlayerWindows.Properties.Resources.heart_40px;
+                CheckTym = false;
+            }    
         }
         private bool ExecuteQuerySearchFavoriteSong(string name, string artist)
         {

@@ -57,6 +57,20 @@ namespace MediaPlayerWindows.ManagerUserControl
             this.lbTime.Text = f.ToString();
             btnSelect.Click += BtnSelect_Click;
         }
+        public UcSong(string b, string c, byte[] d, byte[] e, string f, int i)
+        {
+            InitializeComponent();
+            song = new Song(b, c, d, e, f);
+            this.gunaPictureBox1.Image = ConvertClass.Instance.ConvertByteToBitmap(d);
+            this.lbName.Text = b;
+            this.lbArtist.Text = c;
+            this.lbTime.Text = f.ToString();
+            btnSelect.Click += BtnSelect_Click;
+            btnRemove.Visible = true;
+            btnRemove.Click += BtnRemove_Click1;
+            btnRemove.Click -= BtnRemove_Click;
+        }
+
         public UcSong(string a, string b, string c, string d)
         {
             InitializeComponent();
@@ -76,6 +90,7 @@ namespace MediaPlayerWindows.ManagerUserControl
             btnSelect.Click += BtnSelect_Click;
             btnRemove.Visible = true;
             btnRemove.Click += BtnRemove_Click;
+            btnRemove.Click -= BtnRemove_Click1;
         }
 
         private void BtnRemove_Click(object sender, EventArgs e)
@@ -83,16 +98,10 @@ namespace MediaPlayerWindows.ManagerUserControl
             PlaylistSongDAO.Instance.RemoveFavoriteSong(new PlaylistSong(song.Name, song.Artist, song.IMage, song.Source, song.Length,""));
             Delete(this);
         }
-
-        public void Set(string a, string b, string c, Image d)
+        private void BtnRemove_Click1(object sender, EventArgs e)
         {
-            //this.path = a.ToString();
-            this.lbName.Text = b.ToString();
-            this.lbArtist.Text = c.ToString();
-            //this.image = d;
-            //this.Vs = f;
-            //File.WriteAllBytes(this.path, Vs);
+            RecentlySongDAO.Instance.RemoveRecentlySong(new RecentlySong(song.Name, song.Artist, song.IMage, song.Source, song.Length));
+            Delete(this);
         }
-
     }
 }

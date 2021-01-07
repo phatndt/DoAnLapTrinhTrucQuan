@@ -38,11 +38,11 @@
             this.btnShuffle = new Guna.UI.WinForms.GunaCircleButton();
             this.btnPlayPause = new Guna.UI.WinForms.GunaCircleButton();
             this.btnRepeat = new Guna.UI.WinForms.GunaCircleButton();
+            this.btnLyrics = new Guna.UI.WinForms.GunaCircleButton();
             this.btnNext = new Guna.UI.WinForms.GunaCircleButton();
             this.btnVolumn = new Guna.UI.WinForms.GunaCircleButton();
             this.btnAddPlaylist = new Guna.UI.WinForms.GunaCircleButton();
             this.btnTym = new Guna.UI.WinForms.GunaCircleButton();
-            this.btnLyrics = new Guna.UI.WinForms.GunaCircleButton();
             this.TrackbarVolumn = new Guna.UI.WinForms.GunaTrackBar();
             this.lblTime_end = new Guna.UI.WinForms.GunaLabel();
             this.lblTime_start = new Guna.UI.WinForms.GunaLabel();
@@ -198,6 +198,29 @@
             this.btnRepeat.Size = new System.Drawing.Size(40, 40);
             this.btnRepeat.TabIndex = 59;
             // 
+            // btnLyrics
+            // 
+            this.btnLyrics.Animated = true;
+            this.btnLyrics.AnimationHoverSpeed = 0.07F;
+            this.btnLyrics.AnimationSpeed = 0.03F;
+            this.btnLyrics.BaseColor = System.Drawing.Color.White;
+            this.btnLyrics.BorderColor = System.Drawing.Color.Black;
+            this.btnLyrics.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnLyrics.FocusedColor = System.Drawing.Color.Empty;
+            this.btnLyrics.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLyrics.ForeColor = System.Drawing.Color.White;
+            this.btnLyrics.Image = global::MediaPlayerWindows.Properties.Resources.explicit_30px;
+            this.btnLyrics.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnLyrics.Location = new System.Drawing.Point(0, 0);
+            this.btnLyrics.Name = "btnLyrics";
+            this.btnLyrics.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
+            this.btnLyrics.OnHoverBorderColor = System.Drawing.Color.Gainsboro;
+            this.btnLyrics.OnHoverForeColor = System.Drawing.Color.Gainsboro;
+            this.btnLyrics.OnHoverImage = null;
+            this.btnLyrics.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnLyrics.Size = new System.Drawing.Size(40, 40);
+            this.btnLyrics.TabIndex = 59;
+            // 
             // btnNext
             // 
             this.btnNext.Animated = true;
@@ -292,29 +315,6 @@
             this.btnTym.Size = new System.Drawing.Size(20, 20);
             this.btnTym.TabIndex = 59;
             // 
-            // btnLyrics
-            // 
-            this.btnLyrics.Animated = true;
-            this.btnLyrics.AnimationHoverSpeed = 0.07F;
-            this.btnLyrics.AnimationSpeed = 0.03F;
-            this.btnLyrics.BaseColor = System.Drawing.Color.White;
-            this.btnLyrics.BorderColor = System.Drawing.Color.Black;
-            this.btnLyrics.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnLyrics.FocusedColor = System.Drawing.Color.Empty;
-            this.btnLyrics.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnLyrics.ForeColor = System.Drawing.Color.White;
-            this.btnLyrics.Image = global::MediaPlayerWindows.Properties.Resources.explicit_30px;
-            this.btnLyrics.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnLyrics.Location = new System.Drawing.Point(0, 0);
-            this.btnLyrics.Name = "btnLyrics";
-            this.btnLyrics.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
-            this.btnLyrics.OnHoverBorderColor = System.Drawing.Color.Gainsboro;
-            this.btnLyrics.OnHoverForeColor = System.Drawing.Color.Gainsboro;
-            this.btnLyrics.OnHoverImage = null;
-            this.btnLyrics.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btnLyrics.Size = new System.Drawing.Size(40, 40);
-            this.btnLyrics.TabIndex = 59;
-            // 
             // TrackbarVolumn
             // 
             this.TrackbarVolumn.Location = new System.Drawing.Point(1083, 30);
@@ -352,9 +352,8 @@
             this.lbArtist.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.lbArtist.Location = new System.Drawing.Point(107, 35);
             this.lbArtist.Name = "lbArtist";
-            this.lbArtist.Size = new System.Drawing.Size(39, 19);
+            this.lbArtist.Size = new System.Drawing.Size(0, 19);
             this.lbArtist.TabIndex = 56;
-            this.lbArtist.Text = "Keyp";
             // 
             // lbName
             // 
@@ -362,9 +361,8 @@
             this.lbName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lbName.Location = new System.Drawing.Point(106, 10);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(164, 21);
+            this.lbName.Size = new System.Drawing.Size(0, 21);
             this.lbName.TabIndex = 57;
-            this.lbName.Text = "Xin một lần ngoại lệ";
             // 
             // pictureSong
             // 

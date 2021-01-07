@@ -28,6 +28,7 @@ using MediaPlayerWindows.DTO;
 using Guna.UI.WinForms;
 using xNet;
 using System.Net;
+using System.Threading;
 
 namespace MediaPlayerWindows
 {
@@ -39,9 +40,10 @@ namespace MediaPlayerWindows
         UcFavoriteSongList ucFavoriteSongList = new UcFavoriteSongList();
         UcBrowseSongList ucBrowseSongList = null;
         UcSongList UcSongList = new UcSongList("LoadRecentlySongs");
-        UcSongList UcSongListVN = new UcSongList("LoadTopVNSong",CheckForInternetConnection());
-        UcSongList UcSongListEA = new UcSongList("LoadTopEASong",CheckForInternetConnection());
-        UcSongList UcSongListKO = new UcSongList("LoadTopKOSong",(CheckForInternetConnection()));
+
+        UcSongList UcSongListVN = new UcSongList("LoadTopVNSong", CheckForInternetConnection());
+        UcSongList UcSongListEA = new UcSongList("LoadTopEASong", CheckForInternetConnection());
+        UcSongList UcSongListKO = new UcSongList("LoadTopKOSong", (CheckForInternetConnection()));
         UcPlaylistSong UcPlaylistSong = new UcPlaylistSong();
         string[] Path;
 
@@ -50,7 +52,6 @@ namespace MediaPlayerWindows
         {
             this.DoubleBuffered = true;
             InitializeComponent();
-            LoadOneMusic();
 
             this.FormClosing += FMusicManager_FormClosing;
 
@@ -66,7 +67,6 @@ namespace MediaPlayerWindows
 
             ucMusicControl.ReLoad += UcMusicControl_ReLoad;
             ucMusicControl.Remove += UcMusicControl_Remove;
-
 
         }
 
@@ -134,6 +134,7 @@ namespace MediaPlayerWindows
         #region RecentlySong
         private void BtnRecently_Click(object sender, EventArgs e)
         {
+            UcSongList.LoadRecentlySongs();
             OpenUserControlDockFill(UcSongList);
             ucMusicControl.CleanUcSong();
             ucMusicControl.CleanUcFavoriteSong();
@@ -156,7 +157,7 @@ namespace MediaPlayerWindows
         #region FavoriteSong
         private void UcFavoriteSong_RemoveTym(UcFavoriteSong ucFavoriteSong)
         {
-            ucMusicControl.SetTymImage();
+            ucMusicControl.SetTymImage(ucFavoriteSong);
         }
 
         private void BtnFavoriteSong_Click(object sender, EventArgs e)
@@ -303,30 +304,6 @@ namespace MediaPlayerWindows
             panel2.Controls.Add(childForm);
         }
         #endregion
-        public void LoadOneMusic()
-        {
-            string s = @"C:\Users\PC\Downloads\BongHoaDepNhat-QuanAP-6607955.mp3";
-            //string s = @"C:\Users\THANHPHAT219\Downloads\MusicTest\Tình Sầu Thiên Thu Muôn Lối ( Htrol Remix ) Doãn Hiếu Nhạc Tiktok Gây Nghiện 2020.mp3";
-            TagLib.File fileTag = TagLib.File.Create(s, "audio/mp3", TagLib.ReadStyle.None);
-            string Name = fileTag.Tag.Title;
-            string Artist = fileTag.Tag.FirstPerformer;
-            Image image = null;
-            var mStream = new MemoryStream();
-            var firstPicture = fileTag.Tag.Pictures.FirstOrDefault();
-            if (firstPicture != null)
-            {
-                byte[] pData = firstPicture.Data.Data;
-                mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
-                var bm = new Bitmap(mStream, false);
-                mStream.Dispose();
-                image = bm;
-            }
-            else
-            {
-                //pictureSong.Image = global::MediaPlayerWindows.Properties.Resources.pictureBoxNotFound;
-            }
-            //ucNameSong1.Set(s, Name, Artist, image);
-        }
         public static bool CheckForInternetConnection()
         {
             try

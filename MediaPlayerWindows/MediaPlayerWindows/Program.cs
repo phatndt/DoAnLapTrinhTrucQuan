@@ -17,6 +17,7 @@ namespace MediaPlayerWindows
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new fMusicManager());
             Application.Run(new fMusicManager());
         }
     }

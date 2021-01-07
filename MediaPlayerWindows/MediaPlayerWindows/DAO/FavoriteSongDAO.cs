@@ -81,7 +81,7 @@ namespace MediaPlayerWindows.DAO
                 try
                 {
                     connection.Open();
-                    string s = "DELETE FROM FAVORITESONGS WHERE ( NAMESONG = '" + favoriteSong.Name + "')";
+                    string s = "DELETE FROM FAVORITESONGS WHERE ( NAMESONG = '" + favoriteSong.Name + "' ) AND ( ARTISTSONG = '" + favoriteSong.Artist + "' )";
                     SQLiteCommand command = new SQLiteCommand(s, connection);
                     int i = command.ExecuteNonQuery();
 

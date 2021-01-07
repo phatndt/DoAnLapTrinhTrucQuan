@@ -15,6 +15,7 @@ using MediaPlayerWindows.DAO;
 using xNet;
 using System.Text.RegularExpressions;
 using System.Net;
+using System.Threading;
 
 namespace MediaPlayerWindows.ManagerUserControl
 {
@@ -38,6 +39,8 @@ namespace MediaPlayerWindows.ManagerUserControl
         public UcSongList(string s,bool check)
         {
             InitializeComponent();
+            Control.CheckForIllegalCrossThreadCalls = false;
+            ucTitleInfomationSong1.Guna().Visible = false;
             if(check)
             {
                 if (s == "LoadTopVNSong")
@@ -110,22 +113,16 @@ namespace MediaPlayerWindows.ManagerUserControl
             List<RecentlySong> recentlySongs = RecentlySongDAO.Instance.LoadRencentlySongsFromDB();
             foreach (RecentlySong recently in recentlySongs)
             {
-                UcSong ucSong = new UcSong(recently.Name, recently.Artist, recently.IMage, recently.Source, recently.Length);
+                UcSong ucSong = new UcSong(recently.Name, recently.Artist, recently.IMage, recently.Source, recently.Length,1);
+                ucSong.Delete += UcSong_Delete;
                 flowLayoutPanel1.Controls.Add(ucSong);
             }
         }
-        public void Remove()
-        {
-            //flowLayoutPanel.Controls.Remove()
-        }
 
-        private void FlowLayoutPanel_ControlAdded(object sender, ControlEventArgs e)
+        private void UcSong_Delete(UcSong song)
         {
-            //MessageBox.Show("b");
-            //flowLayoutPanel.Controls.Add(new UcNameSong());
-           
+            flowLayoutPanel1.Controls.Remove(song);
         }
-
         public FlowLayoutPanel GetFlowLayoutPanel()
         {
             return flowLayoutPanel1;
@@ -139,6 +136,14 @@ namespace MediaPlayerWindows.ManagerUserControl
                 UcOnlineSong ucOnlineSong = new UcOnlineSong(songVN.Name, songVN.Artist, songVN.ImageOnline, songVN.DownloadURL);
                 flowLayoutPanel1.Controls.Add(ucOnlineSong);
             }
+            //new Thread(
+            //    () =>
+            //    {
+
+            //    }
+            //    )
+            //{ IsBackground= true}.Start(); 
+
         }
         public void LoadTopEASongs()
         {

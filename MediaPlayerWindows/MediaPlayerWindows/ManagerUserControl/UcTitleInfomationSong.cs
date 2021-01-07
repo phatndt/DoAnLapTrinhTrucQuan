@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Guna.UI.WinForms;
 
 namespace MediaPlayerWindows.ManagerUserControl
 {
@@ -15,6 +16,10 @@ namespace MediaPlayerWindows.ManagerUserControl
         public UcTitleInfomationSong()
         {
             InitializeComponent();
+        }
+        public GunaLabel Guna()
+        {
+            return gunaLabel4;
         }
     }
 }
