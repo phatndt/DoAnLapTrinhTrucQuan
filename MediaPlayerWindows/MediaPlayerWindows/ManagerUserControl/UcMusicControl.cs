@@ -284,11 +284,23 @@ namespace MediaPlayerWindows.ManagerUserControl
         public void SelectOnlineSong(UcOnlineSong ucOnlineSong)
         {
 
+
             string Filename = AppDomain.CurrentDomain.BaseDirectory + "Song\\" + ucOnlineSong.NameSong + ".mp3";
             if (!File.Exists(Filename))
             {
+                HttpRequest http1 = new HttpRequest();
+                string htmlSong = http1.Get(ucOnlineSong.DownloadURL).ToString();
+                var Audio = Regex.Matches(htmlSong, @"player.peConfig.xmlURL = ""(.*?)""", RegexOptions.Singleline);
+                string AudioURL = Audio[0].ToString().Replace("player.peConfig.xmlURL = \"", "").Replace("\"", "");
+
+                HttpRequest http2 = new HttpRequest();
+                string htmlAudio = http2.Get(AudioURL).ToString();
+                var Location = Regex.Matches(htmlAudio, @"<location>(.*?)</location>", RegexOptions.Singleline);
+                string LocationAudio = Location[0].ToString();
+                var Download = Regex.Matches(htmlAudio, @"http(.*?)]", RegexOptions.Singleline);
+                string DownloadURL = Download[0].ToString().Replace("]", "");
                 WebClient wb = new WebClient();
-                wb.DownloadFile(ucOnlineSong.DownloadURL, Filename);
+                wb.DownloadFile(DownloadURL, Filename);
             }
 
             Setup(Filename);
@@ -324,30 +336,52 @@ namespace MediaPlayerWindows.ManagerUserControl
             {
                 WindowsMediaPlayer.settings.volume = TrackbarVolumn.Value;
                 this.LastSoundValue = TrackbarVolumn.Value;
+                btnVolumn.Image = global::MediaPlayerWindows.Properties.Resources.voice_40px;
             }
+            else if(TrackbarVolumn.Value != this.LastSoundValue && TrackbarVolumn.Value == TrackbarVolumn.Minimum)
+            {
+                WindowsMediaPlayer.settings.volume = TrackbarVolumn.Value;
+                if (this.LastSoundValue == 0)
+                {
+                    this.LastSoundValue = 50;
+                    TrackbarVolumn.Value = this.LastSoundValue;
+                }
+                else
+                    this.LastSoundValue = TrackbarVolumn.Value;
+                btnVolumn.Image = global::MediaPlayerWindows.Properties.Resources.mute_40px;
+            }
+
         }
 
         private void BtnVolumn_Click(object sender, EventArgs e)
         {
-            if (CheckVolumnImage)
+            //if (CheckVolumnImage)
+            //{
+            //    btnVolumn.Image = global::MediaPlayerWindows.Properties.Resources.mute_40px;
+            //    CheckVolumnImage = false;
+            //    TrackbarVolumn.Value = 0;
+            //    WindowsMediaPlayer.settings.volume = TrackbarVolumn.Value;
+            //}
+            //else
+            //{
+            //    btnVolumn.Image = global::MediaPlayerWindows.Properties.Resources.voice_40px;
+            //    CheckVolumnImage = true;
+
+            //        TrackbarVolumn.Value = this.LastSoundValue;
+            //    WindowsMediaPlayer.settings.volume = this.LastSoundValue;
+            //}
+            if (TrackbarVolumn.Value != 0)
             {
+                this.LastSoundValue = TrackbarVolumn.Value;
                 btnVolumn.Image = global::MediaPlayerWindows.Properties.Resources.mute_40px;
-                CheckVolumnImage = false;
                 TrackbarVolumn.Value = 0;
                 WindowsMediaPlayer.settings.volume = TrackbarVolumn.Value;
             }
             else
             {
                 btnVolumn.Image = global::MediaPlayerWindows.Properties.Resources.voice_40px;
-                CheckVolumnImage = true;
-                TrackbarVolumn.Value = this.LastSoundValue;
+                TrackbarVolumn.Value =50;
                 WindowsMediaPlayer.settings.volume = this.LastSoundValue;
-            }
-            if (TrackbarVolumn.Value != 0)
-            {
-            }
-            else
-            {
             }
         }
         private void Timer_Tick(object sender, EventArgs e)
@@ -449,6 +483,7 @@ namespace MediaPlayerWindows.ManagerUserControl
                 btnTym.Enabled = true;
                 SetupPausePlayButton();
                 TrackbarVolumn.Value = 50;
+                TrackbarMusic.Value = TrackbarMusic.Minimum;
                 this.LastSoundValue = TrackbarVolumn.Value;
                 SetMuteButton();
                 var fileTag = TagLib.File.Create(s);

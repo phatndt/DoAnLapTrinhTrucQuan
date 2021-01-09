@@ -49,18 +49,18 @@ namespace MediaPlayerWindows.DAO
                     string ImageURL = imageurl[0].ToString();
                     ImageURL = ImageURL.Replace("<img src=\"", "").Replace("\"", "");
 
-                    HttpRequest http1 = new HttpRequest();
-                    string htmlSong = http1.Get(@URL).ToString();
-                    var Audio = Regex.Matches(htmlSong, @"player.peConfig.xmlURL = ""(.*?)""", RegexOptions.Singleline);
-                    string AudioURL = Audio[0].ToString().Replace("player.peConfig.xmlURL = \"", "").Replace("\"", "");
+                    //HttpRequest http1 = new HttpRequest();
+                    //string htmlSong = http1.Get(@URL).ToString();
+                    //var Audio = Regex.Matches(htmlSong, @"player.peConfig.xmlURL = ""(.*?)""", RegexOptions.Singleline);
+                    //string AudioURL = Audio[0].ToString().Replace("player.peConfig.xmlURL = \"", "").Replace("\"", "");
 
-                    HttpRequest http2 = new HttpRequest();
-                    string htmlAudio = http2.Get(AudioURL).ToString();
-                    var Location = Regex.Matches(htmlAudio, @"<location>(.*?)</location>", RegexOptions.Singleline);
-                    string LocationAudio = Location[0].ToString();
-                    var Download = Regex.Matches(htmlAudio, @"http(.*?)]", RegexOptions.Singleline);
-                    string DownloadURL = Download[0].ToString().Replace("]", "");
-                    OnlineSong onlineSong = new OnlineSong(Name, Artist, ImageURL, DownloadURL);
+                    //HttpRequest http2 = new HttpRequest();
+                    //string htmlAudio = http2.Get(AudioURL).ToString();
+                    //var Location = Regex.Matches(htmlAudio, @"<location>(.*?)</location>", RegexOptions.Singleline);
+                    //string LocationAudio = Location[0].ToString();
+                    //var Download = Regex.Matches(htmlAudio, @"http(.*?)]", RegexOptions.Singleline);
+                    //string DownloadURL = Download[0].ToString().Replace("]", "");
+                    OnlineSong onlineSong = new OnlineSong(Name, Artist, ImageURL, URL);
                     SongList.Add(onlineSong);
                 }
 
@@ -101,18 +101,18 @@ namespace MediaPlayerWindows.DAO
                     string ImageURL = imageurl[0].ToString();
                     ImageURL = ImageURL.Replace("<img src=\"", "").Replace("\"", "");
 
-                    HttpRequest http1 = new HttpRequest();
-                    string htmlSong = http1.Get(@URL).ToString();
-                    var Audio = Regex.Matches(htmlSong, @"player.peConfig.xmlURL = ""(.*?)""", RegexOptions.Singleline);
-                    string AudioURL = Audio[0].ToString().Replace("player.peConfig.xmlURL = \"", "").Replace("\"", "");
+                    //HttpRequest http1 = new HttpRequest();
+                    //string htmlSong = http1.Get(@URL).ToString();
+                    //var Audio = Regex.Matches(htmlSong, @"player.peConfig.xmlURL = ""(.*?)""", RegexOptions.Singleline);
+                    //string AudioURL = Audio[0].ToString().Replace("player.peConfig.xmlURL = \"", "").Replace("\"", "");
 
-                    HttpRequest http2 = new HttpRequest();
-                    string htmlAudio = http2.Get(AudioURL).ToString();
-                    var Location = Regex.Matches(htmlAudio, @"<location>(.*?)</location>", RegexOptions.Singleline);
-                    string LocationAudio = Location[0].ToString();
-                    var Download = Regex.Matches(htmlAudio, @"http(.*?)]", RegexOptions.Singleline);
-                    string DownloadURL = Download[0].ToString().Replace("]", "");
-                    OnlineSong onlineSong = new OnlineSong(Name, Artist, ImageURL, DownloadURL);
+                    //HttpRequest http2 = new HttpRequest();
+                    //string htmlAudio = http2.Get(AudioURL).ToString();
+                    //var Location = Regex.Matches(htmlAudio, @"<location>(.*?)</location>", RegexOptions.Singleline);
+                    //string LocationAudio = Location[0].ToString();
+                    //var Download = Regex.Matches(htmlAudio, @"http(.*?)]", RegexOptions.Singleline);
+                    //string DownloadURL = Download[0].ToString().Replace("]", "");
+                    OnlineSong onlineSong = new OnlineSong(Name, Artist, ImageURL, URL);
                     SongList.Add(onlineSong);
                 }
 
@@ -153,18 +153,18 @@ namespace MediaPlayerWindows.DAO
                     string ImageURL = imageurl[0].ToString();
                     ImageURL = ImageURL.Replace("<img src=\"", "").Replace("\"", "");
 
-                    HttpRequest http1 = new HttpRequest();
-                    string htmlSong = http1.Get(@URL).ToString();
-                    var Audio = Regex.Matches(htmlSong, @"player.peConfig.xmlURL = ""(.*?)""", RegexOptions.Singleline);
-                    string AudioURL = Audio[0].ToString().Replace("player.peConfig.xmlURL = \"", "").Replace("\"", "");
+                    //HttpRequest http1 = new HttpRequest();
+                    //string htmlSong = http1.Get(@URL).ToString();
+                    //var Audio = Regex.Matches(htmlSong, @"player.peConfig.xmlURL = ""(.*?)""", RegexOptions.Singleline);
+                    //string AudioURL = Audio[0].ToString().Replace("player.peConfig.xmlURL = \"", "").Replace("\"", "");
 
-                    HttpRequest http2 = new HttpRequest();
-                    string htmlAudio = http2.Get(AudioURL).ToString();
-                    var Location = Regex.Matches(htmlAudio, @"<location>(.*?)</location>", RegexOptions.Singleline);
-                    string LocationAudio = Location[0].ToString();
-                    var Download = Regex.Matches(htmlAudio, @"http(.*?)]", RegexOptions.Singleline);
-                    string DownloadURL = Download[0].ToString().Replace("]", "");
-                    OnlineSong onlineSong = new OnlineSong(Name, Artist, ImageURL, DownloadURL);
+                    //HttpRequest http2 = new HttpRequest();
+                    //string htmlAudio = http2.Get(AudioURL).ToString();
+                    //var Location = Regex.Matches(htmlAudio, @"<location>(.*?)</location>", RegexOptions.Singleline);
+                    //string LocationAudio = Location[0].ToString();
+                    //var Download = Regex.Matches(htmlAudio, @"http(.*?)]", RegexOptions.Singleline);
+                    //string DownloadURL = Download[0].ToString().Replace("]", "");
+                    OnlineSong onlineSong = new OnlineSong(Name, Artist, ImageURL, URL);
                     SongList.Add(onlineSong);
                 }
 

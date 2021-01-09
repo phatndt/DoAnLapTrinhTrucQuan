@@ -38,12 +38,12 @@
             // 
             this.btnDownload.AnimationHoverSpeed = 0.07F;
             this.btnDownload.AnimationSpeed = 0.03F;
-            this.btnDownload.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
+            this.btnDownload.BaseColor = System.Drawing.Color.Silver;
             this.btnDownload.BorderColor = System.Drawing.Color.Black;
             this.btnDownload.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnDownload.FocusedColor = System.Drawing.Color.Empty;
             this.btnDownload.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDownload.ForeColor = System.Drawing.Color.White;
+            this.btnDownload.ForeColor = System.Drawing.Color.Black;
             this.btnDownload.Image = ((System.Drawing.Image)(resources.GetObject("btnDownload.Image")));
             this.btnDownload.ImageSize = new System.Drawing.Size(30, 30);
             this.btnDownload.Location = new System.Drawing.Point(387, 240);
@@ -51,7 +51,7 @@
             this.btnDownload.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnDownload.OnHoverBorderColor = System.Drawing.Color.Silver;
             this.btnDownload.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btnDownload.OnHoverImage = global::MediaPlayerWindows.Properties.Resources.playlist_green_40px;
+            this.btnDownload.OnHoverImage = null;
             this.btnDownload.OnPressedColor = System.Drawing.Color.Black;
             this.btnDownload.Size = new System.Drawing.Size(224, 79);
             this.btnDownload.TabIndex = 5;

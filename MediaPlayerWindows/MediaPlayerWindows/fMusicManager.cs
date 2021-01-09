@@ -28,7 +28,6 @@ using MediaPlayerWindows.DTO;
 using Guna.UI.WinForms;
 using xNet;
 using System.Net;
-using System.Threading;
 
 namespace MediaPlayerWindows
 {
@@ -255,6 +254,7 @@ namespace MediaPlayerWindows
 
         private void UcOnlineSong_PlayOnlineSong(UcOnlineSong ucOnlineSong)
         {
+
             ucMusicControl.SelectOnlineSong(ucOnlineSong);
         }
 
